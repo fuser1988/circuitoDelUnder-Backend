@@ -14,8 +14,7 @@ public class RecitalServiceImpl implements RecitalService{
 
 	@Override
 	public void guardar(Recital recital) {
-		dao.save(recital);
-		
+		dao.save(recital);	
 	}
 
 }

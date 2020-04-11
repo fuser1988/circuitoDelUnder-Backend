@@ -12,6 +12,8 @@ import ar.edu.unq.circuito.service.RecitalServiceImpl;
 public class CircuitoDelUnderBackendApplication {
 
 	public static void main(String[] args) {
+		SpringApplication.run(CircuitoDelUnderBackendApplication.class, args);
+		/*
 		ConfigurableApplicationContext context = SpringApplication.run(CircuitoDelUnderBackendApplication.class);
 		RecitalServiceImpl service = context.getBean(RecitalServiceImpl.class);
 
@@ -22,7 +24,7 @@ public class CircuitoDelUnderBackendApplication {
 		service.guardar(r);
 		service.guardar(r2);
 		service.guardar(r3);
-		context.close();
+		context.close();*/
     }
 
 }
