@@ -15,6 +15,8 @@ public class Recital {
 	
 	private String nombre;
 	
+	private String genero;
+	
 	public Recital() {
 		
 	}
@@ -29,6 +31,14 @@ public class Recital {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 
 	public String getNombre() {
