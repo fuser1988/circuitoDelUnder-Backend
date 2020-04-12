@@ -16,14 +16,20 @@ public class RecitalServiceImpl implements RecitalService{
 
 	@Override
 	public void guardar(Recital recital) {
-	// prop. guarda el recital a la base de datos
+		// prop. guarda el recital a la base de datos
 		dao.save(recital);	
 	}
 
 	@Override
 	public List<Recital> get() {
-	// prop. retorna todos los recitales de la base de datos
+		// prop. retorna todos los recitales de la base de datos
 		return dao.findAll();
+	}
+
+	@Override
+	public List<Recital> getGenero(String genero) {
+		// prop. retorna todos los recitales de dicho genero
+		return dao.findByGenero(genero);
 	}
 
 }

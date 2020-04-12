@@ -28,5 +28,10 @@ public class CircutioController {
 	public List<Recital> get() {
 		return service.get();
 	}
+	
+	@GetMapping("/recitales/{genero}")
+	public List<Recital> filterGenero(@PathVariable("genero") String genero) {
+		return service.getGenero(genero);
+	}
 
 }
