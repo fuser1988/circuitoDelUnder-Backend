@@ -6,30 +6,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unq.circuito.model.Recital;
-import ar.edu.unq.circuito.repo.RecitalDao;
+import ar.edu.unq.circuito.repo.RecitalReposity;
 
 @Service
 public class RecitalServiceImpl implements RecitalService{
 	
 	@Autowired
-	private RecitalDao dao;
+	private RecitalReposity repo;
 
 	@Override
 	public void guardar(Recital recital) {
 		// prop. guarda el recital a la base de datos
-		dao.save(recital);	
+		repo.save(recital);	
 	}
 
 	@Override
 	public List<Recital> get() {
 		// prop. retorna todos los recitales de la base de datos
-		return dao.findAll();
+		return repo.findAll();
 	}
 
 	@Override
-	public List<Recital> getGenero(String genero) {
+	public List<Recital> filterGenero(String genero) {
 		// prop. retorna todos los recitales de dicho genero
-		return dao.findByGenero(genero);
+		return repo.findByGenero(genero);
 	}
 
 }

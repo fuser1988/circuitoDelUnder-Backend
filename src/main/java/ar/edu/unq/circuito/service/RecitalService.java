@@ -10,6 +10,6 @@ public interface RecitalService {
 
 	public List<Recital> get();
 
-	public List<Recital> getGenero(String genero);
+	public List<Recital> filterGenero(String genero);
 
 }
