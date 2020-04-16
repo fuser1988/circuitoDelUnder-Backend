@@ -1,6 +1,7 @@
 package ar.edu.unq.circuito.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ public class Recital {
 	
 	private String nombre;
 	
-private String generos;
+	private List<Genero> generos;
 	
 	private Date fechayHoraComienzoDeRecital;
 
@@ -37,7 +38,7 @@ private String generos;
 		
 	}
 
-	public Recital(String nombre, String generos, Date fechayHoraComienzoDeRecital, Date fechaYHoraFinDeRecital,
+	public Recital(String nombre, List<Genero> generos, Date fechayHoraComienzoDeRecital, Date fechaYHoraFinDeRecital,
 			String bandas, String nombreDeLugar, String direccionDeLugar,String imagen, int precioDeEntrada) {
 		this.nombre = nombre;
 		this.generos = generos;
@@ -58,12 +59,12 @@ private String generos;
 		this.id = id;
 	}
 
-	public String getGeneros() {
+	public List<Genero> getGeneros() {
 		return generos;
 	}
 
-	public void setGeneros(String genero) {
-		this.generos = genero;
+	public void setGeneros(List<Genero> generos) {
+		this.generos = generos;
 	}
 
 	public String getNombre() {
