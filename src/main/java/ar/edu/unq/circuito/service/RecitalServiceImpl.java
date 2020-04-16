@@ -24,11 +24,11 @@ public class RecitalServiceImpl implements RecitalService{
 		// prop. retorna todos los recitales de la base de datos
 		return repo.findAll();
 	}
-	/*
+	
 	@Override
 	public List<Recital> filterGenero(String genero) {
 		// prop. retorna todos los recitales de dicho genero
 		return repo.findByGenero(genero);
-	}*/
+	}
 
 }

@@ -10,8 +10,7 @@ public class Recital {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-	@Column(name = "nombre", length = 50)	
+	
 	private String nombre;
 	
 	private String genero;
@@ -38,8 +37,8 @@ public class Recital {
 			String bandas, String nombreDeLugar, String direccionDeLugar,String imagen, int precioDeEntrada) {
 		this.nombre = nombre;
 		this.genero = genero;
-		this.fechayHoraComienzoDeRecital = fechayHoraComienzoDeRecital;
-		this.fechaYHoraFinDeRecital = fechaYHoraFinDeRecital;
+		this.fechayHoraComienzoDeRecital = new Date();
+		this.fechaYHoraFinDeRecital = new Date();
 		this.bandas = bandas;
 		this.nombreDeLugar = nombreDeLugar;
 		this.direccionDeLugar = direccionDeLugar;
@@ -72,6 +71,9 @@ public class Recital {
 	}
 
 	public Date getFechayHoraComienzoDeRecital() {
+		/* pasar el formato a dia y hora.
+		 * DateFormat hourdateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
+		hourdateFormat.format(fechayHoraComienzoDeRecital)*/
 		return fechayHoraComienzoDeRecital;
 	}
 
@@ -80,6 +82,8 @@ public class Recital {
 	}
 
 	public Date getFechaYHoraFinDeRecital() {
+		/*DateFormat hourdateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
+		hourdateFormat.format(fechaYHoraFinDeRecital)*/
 		return fechaYHoraFinDeRecital;
 	}
 

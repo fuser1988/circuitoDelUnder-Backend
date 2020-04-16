@@ -1,5 +1,6 @@
 package ar.edu.unq.circuito.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import ar.edu.unq.circuito.service.RecitalService;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/circuito_under")
 public class RecitalController {
 
 	@Autowired
@@ -23,18 +24,17 @@ public class RecitalController {
 	
 	@PostMapping("/recitales")
 	public void save(@RequestBody Recital recital) {
-		Recital r = new Recital();
-	
-		service.guardar(r);
+		recital.setFechayHoraComienzoDeRecital(recital.getFechayHoraComienzoDeRecital());
+		service.guardar(recital);
 	}
 	
 	@GetMapping("/recitales")
 	public List<Recital> get() {
 		return service.get();
 	}
-	/*
+	
 	@GetMapping("/recitales/bandas")
 	public List<Recital> filterGenero(@RequestParam(value = "genero") String genero) {
 		return service.filterGenero(genero);
-	}*/
+	}
 }
