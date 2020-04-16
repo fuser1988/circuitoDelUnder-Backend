@@ -1,24 +1,20 @@
 package ar.edu.unq.circuito.model;
-
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
+import javax.persistence.*;
 
 @Entity
+@Table(name = "recital")
 public class Recital {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-	
+
+	@Column(name = "nombre", length = 50)	
 	private String nombre;
 	
-	private List<Genero> generos;
+	private String genero;
 	
 	private Date fechayHoraComienzoDeRecital;
 
@@ -33,15 +29,15 @@ public class Recital {
 	private String imagen;
 
 	private int precioDeEntrada;
-	
+
 	public Recital() {
 		
 	}
-
-	public Recital(String nombre, List<Genero> generos, Date fechayHoraComienzoDeRecital, Date fechaYHoraFinDeRecital,
+	
+	public Recital(String nombre, String genero, Date fechayHoraComienzoDeRecital, Date fechaYHoraFinDeRecital,
 			String bandas, String nombreDeLugar, String direccionDeLugar,String imagen, int precioDeEntrada) {
 		this.nombre = nombre;
-		this.generos = generos;
+		this.genero = genero;
 		this.fechayHoraComienzoDeRecital = fechayHoraComienzoDeRecital;
 		this.fechaYHoraFinDeRecital = fechaYHoraFinDeRecital;
 		this.bandas = bandas;
@@ -50,7 +46,7 @@ public class Recital {
 		this.imagen = imagen;
 		this.precioDeEntrada = precioDeEntrada;
 	}
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -59,20 +55,20 @@ public class Recital {
 		this.id = id;
 	}
 
-	public List<Genero> getGeneros() {
-		return generos;
-	}
-
-	public void setGeneros(List<Genero> generos) {
-		this.generos = generos;
-	}
-
 	public String getNombre() {
 		return nombre;
 	}
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 
 	public Date getFechayHoraComienzoDeRecital() {
@@ -130,6 +126,5 @@ public class Recital {
 	public void setPrecioDeEntrada(int precioDeEntrada) {
 		this.precioDeEntrada = precioDeEntrada;
 	}
-	
 	
 }

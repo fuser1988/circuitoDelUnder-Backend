@@ -6,18 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unq.circuito.model.Recital;
-import ar.edu.unq.circuito.repo.RecitalReposity;
-
+import ar.edu.unq.circuito.repo.RecitalRepository;
 @Service
 public class RecitalServiceImpl implements RecitalService{
-	
-	@Autowired
-	private RecitalReposity repo;
 
+	@Autowired
+	private RecitalRepository repo;
+	
 	@Override
 	public void guardar(Recital recital) {
 		// prop. guarda el recital a la base de datos
-		repo.save(recital);	
+		repo.save(recital);
 	}
 
 	@Override
@@ -25,11 +24,11 @@ public class RecitalServiceImpl implements RecitalService{
 		// prop. retorna todos los recitales de la base de datos
 		return repo.findAll();
 	}
-
+	/*
 	@Override
 	public List<Recital> filterGenero(String genero) {
 		// prop. retorna todos los recitales de dicho genero
 		return repo.findByGenero(genero);
-	}
+	}*/
 
 }

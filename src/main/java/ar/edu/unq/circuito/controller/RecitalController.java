@@ -13,26 +13,28 @@ import org.springframework.web.bind.annotation.RestController;
 import ar.edu.unq.circuito.model.Recital;
 import ar.edu.unq.circuito.service.RecitalService;
 
+
 @RestController
-@RequestMapping("/circuito_under")
+@RequestMapping("/api")
 public class RecitalController {
-	
+
 	@Autowired
 	RecitalService service;
 	
 	@PostMapping("/recitales")
 	public void save(@RequestBody Recital recital) {
-		service.guardar(recital);
+		Recital r = new Recital();
+	
+		service.guardar(r);
 	}
 	
 	@GetMapping("/recitales")
 	public List<Recital> get() {
 		return service.get();
 	}
-	
+	/*
 	@GetMapping("/recitales/bandas")
 	public List<Recital> filterGenero(@RequestParam(value = "genero") String genero) {
 		return service.filterGenero(genero);
-	}
-
+	}*/
 }

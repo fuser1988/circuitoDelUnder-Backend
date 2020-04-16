@@ -6,8 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import ar.edu.unq.circuito.model.Recital;
 
-public interface RecitalReposity extends JpaRepository<Recital, Long>{
-	
-	List<Recital> findByGenero(String firstName);
+
+public interface RecitalRepository extends JpaRepository<Recital, Long>{
+
+//	List<Recital> findByGenero(String genero);
 
 }
