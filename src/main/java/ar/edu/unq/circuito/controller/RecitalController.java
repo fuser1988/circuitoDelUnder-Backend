@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,21 +23,26 @@ public class RecitalController {
 	@Autowired
 	RecitalService recitalService;
 	
+	@CrossOrigin
 	@PostMapping("/recitales")
 	public void guaradr(@RequestBody Recital recital) {
 		recital.setFecha(recital.getFecha());
 		recitalService.guardar(recital);
 	}
+	
+	@CrossOrigin
 	@PostMapping("/recitales/fake")
 	public void DataLoad() {
 		recitalService.cargarDatos();
 	}
 	
+	@CrossOrigin
 	@GetMapping("/recitales")
 	public List<Recital> buscar() {
 		return recitalService.buscarTodos();
 	}
 	
+	@CrossOrigin
 	@GetMapping("/recitales/bandas")
 	public List<Recital> filterGenero(@RequestParam(value = "genero") String genero) {
 		return recitalService.filterGenero(genero);
