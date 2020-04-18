@@ -8,7 +8,9 @@ public interface RecitalService {
 
 	public void guardar(Recital recital);
 
-	public List<Recital> get();
+	public List<Recital> buscarTodos();
 
 	public List<Recital> filterGenero(String genero);
+        
+        public void cargarDatos();
 }

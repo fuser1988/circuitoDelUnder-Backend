@@ -1,134 +1,129 @@
 package ar.edu.unq.circuito.model;
-import java.util.Date;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "recital")
 public class Recital {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-	
-	private String nombre;
-	
-	private String genero;
-	
-	private Date fechayHoraComienzoDeRecital;
+    private String nombre;
+    private String descripcion;
+    @ElementCollection
+    private List<String> bandas;
+    private LocalDate fecha;
+    private LocalTime hora;
+    @ElementCollection
+    @Enumerated(EnumType.ORDINAL)
+    private List<Genero> generos;
+    private String direccion;
+    private String localidad;
+    private String lugar;
+    private String imagen;
+    private int precio;
 
-	private Date fechaYHoraFinDeRecital;
+    public Recital() {
+    }
 
-	private String bandas;
+    public Long getId() {
+        return id;
+    }
 
-	private String nombreDeLugar;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	private String direccionDeLugar;
+    public String getNombre() {
+        return nombre;
+    }
 
-	private String imagen;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	private int precioDeEntrada;
+    public String getDescripcion() {
+        return descripcion;
+    }
 
-	public Recital() {
-		
-	}
-	
-	public Recital(String nombre, String genero, Date fechayHoraComienzoDeRecital, Date fechaYHoraFinDeRecital,
-			String bandas, String nombreDeLugar, String direccionDeLugar,String imagen, int precioDeEntrada) {
-		this.nombre = nombre;
-		this.genero = genero;
-		this.fechayHoraComienzoDeRecital = new Date();
-		this.fechaYHoraFinDeRecital = new Date();
-		this.bandas = bandas;
-		this.nombreDeLugar = nombreDeLugar;
-		this.direccionDeLugar = direccionDeLugar;
-		this.imagen = imagen;
-		this.precioDeEntrada = precioDeEntrada;
-	}
-	
-	public Long getId() {
-		return id;
-	}
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public List<String> getBandas() {
+        return bandas;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public void setBandas(List<String> bandas) {
+        this.bandas = bandas;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public LocalDate getFecha() {
+        return fecha;
+    }
 
-	public String getGenero() {
-		return genero;
-	}
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
 
-	public void setGenero(String genero) {
-		this.genero = genero;
-	}
+    public LocalTime getHora() {
+        return hora;
+    }
 
-	public Date getFechayHoraComienzoDeRecital() {
-		/* pasar el formato a dia y hora.
-		 * DateFormat hourdateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
-		hourdateFormat.format(fechayHoraComienzoDeRecital)*/
-		return fechayHoraComienzoDeRecital;
-	}
+    public void setHora(LocalTime hora) {
+        this.hora = hora;
+    }
 
-	public void setFechayHoraComienzoDeRecital(Date fechayHoraComienzoDeRecital) {
-		this.fechayHoraComienzoDeRecital = fechayHoraComienzoDeRecital;
-	}
+    public List<Genero> getGeneros() {
+        return generos;
+    }
 
-	public Date getFechaYHoraFinDeRecital() {
-		/*DateFormat hourdateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
-		hourdateFormat.format(fechaYHoraFinDeRecital)*/
-		return fechaYHoraFinDeRecital;
-	}
+    public void setGeneros(List<Genero> generos) {
+        this.generos = generos;
+    }
 
-	public void setFechaYHoraFinDeRecital(Date fechaYHoraFinDeRecital) {
-		this.fechaYHoraFinDeRecital = fechaYHoraFinDeRecital;
-	}
+    public String getDireccion() {
+        return direccion;
+    }
 
-	public String getBandas() {
-		return bandas;
-	}
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
 
-	public void setBandas(String bandas) {
-		this.bandas = bandas;
-	}
+    public String getLocalidad() {
+        return localidad;
+    }
 
-	public String getNombreDeLugar() {
-		return nombreDeLugar;
-	}
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
+    }
 
-	public void setNombreDeLugar(String nombreDeLugar) {
-		this.nombreDeLugar = nombreDeLugar;
-	}
+    public String getLugar() {
+        return lugar;
+    }
 
-	public String getDireccionDeLugar() {
-		return direccionDeLugar;
-	}
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
 
-	public void setDireccionDeLugar(String direccionDeLugar) {
-		this.direccionDeLugar = direccionDeLugar;
-	}
+    public String getImagen() {
+        return imagen;
+    }
 
-	public String getImagen() {
-		return imagen;
-	}
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
 
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
-	}
+    public int getPrecio() {
+        return precio;
+    }
 
-	public int getPrecioDeEntrada() {
-		return precioDeEntrada;
-	}
-
-	public void setPrecioDeEntrada(int precioDeEntrada) {
-		this.precioDeEntrada = precioDeEntrada;
-	}
-	
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+    
 }

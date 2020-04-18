@@ -9,6 +9,6 @@ import ar.edu.unq.circuito.model.Recital;
 
 public interface RecitalRepository extends JpaRepository<Recital, Long>{
 
-	List<Recital> findByGenero(String genero);
+	List<Recital> findByGeneros(String genero);
 
 }

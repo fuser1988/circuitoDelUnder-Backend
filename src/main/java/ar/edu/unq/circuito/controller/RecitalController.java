@@ -20,21 +20,25 @@ import ar.edu.unq.circuito.service.RecitalService;
 public class RecitalController {
 
 	@Autowired
-	RecitalService service;
+	RecitalService recitalService;
 	
 	@PostMapping("/recitales")
-	public void save(@RequestBody Recital recital) {
-		recital.setFechayHoraComienzoDeRecital(recital.getFechayHoraComienzoDeRecital());
-		service.guardar(recital);
+	public void guaradr(@RequestBody Recital recital) {
+		recital.setFecha(recital.getFecha());
+		recitalService.guardar(recital);
+	}
+	@PostMapping("/recitales/fake")
+	public void DataLoad() {
+		recitalService.cargarDatos();
 	}
 	
 	@GetMapping("/recitales")
-	public List<Recital> get() {
-		return service.get();
+	public List<Recital> buscar() {
+		return recitalService.buscarTodos();
 	}
 	
 	@GetMapping("/recitales/bandas")
 	public List<Recital> filterGenero(@RequestParam(value = "genero") String genero) {
-		return service.filterGenero(genero);
+		return recitalService.filterGenero(genero);
 	}
 }
