@@ -34,7 +34,8 @@ public class RecitalServiceImpl implements RecitalService {
     @Override
     public List<Recital> filterGenero(String genero) {
         // prop. retorna todos los recitales de dicho genero
-        return recitalRepository.findByGeneros(genero);
+    	int index = Genero.valueOf(genero.toUpperCase()).ordinal();
+    	return recitalRepository.findByGeneros(index);
     }
 
     @Override

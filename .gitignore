@@ -4,7 +4,16 @@ target/
 !**/src/main/**
 !**/src/test/**
 
+.classpath
+.settings
+.project
+/target
 /bin
+/.idea
+.metadata
+/.mvn
+mvnw
+mvnw.cmd
 
 ### STS ###
 .apt_generated
