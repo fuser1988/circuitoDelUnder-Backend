@@ -1,16 +1,44 @@
 package ar.edu.unq.circuito.service;
 
+import ar.edu.unq.circuito.model.Genero;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import ar.edu.unq.circuito.model.Recital;
+import ar.edu.unq.circuito.repo.RecitalRepository;
+import ar.edu.unq.circuito.util.DatabaseLoader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public interface RecitalService {
+@Service
+public class RecitalService {
 
-	public void guardar(Recital recital);
+    @Autowired
+    private RecitalRepository recitalRepository;
+    @Autowired
+    private DatabaseLoader dataBaseLoader;
 
-	public List<Recital> buscarTodos();
+    public void guardar(Recital recital) {
+        recitalRepository.save(recital);
+    }
 
-	public List<Recital> filterGenero(String genero);
-        
-        public void cargarDatos();
+    public List<Recital> buscarTodos() {
+        return recitalRepository.findAll();
+    }
+
+    public List<Recital> filterGenero(String genero) {
+        int index = Genero.valueOf(genero.toUpperCase()).ordinal();
+        return recitalRepository.findByGeneros(index);
+    }
+
+    public void cargarDatos() {
+        try {
+            dataBaseLoader.run();
+        } catch (Exception ex) {
+            Logger.getLogger(RecitalService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

@@ -1,6 +1,5 @@
 package ar.edu.unq.circuito.util;
 
-import ar.edu.unq.circuito.util.RecitalBuilder;
 import ar.edu.unq.circuito.model.Genero;
 import ar.edu.unq.circuito.model.Recital;
 import ar.edu.unq.circuito.repo.RecitalRepository;
@@ -13,7 +12,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DatabaseLoader implements CommandLineRunner {
+public class DatabaseLoader {//implements CommandLineRunner {
 
     private RecitalRepository recitalRepository;
 
@@ -22,12 +21,12 @@ public class DatabaseLoader implements CommandLineRunner {
         this.recitalRepository = recitalRepository;
     }
 
-    @Override
+//    @Override
     public void run(String... args) throws Exception {
 
         recitalRepository.deleteAllInBatch();
 
-        Recital recitalUno = RecitalBuilder
+        Recital recitalUno = RecitalBuilderForLoader
                 .conNombre("Convencion de Batmans")
                 .conDescripcion("MAÑACO se precenta con su nueva formacion en El bar del fondo no te lo pierdas")
                 .conBandas(Arrays.asList("MAÑACO", "ETILIKO", "SinFronteras"))
@@ -40,7 +39,7 @@ public class DatabaseLoader implements CommandLineRunner {
                 .conImagen("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMyXyrm9xL_dEbm3gZVD_4wru7ITpJAWxgEZYbQcDfR4WvKsrp&usqp=CAU")
                 .conPrecio(0).build();
 
-        Recital recitalDos = RecitalBuilder
+        Recital recitalDos = RecitalBuilderForLoader
                 .conNombre("Aluminosis")
                 .conDescripcion("Aluminosis se precenta con su nueva formacion en El bar del fondo no te lo pierdas")
                 .conBandas(Arrays.asList("Aluminosis", "ETILIKO"))
@@ -53,7 +52,7 @@ public class DatabaseLoader implements CommandLineRunner {
                 .conImagen("https://4.bp.blogspot.com/_GwJ0Eb4YMaY/StxTOJ2h9jI/AAAAAAAAG8I/UIgeMb6bfxs/s320/3filesnegre.jpg")
                 .conPrecio(0).build();
 
-        Recital recitalTres = RecitalBuilder
+        Recital recitalTres = RecitalBuilderForLoader
                 .conNombre("Lollapalooza")
                 .conDescripcion("Potencial Hardcore se presenta al Lollapalooza con todo su rock punk no te lo podes perder")
                 .conBandas(Arrays.asList("PotencialHardcore", "ETILIKO"))
@@ -66,7 +65,7 @@ public class DatabaseLoader implements CommandLineRunner {
                 .conImagen("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTaKkBYrBRb131SvqD4Nfw000qaBFtvL5L1WOvL2K7vStRzKtss&usqp=CAU")
                 .conPrecio(0).build();
 
-        Recital recitalCuatro = RecitalBuilder
+        Recital recitalCuatro = RecitalBuilderForLoader
                 .conNombre("REGGAE for ever")
                 .conDescripcion("DESORBITADOS se presenta para festejar su aniversario junto a los GONDWANA, en el Club Tucuman")
                 .conBandas(Arrays.asList("DESORBITADOS", "GONDWANA"))
@@ -79,7 +78,7 @@ public class DatabaseLoader implements CommandLineRunner {
                 .conImagen("https://pxb.cdn.0221.com.ar/0221/022019/1549635228344.jpg?x=18&y=95&width=1463&height=732&rotate=0&scaleX=1&scaleY=1&ow=1500&oh=964&&cw=1920&ch=950")
                 .conPrecio(70).build();
 
-        Recital recitalCinco = RecitalBuilder
+        Recital recitalCinco = RecitalBuilderForLoader
                 .conNombre("Escuela de Bluz")
                 .conDescripcion("Hoy una noche de a puro rock y blus en La Barra. Tenemos show en vivo de AMNECIA, FORASTEROS, LaMississippi y ConurbanoBlues. Los esperamos! Las mejores noches de rock están en La Barra")
                 .conBandas(Arrays.asList("AMNECIA", "FORASTEROS", "LaMississippi", "ConurbanoBlues"))

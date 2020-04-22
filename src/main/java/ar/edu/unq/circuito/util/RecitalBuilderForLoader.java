@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-public class RecitalBuilder {
+public class RecitalBuilderForLoader {
     private Long id;
     private String nombre;
     private String descripcion;
@@ -36,63 +36,63 @@ public class RecitalBuilder {
         return recital;
     }
     
-    public RecitalBuilder conId(Long id) {
+    public RecitalBuilderForLoader conId(Long id) {
         this.id = id; 
         return this;
     }
     
-    public static RecitalBuilder conNombre(String nombre) {
-        RecitalBuilder builder = new RecitalBuilder(); 
+    public static RecitalBuilderForLoader conNombre(String nombre) {
+        RecitalBuilderForLoader builder = new RecitalBuilderForLoader(); 
         builder.nombre = nombre;
         return builder;
     }
     
-    public RecitalBuilder conDescripcion(String descripcion) {
+    public RecitalBuilderForLoader conDescripcion(String descripcion) {
         this.descripcion = descripcion;
         return this;
     }
 
-    public RecitalBuilder conBandas(List<String> bandas) {
+    public RecitalBuilderForLoader conBandas(List<String> bandas) {
         this.bandas = bandas;
         return this;
     }
     
-    public RecitalBuilder conFecha(LocalDate fecha) {
+    public RecitalBuilderForLoader conFecha(LocalDate fecha) {
         this.fecha = fecha;
         return this;
     }
     
-    public RecitalBuilder conHora(LocalTime hora) {
+    public RecitalBuilderForLoader conHora(LocalTime hora) {
         this.hora = hora;
         return this;
     }
     
-    public RecitalBuilder conGeneros(List<Genero> generos) {
+    public RecitalBuilderForLoader conGeneros(List<Genero> generos) {
         this.generos = generos;
         return this;
     }
     
-    public RecitalBuilder conLocalidad(String localidad) {
+    public RecitalBuilderForLoader conLocalidad(String localidad) {
         this.localidad = localidad;
         return this;
     }
     
-    public RecitalBuilder conLugar(String lugar) {
+    public RecitalBuilderForLoader conLugar(String lugar) {
         this.lugar = lugar;
         return this;
     }
     
-    public RecitalBuilder conDireccion(String direccion) {
+    public RecitalBuilderForLoader conDireccion(String direccion) {
         this.direccion = direccion;
         return this;
     }
     
-    public RecitalBuilder conImagen(String imagen) {
+    public RecitalBuilderForLoader conImagen(String imagen) {
         this.imagen = imagen;
         return this;
     }
     
-    public RecitalBuilder conPrecio(int precio) {
+    public RecitalBuilderForLoader conPrecio(int precio) {
         this.precio = precio;
         return this;
     }
