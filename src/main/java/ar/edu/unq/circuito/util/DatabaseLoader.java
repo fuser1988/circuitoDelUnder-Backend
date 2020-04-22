@@ -56,7 +56,7 @@ public class DatabaseLoader {//implements CommandLineRunner {
                 .conNombre("Lollapalooza")
                 .conDescripcion("Potencial Hardcore se presenta al Lollapalooza con todo su rock punk no te lo podes perder")
                 .conBandas(Arrays.asList("PotencialHardcore", "ETILIKO"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.METAL, Genero.PUNK))
+                .conGeneros(Arrays.asList(Genero.METAL, Genero.PUNK, Genero.PUNK_ROCK))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("San Isidro")

@@ -19,7 +19,7 @@ public class Recital {
     private LocalDate fecha;
     private LocalTime hora;
     @ElementCollection
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private List<Genero> generos;
     private String direccion;
     private String localidad;

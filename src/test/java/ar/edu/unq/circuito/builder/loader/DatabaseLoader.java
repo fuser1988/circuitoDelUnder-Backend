@@ -1,6 +1,6 @@
 package ar.edu.unq.circuito.builder.loader;
 
-import ar.edu.unq.circuito.util.RecitalBuilder;
+import ar.edu.unq.circuito.builder.RecitalBuilder;
 import ar.edu.unq.circuito.model.Genero;
 import ar.edu.unq.circuito.model.Recital;
 import ar.edu.unq.circuito.repo.RecitalRepository;
