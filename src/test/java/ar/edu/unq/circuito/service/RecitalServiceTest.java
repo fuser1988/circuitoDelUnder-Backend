@@ -20,7 +20,6 @@ public class RecitalServiceTest extends CircuitoDelUnderBackendApplicationTests 
     
     @Test
     public void buscarTodos_conRecitalenEnLaBaseDeDatos_RetornaDosRecitales(){
-//        recitalRepository.deleteAll();
         Recital recitalPersistidoUno = RecitalBuilder.conNombre("ElRecintoRock").build(em);
         Recital recitalPersistidoDos = RecitalBuilder.conNombre("Convencion de Batmans ").build(em);
         Recital recitalPersistidoTres = RecitalBuilder.conNombre("El rotage").build(em);
