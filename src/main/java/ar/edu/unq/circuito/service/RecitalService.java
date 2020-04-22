@@ -29,7 +29,6 @@ public class RecitalService {
     }
 
     public List<Recital> filterGenero(String genero) {
-//        int index = Genero.valueOf(genero.toUpperCase()).ordinal();
         return recitalRepository.findByGeneros(genero.toUpperCase());
     }
 
