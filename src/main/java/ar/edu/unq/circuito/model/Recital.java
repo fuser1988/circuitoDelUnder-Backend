@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Recital {
@@ -12,19 +13,27 @@ public class Recital {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotNull
     private String nombre;
     private String descripcion;
     @ElementCollection
     private List<String> bandas;
+    @NotNull
     private LocalDate fecha;
+    @NotNull
     private LocalTime hora;
+    @NotNull
     @ElementCollection
     @Enumerated(EnumType.STRING)
     private List<Genero> generos;
+    @NotNull
     private String direccion;
+    @NotNull
     private String localidad;
+    @NotNull
     private String lugar;
     private String imagen;
+    @NotNull
     private int precio;
 
     public Recital() {
