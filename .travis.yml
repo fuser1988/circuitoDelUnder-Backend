@@ -1,0 +1,18 @@
+language: java
+jdk:
+  - openjdk8
+
+image: maven:3.3.9-jdk-8
+
+build:
+  script: "mvn install -B"
+
+before_script:
+  - psql -c "create database demo;" -U postgres
+  - sudo -u postgres psql -c "ALTER ROLE postgres WITH password ''"
+
+services:
+  - postgresql
+
+notifications:
+  email: false
