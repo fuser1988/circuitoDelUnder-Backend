@@ -2,6 +2,7 @@ package ar.edu.unq.circuito.controller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -46,5 +47,11 @@ public class RecitalController {
 	@GetMapping("/recitales/bandas")
 	public List<Recital> filterGenero(@RequestParam(value = "genero") String genero) {
 		return recitalService.filterGenero(genero);
+	}
+	
+	@CrossOrigin
+	@GetMapping("/recitales/recital")
+	public Optional<Recital> obtenerRecitalId(@RequestParam(value = "id") Long id) {
+		return recitalService.filterId(id);
 	}
 }
