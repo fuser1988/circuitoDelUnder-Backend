@@ -35,7 +35,8 @@ public class DatabaseLoader {
                 .conLocalidad("Quilmes")
                 .conDireccion("Alvares tomas 2015")
                 .conLugar("Bar del fondo")
-                .conImagen("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMyXyrm9xL_dEbm3gZVD_4wru7ITpJAWxgEZYbQcDfR4WvKsrp&usqp=CAU")
+//                .conImagen("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMyXyrm9xL_dEbm3gZVD_4wru7ITpJAWxgEZYbQcDfR4WvKsrp&usqp=CAU")
+                .conImagen("https://depositosonoro.com/wp-content/uploads/2019/04/55478027_1689594917851261_4586995436853657600_o.jpg")
                 .conPrecio(0).build();
 
         Recital recitalDos = RecitalBuilderForLoader
@@ -48,7 +49,7 @@ public class DatabaseLoader {
                 .conLocalidad("Quilmes")
                 .conDireccion("alvares tomas 2015")
                 .conLugar("Bar del fondo")
-                .conImagen("https://www.elterritorio.com.ar/fotos/810/0/img/1/213/7282195770383114_1.jpg")
+                .conImagen("https://vudum.com.ar/wp-content/uploads/2018/06/DSC_8132-768x513.jpg")
                 .conPrecio(0).build();
 
         Recital recitalTres = RecitalBuilderForLoader
@@ -139,7 +140,7 @@ public class DatabaseLoader {
                 .conLocalidad("Banfield")
                 .conDireccion("Rio bamba 2255")
                 .conLugar("Centro cultural Maria Campo")
-                .conImagen("https://lh3.googleusercontent.com/proxy/H6iV9jvILKjgrKCjjgmXUCQ-fqBHDrpjZyWetvdd3ixfIhsDO2D9CHtIoTMC03dmSOfiwlObB00YrPDrm1Fz50mJe2bw0yG5OPBREYIYv5T5LqThrdOw9dLe")
+                .conImagen("http://www.chacofederal.com/galeria/recital0507.jpg")
                 .conPrecio(0).build();
 
         Recital recitalDiez = RecitalBuilderForLoader
@@ -178,7 +179,7 @@ public class DatabaseLoader {
                 .conLocalidad("Quilmes")
                 .conDireccion("almirante brown 662")
                 .conLugar("La Barra")
-                .conImagen("http://www.chacofederal.com/galeria/recital0507.jpg")
+                .conImagen("https://lh3.googleusercontent.com/proxy/H6iV9jvILKjgrKCjjgmXUCQ-fqBHDrpjZyWetvdd3ixfIhsDO2D9CHtIoTMC03dmSOfiwlObB00YrPDrm1Fz50mJe2bw0yG5OPBREYIYv5T5LqThrdOw9dLe")
                 .conPrecio(0).build();
 
         Recital recitalTrece = RecitalBuilderForLoader
