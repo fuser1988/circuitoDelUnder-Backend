@@ -48,7 +48,7 @@ public class DatabaseLoader {
                 .conLocalidad("Quilmes")
                 .conDireccion("alvares tomas 2015")
                 .conLugar("Bar del fondo")
-                .conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/432222_358355290852913_1938838162_n.jpg?_nc_cat=110&_nc_sid=6e5ad9&_nc_ohc=cNmNhzMwNrEAX9x_hEE&_nc_ht=scontent.faep4-1.fna&oh=846aa6f4e95ac877a3014ba43251889c&oe=5ED3EDDCjpg")
+                .conImagen("https://www.elterritorio.com.ar/fotos/810/0/img/1/213/7282195770383114_1.jpg")
                 .conPrecio(0).build();
 
         Recital recitalTres = RecitalBuilderForLoader
@@ -139,7 +139,7 @@ public class DatabaseLoader {
                 .conLocalidad("Banfield")
                 .conDireccion("Rio bamba 2255")
                 .conLugar("Centro cultural Maria Campo")
-                .conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/13315693_1728087494074616_9080128304275698378_n.png?_nc_cat=108&_nc_sid=6e5ad9&_nc_ohc=Var41vw7kWEAX8PPKQ_&_nc_ht=scontent.faep4-1.fna&oh=64c7f0ea7b3815e2c75025437dd53a44&oe=5ED1AD79")
+                .conImagen("https://lh3.googleusercontent.com/proxy/H6iV9jvILKjgrKCjjgmXUCQ-fqBHDrpjZyWetvdd3ixfIhsDO2D9CHtIoTMC03dmSOfiwlObB00YrPDrm1Fz50mJe2bw0yG5OPBREYIYv5T5LqThrdOw9dLe")
                 .conPrecio(0).build();
 
         Recital recitalDiez = RecitalBuilderForLoader
@@ -178,7 +178,7 @@ public class DatabaseLoader {
                 .conLocalidad("Quilmes")
                 .conDireccion("almirante brown 662")
                 .conLugar("La Barra")
-                .conImagen("https://rocktambulos.com/wp-content/uploads/DSC_0431_MV-1132x509.jpg")
+                .conImagen("http://www.chacofederal.com/galeria/recital0507.jpg")
                 .conPrecio(0).build();
 
         Recital recitalTrece = RecitalBuilderForLoader
@@ -191,7 +191,7 @@ public class DatabaseLoader {
                 .conLocalidad("Avellaneda")
                 .conDireccion("Mitre 2245")
                 .conLugar("El Catar")
-                .conImagen("https://pm1.narvii.com/6730/a823645baba51e9ba2c90d20579fb0f1daa0b184v2_hq.jpg")
+                .conImagen("https://media.datachaco.com/adjuntos/244/imagenes/000/896/0000896826.jpg")
                 .conPrecio(0).build();
         
         Recital recitalCatorce = RecitalBuilderForLoader
