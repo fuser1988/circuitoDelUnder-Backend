@@ -48,14 +48,14 @@ public class DatabaseLoader {
                 .conLocalidad("Quilmes")
                 .conDireccion("alvares tomas 2015")
                 .conLugar("Bar del fondo")
-                .conImagen("https://4.bp.blogspot.com/_GwJ0Eb4YMaY/StxTOJ2h9jI/AAAAAAAAG8I/UIgeMb6bfxs/s320/3filesnegre.jpg")
+                .conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/432222_358355290852913_1938838162_n.jpg?_nc_cat=110&_nc_sid=6e5ad9&_nc_ohc=cNmNhzMwNrEAX9x_hEE&_nc_ht=scontent.faep4-1.fna&oh=846aa6f4e95ac877a3014ba43251889c&oe=5ED3EDDCjpg")
                 .conPrecio(0).build();
 
         Recital recitalTres = RecitalBuilderForLoader
                 .conNombre("Lolapeluza")
                 .conDescripcion("Potencial Hardcore se presenta al Lolapeluza con todo su rock punk no te lo podes perder")
                 .conBandas(Arrays.asList("Potencial", "ETILIKO"))
-                .conGeneros(Arrays.asList(Genero.METAL,Genero.HARDCORE, Genero.PUNK, Genero.PUNK_ROCK))
+                .conGeneros(Arrays.asList(Genero.ROCK, Genero.METAL, Genero.HARDCORE, Genero.PUNK, Genero.PUNK_ROCK))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("San Isidro")
@@ -68,7 +68,7 @@ public class DatabaseLoader {
                 .conNombre("REGGAE for ever")
                 .conDescripcion("DESORBITADOS se presenta para festejar su aniversario junto a los GONDWANA, en el Club Tucumán")
                 .conBandas(Arrays.asList("DESORBITADOS", "GONDWANA"))
-                .conGeneros(Arrays.asList(Genero.REGGAE))
+                .conGeneros(Arrays.asList(Genero.METAL, Genero.REGGAE))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
@@ -113,7 +113,7 @@ public class DatabaseLoader {
                 .conLocalidad("Palermo")
                 .conDireccion("Av. Santafe 2585")
                 .conLugar("Salon Pueyrredón")
-                .conImagen("http://cdn-d15c.kxcdn.com/contenidos/201904/2a53ef1d-6e6c-4b34-bc65-3f85e202f217.png")
+                .conImagen("https://video-images.vice.com/_uncategorized/1539281513314-Paltax.jpeg")
                 .conPrecio(0).build();
 
         Recital recitalOcho = RecitalBuilderForLoader
@@ -133,7 +133,7 @@ public class DatabaseLoader {
                 .conNombre("Recitales en resistencia")
                 .conDescripcion("Una nueva ediccion de Recitales en recistencia se llevara a cabo en el complejo cultural Maria Ocampo.No te lo podes perder.Entrada totalmente gratuita.")
                 .conBandas(Arrays.asList("MAÑACO", "KONTRA VIOLENCIA", "Don Cabot", "ETILIKO","Sin fronteras","Desahogo"))
-                .conGeneros(Arrays.asList(Genero.ROCK,Genero.PUNK, Genero.PUNK_ROCK, Genero.HARDCORE_PUNK, Genero.ROCK_AND_ROLL))
+                .conGeneros(Arrays.asList(Genero.ROCK, Genero.PUNK, Genero.PUNK_ROCK, Genero.HARDCORE_PUNK, Genero.ROCK_AND_ROLL))
                 .conFecha(LocalDate.of(2020, 12, 16))
                 .conHora(LocalTime.of(16, 00, 00))
                 .conLocalidad("Banfield")
@@ -152,7 +152,7 @@ public class DatabaseLoader {
                 .conLocalidad("Solano")
                 .conDireccion("San martin 2258")
                 .conLugar("Sudaka")
-                .conImagen("http://entreriosahora.com/wp-content/uploads/2019/06/rock-759x500.jpghttp://entreriosahora.com/wp-content/uploads/2019/06/rock-759x500.jpg")
+                .conImagen("http://entreriosahora.com/wp-content/uploads/2019/06/rock-759x500.jpg")
                 .conPrecio(0).build();
 
         Recital recitalOnce = RecitalBuilderForLoader
@@ -195,16 +195,16 @@ public class DatabaseLoader {
                 .conPrecio(0).build();
         
         Recital recitalCatorce = RecitalBuilderForLoader
-                .conNombre("Camus")
-                .conDescripcion("Camus se presenta junto a grandes colegas del under local. No te lo podes perder")
+                .conNombre("Volátil")
+                .conDescripcion("Volátil se presenta junto a grandes colegas del under local. No te lo podes perder")
                 .conBandas(Arrays.asList("Camus", "Los de siempre"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.HARD_ROCK))
+                .conGeneros(Arrays.asList(Genero.ROCK, Genero.ROCK_AND_ROLL))
                 .conFecha(LocalDate.of(2020, 9, 21))
                 .conHora(LocalTime.of(23, 00, 00))
                 .conLocalidad("Burzaco")
                 .conDireccion("Pedro moran 6622")
                 .conLugar("El Amparo")
-                .conImagen("https://k32.kn3.net/taringa/2/B/0/4/7/7/CircusDei/5F6.png")
+                .conImagen("http://03442.com.ar/noticias/wp-content/uploads/2016/08/VOLATIL-ROCK-EN-BS-AS-1-e1471890391969.jpg")
                 .conPrecio(0).build();
 
         Recital recitalQuince = RecitalBuilderForLoader
