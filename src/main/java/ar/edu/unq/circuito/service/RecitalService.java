@@ -1,6 +1,5 @@
 package ar.edu.unq.circuito.service;
 
-import ar.edu.unq.circuito.model.Genero;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +37,10 @@ public class RecitalService {
         } catch (Exception ex) {
             Logger.getLogger(RecitalService.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public Recital BuscarPorId(long id) {
+        return recitalRepository.findById(id).get();
     }
 
 }

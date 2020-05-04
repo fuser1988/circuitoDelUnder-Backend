@@ -1,6 +1,5 @@
 package ar.edu.unq.circuito.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ar.edu.unq.circuito.model.Recital;
 import ar.edu.unq.circuito.service.RecitalService;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
@@ -47,4 +47,11 @@ public class RecitalController {
 	public List<Recital> filterGenero(@RequestParam(value = "genero") String genero) {
 		return recitalService.filterGenero(genero);
 	}
+	
+	@CrossOrigin
+	@GetMapping("/recitales/{id}")
+	public Recital obtenerRecitalId(@PathVariable(value = "id") Long id) {
+		return recitalService.BuscarPorId(id);
+	}
+
 }
