@@ -11,7 +11,7 @@ import ar.edu.unq.circuito.model.Recital;
 
 public interface RecitalRepository extends JpaRepository<Recital, Long>{
 
-	@Query(value = "SELECT a.* FROM recital a INNER JOIN recital_generos b ON a.id = b.recital_id AND b.generos LIKE %?1%", nativeQuery = true)
+	@Query(value = "SELECT distinct a.* FROM recital a INNER JOIN recital_generos b ON a.id = b.recital_id AND b.generos LIKE %?1%", nativeQuery = true)
 	List<Recital> findByGeneros(String genero);
 
 	Optional<Recital> findById(Long id);
