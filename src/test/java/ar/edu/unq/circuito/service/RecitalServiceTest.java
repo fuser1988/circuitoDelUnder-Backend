@@ -27,4 +27,12 @@ public class RecitalServiceTest extends CircuitoDelUnderBackendApplicationTests 
         List<Recital> recitalesrecuperados = recitalService.buscarTodos();
         assertThat(recitalesrecuperados).size().isEqualTo(3);
     }
+    
+    @Test
+    public void BuscarPorId_conRecitalenPersistido_RetornaRecital(){
+        Recital recitalPersistido = RecitalBuilder.conNombre("ElRecintoRock").build(em);
+        
+        Recital recitalRecuperado = recitalService.BuscarPorId(recitalPersistido.getId());
+        assertThat(recitalRecuperado).extracting("nombre").isEqualTo(recitalPersistido.getNombre());
+    }
 }

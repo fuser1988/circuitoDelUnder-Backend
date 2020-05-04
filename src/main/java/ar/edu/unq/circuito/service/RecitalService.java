@@ -1,8 +1,6 @@
 package ar.edu.unq.circuito.service;
 
-import ar.edu.unq.circuito.model.Genero;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,8 +39,8 @@ public class RecitalService {
         }
     }
 
-	public Optional<Recital> filterId(long id) {
-		return recitalRepository.findById(id);
-	}
+    public Recital BuscarPorId(long id) {
+        return recitalRepository.findById(id).get();
+    }
 
 }

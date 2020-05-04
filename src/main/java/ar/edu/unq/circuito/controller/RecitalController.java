@@ -1,8 +1,6 @@
 package ar.edu.unq.circuito.controller;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ar.edu.unq.circuito.model.Recital;
 import ar.edu.unq.circuito.service.RecitalService;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
@@ -50,8 +49,9 @@ public class RecitalController {
 	}
 	
 	@CrossOrigin
-	@GetMapping("/recitales/recital")
-	public Optional<Recital> obtenerRecitalId(@RequestParam(value = "id") Long id) {
-		return recitalService.filterId(id);
+	@GetMapping("/recitales/{id}")
+	public Recital obtenerRecitalId(@PathVariable(value = "id") Long id) {
+		return recitalService.BuscarPorId(id);
 	}
+
 }
