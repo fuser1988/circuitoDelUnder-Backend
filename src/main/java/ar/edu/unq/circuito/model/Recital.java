@@ -15,6 +15,7 @@ public class Recital {
     private Long id;
     @NotNull
     private String nombre;
+    @NotNull
     private String descripcion;
     @ElementCollection
     private List<String> bandas;
@@ -32,6 +33,7 @@ public class Recital {
     private String localidad;
     @NotNull
     private String lugar;
+    @NotNull
     private String imagen;
     @NotNull
     private int precio;
