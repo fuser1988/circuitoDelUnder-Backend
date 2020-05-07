@@ -56,9 +56,10 @@ public class RecitalBuilder extends AbstractPersistenceBuilder<Recital> {
         return this;
     }
     
-    public RecitalBuilder conGeneros(List<Genero> generos) {
-        instance.setGeneros(generos);
-        return this;
+    public static RecitalBuilder conGeneros(List<Genero> generos) {
+    	RecitalBuilder builder = new RecitalBuilder(); 
+    	builder.instance.setGeneros(generos);
+        return builder;
     }
     
     public RecitalBuilder conLocalidad(String localidad) {

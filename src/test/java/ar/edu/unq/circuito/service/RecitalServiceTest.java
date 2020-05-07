@@ -2,8 +2,11 @@ package ar.edu.unq.circuito.service;
 
 import ar.edu.unq.circuito.CircuitoDelUnderBackendApplicationTests;
 import ar.edu.unq.circuito.builder.RecitalBuilder;
+import ar.edu.unq.circuito.model.Genero;
 import ar.edu.unq.circuito.model.Recital;
 import ar.edu.unq.circuito.repo.RecitalRepository;
+
+import java.util.Arrays;
 import java.util.List;
 import static org.assertj.core.api.Java6Assertions.assertThat;
 import org.junit.jupiter.api.Test;
@@ -34,5 +37,15 @@ public class RecitalServiceTest extends CircuitoDelUnderBackendApplicationTests 
         
         Recital recitalRecuperado = recitalService.BuscarPorId(recitalPersistido.getId());
         assertThat(recitalRecuperado).extracting("nombre").isEqualTo(recitalPersistido.getNombre());
+    }
+    
+    @Test
+    public void buscarPorGenerosRock_conRecitalenPersistido_RetornaDosRecitales(){
+    	Recital recitalPersistidoUno = RecitalBuilder.conGeneros(Arrays.asList(Genero.ROCK)).build(em);
+        Recital recitalPersistidoDos = RecitalBuilder.conGeneros(Arrays.asList(Genero.METAL, Genero.PUNK)).build(em);
+        Recital recitalPersistidoTres = RecitalBuilder.conGeneros(Arrays.asList(Genero.ROCK, Genero.METAL, Genero.PUNK)).build(em);
+        
+        List<Recital> recitalesrecuperados = recitalService.filterGenero("Rock");
+        assertThat(recitalesrecuperados).size().isEqualTo(2);
     }
 }
