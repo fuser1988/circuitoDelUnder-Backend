@@ -31,16 +31,16 @@ public class RecitalService {
         return recitalRepository.findByGeneros(genero.toUpperCase());
     }
 
+    public Recital BuscarPorId(long id) {
+        return recitalRepository.findById(id).get();
+    }
+
     public void cargarDatos() {
         try {
             dataBaseLoader.run();
         } catch (Exception ex) {
             Logger.getLogger(RecitalService.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
-    public Recital BuscarPorId(long id) {
-        return recitalRepository.findById(id).get();
     }
 
 }
