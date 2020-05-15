@@ -25,9 +25,10 @@ public class RecitalController {
 	
 	@CrossOrigin
 	@PostMapping("/recitales")
-	public void guaradr(@RequestBody Recital recital) {
+	public Recital guardar(@RequestBody Recital recital) {
 		recital.setFecha(recital.getFecha());
 		recitalService.guardar(recital);
+		return this.obtenerRecitalId(recital.getId());
 	}
 	
 	@CrossOrigin
