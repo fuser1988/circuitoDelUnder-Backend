@@ -19,8 +19,8 @@ public class RecitalService {
     @Autowired
     private DatabaseLoader dataBaseLoader;
 
-    public void guardar(Recital recital) {
-        recitalRepository.save(recital);
+    public Recital guardar(Recital recital) {
+        return recitalRepository.save(recital);
     }
 
     public List<Recital> buscarTodos() {

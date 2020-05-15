@@ -27,8 +27,7 @@ public class RecitalController {
 	@PostMapping("/recitales")
 	public Recital guardar(@RequestBody Recital recital) {
 		recital.setFecha(recital.getFecha());
-		recitalService.guardar(recital);
-		return this.obtenerRecitalId(recital.getId());
+		return recitalService.guardar(recital);
 	}
 	
 	@CrossOrigin
