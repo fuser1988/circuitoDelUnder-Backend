@@ -4,7 +4,6 @@ import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.Genero;
 import ar.edu.unq.circuito.model.Recital;
 import ar.edu.unq.circuito.repo.RecitalRepository;
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Arrays;
@@ -31,7 +30,7 @@ public class DatabaseLoader {
         Recital recitalUno = RecitalBuilderForLoader
                 .conNombre("Convención de Batmans")
                 .conDescripcion("MAÑACO se presenta con su nueva formación en El bar del fondo no te lo pierdas")
-                .conBandas(Arrays.asList("MAÑACO", "ETILIKO", "Sin Fronteras"))
+//                .conBandas(Arrays.asList("MAÑACO", "ETILIKO", "Sin Fronteras"))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
@@ -44,7 +43,7 @@ public class DatabaseLoader {
         Recital recitalDos = RecitalBuilderForLoader
                 .conNombre("Aluminosis")
                 .conDescripcion("Aluminosis se presenta con su nueva formación en El bar del fondo no te lo pierdas")
-                .conBandas(Arrays.asList("Aluminosis", "ETILIKO"))
+//                .conBandas(Arrays.asList("Aluminosis", "ETILIKO"))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
@@ -56,7 +55,7 @@ public class DatabaseLoader {
         Recital recitalTres = RecitalBuilderForLoader
                 .conNombre("Lolapeluza")
                 .conDescripcion("Potencial Hardcore se presenta al Lolapeluza con todo su rock punk no te lo podes perder")
-                .conBandas(Arrays.asList("Potencial", "ETILIKO"))
+//                .conBandas(Arrays.asList("Potencial", "ETILIKO"))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("San Isidro")
@@ -68,7 +67,7 @@ public class DatabaseLoader {
         Recital recitalCuatro = RecitalBuilderForLoader
                 .conNombre("REGGAE for ever")
                 .conDescripcion("DESORBITADOS se presenta para festejar su aniversario junto a los GONDWANA, en el Club Tucumán")
-                .conBandas(Arrays.asList("DESORBITADOS", "GONDWANA"))
+//                .conBandas(Arrays.asList("DESORBITADOS", "GONDWANA"))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
@@ -80,7 +79,7 @@ public class DatabaseLoader {
         Recital recitalCinco = RecitalBuilderForLoader
                 .conNombre("Escuela de Blues")
                 .conDescripcion("Hoy una noche de puro rock y Blues en La Barra. Tenemos show en vivo de AMNECIA, FORASTEROS, La Mississippi y ConurbanoBlues. Los esperamos! Las mejores noches de rock están en La Barra")
-                .conBandas(Arrays.asList("AMNECIA", "FORASTEROS", "LaMississippi", "ConurbanoBlues"))
+//                .conBandas(Arrays.asList("AMNECIA", "FORASTEROS", "LaMississippi", "ConurbanoBlues"))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
@@ -92,7 +91,7 @@ public class DatabaseLoader {
         Recital recitalSeis = RecitalBuilderForLoader
                 .conNombre("Furias del metal")
                 .conDescripcion("Hoy Noche de Metal Argento en La caldera. Se presenta Demoledor juto a Furias del metal.Los esperamos! Las mejores noches de rock están en La caldera")
-                .conBandas(Arrays.asList("Furias del metal", "Demoledor"))
+//                .conBandas(Arrays.asList("Furias del metal", "Demoledor"))
                 .conFecha(LocalDate.of(2020, 6, 22))
                 .conHora(LocalTime.of(21, 00, 00))
                 .conLocalidad("Avellaneda")
@@ -104,7 +103,7 @@ public class DatabaseLoader {
         Recital recitalSiete = RecitalBuilderForLoader
                 .conNombre("Las ex")
                 .conDescripcion("Hoy una noche de a puro Punk Rock en el Salon Pueyrredón. Las ex presentan su nuevo disco en casa. No te lo podes perder! Las mejores noches de rock están en Salon Pueyrredón")
-                .conBandas(Arrays.asList("AMNECIA", "FORASTEROS", "LaMississippi", "ConurbanoBlues"))
+//                .conBandas(Arrays.asList("AMNECIA", "FORASTEROS", "LaMississippi", "ConurbanoBlues"))
                 .conFecha(LocalDate.of(2020, 8, 10))
                 .conHora(LocalTime.of(20, 30, 00))
                 .conLocalidad("Palermo")
@@ -116,7 +115,7 @@ public class DatabaseLoader {
         Recital recitalOcho = RecitalBuilderForLoader
                 .conNombre("Don Cabot")
                 .conDescripcion("Hoy una noche de a Rock and Roll  y blus en El faro. Gandes exponentes del rockandroll local se Presentan en El faro tu lugar")
-                .conBandas(Arrays.asList("Don Cabot", "Piojosos", "LaMississippi"))
+//                .conBandas(Arrays.asList("Don Cabot", "Piojosos", "LaMississippi"))
                 .conFecha(LocalDate.of(2018, 7, 16))
                 .conHora(LocalTime.of(23, 15, 00))
                 .conLocalidad("Lanus")
@@ -128,7 +127,7 @@ public class DatabaseLoader {
         Recital recitalNueve = RecitalBuilderForLoader
                 .conNombre("Recitales en resistencia")
                 .conDescripcion("Una nueva ediccion de Recitales en recistencia se llevara a cabo en el complejo cultural Maria Ocampo.No te lo podes perder.Entrada totalmente gratuita.")
-                .conBandas(Arrays.asList("MAÑACO", "KONTRA VIOLENCIA", "Don Cabot", "ETILIKO", "Sin fronteras", "Desahogo"))
+//                .conBandas(Arrays.asList("MAÑACO", "KONTRA VIOLENCIA", "Don Cabot", "ETILIKO", "Sin fronteras", "Desahogo"))
                 .conFecha(LocalDate.of(2020, 12, 16))
                 .conHora(LocalTime.of(16, 00, 00))
                 .conLocalidad("Banfield")
@@ -140,7 +139,7 @@ public class DatabaseLoader {
         Recital recitalDiez = RecitalBuilderForLoader
                 .conNombre("Solventes de Todo")
                 .conDescripcion("La legendaria banda del corurbano vuelve a los ecenarios de la mano con nuevo materia y vos no te lo podes perder.")
-                .conBandas(Arrays.asList("Solventes de Todo", "La mocosa"))
+//                .conBandas(Arrays.asList("Solventes de Todo", "La mocosa"))
                 .conFecha(LocalDate.of(2020, 6, 16))
                 .conHora(LocalTime.of(20, 30, 00))
                 .conLocalidad("Solano")
@@ -152,7 +151,7 @@ public class DatabaseLoader {
         Recital recitalOnce = RecitalBuilderForLoader
                 .conNombre("La tia Mary")
                 .conDescripcion("Vuelve La tia Mary al barrio que los vio nacer, se presenta en festival solidario por el merendero las comadrejas junto a bandas amigas. ")
-                .conBandas(Arrays.asList("La tia Mary", "FORASTEROS", "LaMississippi", "ConurbanoBlues", "MAÑACO"))
+//                .conBandas(Arrays.asList("La tia Mary", "FORASTEROS", "LaMississippi", "ConurbanoBlues", "MAÑACO"))
                 .conFecha(LocalDate.of(2020, 8, 20))
                 .conHora(LocalTime.of(14, 00, 00))
                 .conLocalidad("Lanus")
@@ -164,7 +163,7 @@ public class DatabaseLoader {
         Recital recitalDoce = RecitalBuilderForLoader
                 .conNombre("Incognitos de la noche")
                 .conDescripcion("Hoy una noche de a puro rock en La Barra. Tenemos el show en vivo de Incognitos de la noche, FORASTEROS, La Mississippi y Conurbano Blues. Los esperamos! Las mejores noches de rock están en La Barra")
-                .conBandas(Arrays.asList("Incognitos de la noche", "FORASTEROS", "LaMississippi", "ConurbanoBlues"))
+//                .conBandas(Arrays.asList("Incognitos de la noche", "FORASTEROS", "LaMississippi", "ConurbanoBlues"))
                 .conFecha(LocalDate.of(2020, 05, 15))
                 .conHora(LocalTime.of(21, 00, 00))
                 .conLocalidad("Quilmes")
@@ -176,7 +175,7 @@ public class DatabaseLoader {
         Recital recitalTrece = RecitalBuilderForLoader
                 .conNombre("Silencio del vacio")
                 .conDescripcion("La legendaria banda de Valenti Alsina presenta su nuevo disco tocando en vivo para todos su seguidores. Entrada libre y gratuita")
-                .conBandas(Arrays.asList("Silencio del vacio", "La Katana"))
+//                .conBandas(Arrays.asList("Silencio del vacio", "La Katana"))
                 .conFecha(LocalDate.of(2020, 10, 11))
                 .conHora(LocalTime.of(20, 00, 00))
                 .conLocalidad("Avellaneda")
@@ -188,7 +187,7 @@ public class DatabaseLoader {
         Recital recitalCatorce = RecitalBuilderForLoader
                 .conNombre("Volátil")
                 .conDescripcion("Volátil se presenta junto a grandes colegas del under local. No te lo podes perder")
-                .conBandas(Arrays.asList("Camus", "Los de siempre"))
+//                .conBandas(Arrays.asList("Camus", "Los de siempre"))
                 .conFecha(LocalDate.of(2020, 9, 21))
                 .conHora(LocalTime.of(23, 00, 00))
                 .conLocalidad("Burzaco")
@@ -200,7 +199,7 @@ public class DatabaseLoader {
         Recital recitalQuince = RecitalBuilderForLoader
                 .conNombre("Festival musical Todos por Juan")
                 .conDescripcion("Gran festival musical 'Todos Por Juan' participa de esta campaña solidaria y apoya el rock independiente. Entrada un alimento no precedero")
-                .conBandas(Arrays.asList("Dueños de la nada", "Demoledor", "La Mississippi", "Conurbano Blues", "Un poco de pan"))
+//                .conBandas(Arrays.asList("Dueños de la nada", "Demoledor", "La Mississippi", "Conurbano Blues", "Un poco de pan"))
                 .conFecha(LocalDate.of(2020, 06, 22))
                 .conHora(LocalTime.of(16, 30, 00))
                 .conLocalidad("Lomas de Zamora")
@@ -211,7 +210,8 @@ public class DatabaseLoader {
 
         Recital recitalDieciSeis = RecitalBuilderForLoader
                 .conNombre("Dementes")
-                .conDescripcion("Hoy una noche de a puro rock y blues la Terraza. Tenemos show en vivo de Dementes, El concilio, La pavada, Ojos turbios. Los esperamos! Las mejores noches de rock están en La terraza").conBandas(Arrays.asList("Dementes", "El concilio", "La pavada", "Ojos turbios"))
+                .conDescripcion("Hoy una noche de a puro rock y blues la Terraza. Tenemos show en vivo de Dementes, El concilio, La pavada, Ojos turbios. Los esperamos! Las mejores noches de rock están en La terraza")
+//                .conBandas(Arrays.asList("Dementes", "El concilio", "La pavada", "Ojos turbios"))
                 .conFecha(LocalDate.of(2020, 11, 20))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Berazategui")
