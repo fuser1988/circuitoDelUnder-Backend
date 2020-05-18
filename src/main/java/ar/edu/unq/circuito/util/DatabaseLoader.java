@@ -25,15 +25,13 @@ public class DatabaseLoader {
 
         recitalRepository.deleteAllInBatch();
         Banda banda = new Banda();
-        banda.setId(new Long(500));
         banda.setNombre("El Banda");
         banda.setGeneros(Arrays.asList(Genero.METAL, Genero.PUNK));
         banda.setInfo("somos una banda del sur de Buenos aires, hacemos rock");
         banda.setImagen("www.UnaUmagen.com/imagen");
         
         Banda laRenga = new Banda();
-        laRenga.setId(new Long(600));
-    	laRenga.setNombre("La Renga");
+        laRenga.setNombre("La Renga");
     	laRenga.setGeneros(Arrays.asList(Genero.ROCK));
         laRenga.setInfo("https://www.larenga.com");
         laRenga.setImagen("https://www.larenga.com/images/logo.png");
@@ -41,9 +39,9 @@ public class DatabaseLoader {
         
 
         Recital recitalUno = RecitalBuilderForLoader
-                .conNombre("Convención de ")
+                .conNombre("Convención de Batmans")
                 .conDescripcion("MAÑACO se presenta con su nueva formación en El bar del fondo no te lo pierdas")
-    //            .conBandas(Arrays.asList(banda, laRenga))
+                .conBandas(Arrays.asList(banda, laRenga))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
@@ -56,7 +54,7 @@ public class DatabaseLoader {
         Recital recitalDos = RecitalBuilderForLoader
                 .conNombre("Aluminosis")
                 .conDescripcion("Aluminosis se presenta con su nueva formación en El bar del fondo no te lo pierdas")
-        //        .conBandas(Arrays.asList(banda))
+                .conBandas(Arrays.asList(banda))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
@@ -68,7 +66,7 @@ public class DatabaseLoader {
         Recital recitalTres = RecitalBuilderForLoader
                 .conNombre("Lolapeluza")
                 .conDescripcion("Potencial Hardcore se presenta al Lolapeluza con todo su rock punk no te lo podes perder")
-     //           .conBandas(Arrays.asList(laRenga))
+                .conBandas(Arrays.asList(laRenga))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("San Isidro")
@@ -212,7 +210,8 @@ public class DatabaseLoader {
         Recital recitalQuince = RecitalBuilderForLoader
                 .conNombre("Festival musical Todos por Juan")
                 .conDescripcion("Gran festival musical 'Todos Por Juan' participa de esta campaña solidaria y apoya el rock independiente. Entrada un alimento no precedero")
-                .conBandas(Arrays.asList(banda))//     .conBandas(Arrays.asList("Dueños de la nada", "Demoledor", "La Mississippi", "Conurbano Blues", "Un poco de pan"))
+         //     .conBandas(Arrays.asList("Dueños de la nada", "Demoledor", "La Mississippi", "Conurbano Blues", "Un poco de pan"))
+                .conBandas(Arrays.asList(banda))
                 .conFecha(LocalDate.of(2020, 06, 22))
                 .conHora(LocalTime.of(16, 30, 00))
                 .conLocalidad("Lomas de Zamora")
@@ -224,7 +223,8 @@ public class DatabaseLoader {
         Recital recitalDieciSeis = RecitalBuilderForLoader
                 .conNombre("Dementes")
                 .conDescripcion("Hoy una noche de a puro rock y blues la Terraza. Tenemos show en vivo de Dementes, El concilio, La pavada, Ojos turbios. Los esperamos! Las mejores noches de rock están en La terraza")                
-                .conBandas(Arrays.asList(laRenga))//.conBandas(Arrays.asList("Dementes", "El concilio", "La pavada", "Ojos turbios"))
+        //        .conBandas(Arrays.asList("Dementes", "El concilio", "La pavada", "Ojos turbios"))
+                .conBandas(Arrays.asList(laRenga))
                 .conFecha(LocalDate.of(2020, 11, 20))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Berazategui")

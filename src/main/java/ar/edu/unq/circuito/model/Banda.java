@@ -9,15 +9,13 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.TableGenerator;
 import javax.validation.constraints.NotNull;
 
 @Entity
 public class Banda {
 	
 	@Id 
-	//@GeneratedValue(strategy=GenerationType.AUTO) 
+	@GeneratedValue(strategy=GenerationType.AUTO) 
 	private Long id;
 	@NotNull
 	private String nombre;

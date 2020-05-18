@@ -10,13 +10,14 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Recital {
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     @NotNull
     private String nombre;
     @NotNull
     private String descripcion;
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Banda> bandas;
     @NotNull
     private LocalDate fecha;
