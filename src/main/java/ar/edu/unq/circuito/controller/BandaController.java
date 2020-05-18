@@ -17,18 +17,18 @@ import ar.edu.unq.circuito.service.BandaService;
 @RequestMapping("/circuito_under")
 public class BandaController {
 
-	@Autowired
-	BandaService bandaService;
-	
-	@CrossOrigin
-	@PostMapping("/banda")
-	public Banda guardar(@RequestBody Banda banda) {
-		return bandaService.guardar(banda);
-	}
-	
-	@CrossOrigin
-	@GetMapping("/bandas")
-	public List<Banda> buscar() {
-		return bandaService.buscarTodos();
-	}
+    @Autowired
+    BandaService bandaService;
+
+    @CrossOrigin
+    @PostMapping("/banda")
+    public Banda guardar(@RequestBody Banda banda) {
+        return bandaService.guardar(banda);
+    }
+
+    @CrossOrigin
+    @GetMapping("/bandas")
+    public List<Banda> buscar() {
+        return bandaService.buscarTodos();
+    }
 }

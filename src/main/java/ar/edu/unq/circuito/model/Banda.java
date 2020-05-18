@@ -13,63 +13,62 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 public class Banda {
-	
-	@Id 
-	@GeneratedValue(strategy=GenerationType.AUTO) 
-	private Long id;
-	@NotNull
-	private String nombre;
-	@NotNull
-	@ElementCollection
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @NotNull
+    private String nombre;
+    @NotNull
+    @ElementCollection
     @Enumerated(EnumType.STRING)
-	private List<Genero> generos;
-	@NotNull
-	private String imagen;
-	@NotNull
-	private String info;
-	
-	
-	public List<Genero> getGeneros() {
-		return generos;
-	}
+    private List<Genero> generos;
+    @NotNull
+    private String imagen;
+    @NotNull
+    private String info;
 
-	public void setGeneros(List<Genero> generos) {
-		this.generos = generos;
-	}
+    public List<Genero> getGeneros() {
+        return generos;
+    }
 
-	public String getImagen() {
-		return imagen;
-	}
+    public void setGeneros(List<Genero> generos) {
+        this.generos = generos;
+    }
 
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
-	}
+    public String getImagen() {
+        return imagen;
+    }
 
-	public String getInfo() {
-		return info;
-	}
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
 
-	public void setInfo(String info) {
-		this.info = info;
-	}
+    public String getInfo() {
+        return info;
+    }
 
-	public Banda() {
-	};
+    public void setInfo(String info) {
+        this.info = info;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public Banda() {
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
 }

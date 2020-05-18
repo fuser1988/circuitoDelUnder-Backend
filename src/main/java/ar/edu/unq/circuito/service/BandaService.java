@@ -11,15 +11,15 @@ import ar.edu.unq.circuito.repo.BandaRepository;
 @Service
 public class BandaService {
 
-	@Autowired
-	private BandaRepository bandaRepository;
-	
-	public Banda guardar(Banda banda) {
-		return bandaRepository.save(banda);
-	}
+    @Autowired
+    private BandaRepository bandaRepository;
 
-	public List<Banda> buscarTodos() {
-		return bandaRepository.findAll();
-	}
+    public Banda guardar(Banda banda) {
+        return bandaRepository.save(banda);
+    }
+
+    public List<Banda> buscarTodos() {
+        return bandaRepository.findAll();
+    }
 
 }
