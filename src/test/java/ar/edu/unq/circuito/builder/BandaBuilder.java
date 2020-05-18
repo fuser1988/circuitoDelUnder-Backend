@@ -24,8 +24,9 @@ public class BandaBuilder extends AbstractPersistenceBuilder<Banda> {
     }
     
     public BandaBuilder conGeneros(List<Genero> generos) {
-        instance.setGeneros(generos);
-        return this;
+    	BandaBuilder builder = new BandaBuilder();
+        builder.instance.setGeneros(generos);
+        return builder;
     }
     
     public BandaBuilder conInfo(String info) {
@@ -42,5 +43,5 @@ public class BandaBuilder extends AbstractPersistenceBuilder<Banda> {
         instance.setMaterial(material);
         return this;
     }*/
-    
+
 }

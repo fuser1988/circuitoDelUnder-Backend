@@ -1,6 +1,7 @@
 package ar.edu.unq.circuito.builder;
 
 import ar.edu.unq.circuito.model.Banda;
+import ar.edu.unq.circuito.model.Genero;
 import ar.edu.unq.circuito.model.Recital;
 import com.somospnt.test.builder.AbstractPersistenceBuilder;
 import java.time.LocalDate;
@@ -13,6 +14,9 @@ public class RecitalBuilder extends AbstractPersistenceBuilder<Recital> {
     private RecitalBuilder(){
     	Banda laRenga = new Banda();
     	laRenga.setNombre("La Renga");
+    	laRenga.setGeneros(Arrays.asList(Genero.ROCK));
+    	laRenga.setImagen("https://www.larenga.com/images/logo.png");
+    	laRenga.setInfo("https://www.larenga.com");
     	
         instance = new Recital();
         instance.setNombre("El Recital");
@@ -39,12 +43,12 @@ public class RecitalBuilder extends AbstractPersistenceBuilder<Recital> {
     }
     
     public RecitalBuilder conDescripcion(String descripcion) {
-        instance.setDescripcion(descripcion);
+    	instance.setDescripcion(descripcion);
         return this;
     }
 
     public RecitalBuilder conBandas(List<Banda> bandas) {
-        instance.setBandas(bandas);     
+    	instance.setBandas(bandas);     
         return this;
     }
     

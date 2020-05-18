@@ -27,7 +27,7 @@ public class DatabaseLoader {
         Banda banda = new Banda();
         banda.setNombre("El Banda");
         banda.setGeneros(Arrays.asList(Genero.METAL, Genero.PUNK));
-        banda.setInfo("somos una banda del sur de Buenos aires, hacemos rock");
+        banda.setInfo("somos una banda del sur de Buenos aires, hacemos metal");
         banda.setImagen("www.UnaUmagen.com/imagen");
         
         Banda laRenga = new Banda();
@@ -210,7 +210,6 @@ public class DatabaseLoader {
         Recital recitalQuince = RecitalBuilderForLoader
                 .conNombre("Festival musical Todos por Juan")
                 .conDescripcion("Gran festival musical 'Todos Por Juan' participa de esta campaña solidaria y apoya el rock independiente. Entrada un alimento no precedero")
-         //     .conBandas(Arrays.asList("Dueños de la nada", "Demoledor", "La Mississippi", "Conurbano Blues", "Un poco de pan"))
                 .conBandas(Arrays.asList(banda))
                 .conFecha(LocalDate.of(2020, 06, 22))
                 .conHora(LocalTime.of(16, 30, 00))
@@ -223,7 +222,6 @@ public class DatabaseLoader {
         Recital recitalDieciSeis = RecitalBuilderForLoader
                 .conNombre("Dementes")
                 .conDescripcion("Hoy una noche de a puro rock y blues la Terraza. Tenemos show en vivo de Dementes, El concilio, La pavada, Ojos turbios. Los esperamos! Las mejores noches de rock están en La terraza")                
-        //        .conBandas(Arrays.asList("Dementes", "El concilio", "La pavada", "Ojos turbios"))
                 .conBandas(Arrays.asList(laRenga))
                 .conFecha(LocalDate.of(2020, 11, 20))
                 .conHora(LocalTime.of(22, 00, 00))
