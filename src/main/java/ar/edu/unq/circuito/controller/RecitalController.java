@@ -51,7 +51,7 @@ public class RecitalController {
 	@CrossOrigin
 	@GetMapping("/recitales/{id}")
 	public Recital obtenerRecitalId(@PathVariable(value = "id") Long id) {
-		return recitalService.BuscarPorId(id);
+		return recitalService.buscarPorId(id);
 	}
 
 }

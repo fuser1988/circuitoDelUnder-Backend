@@ -1,6 +1,25 @@
 package ar.edu.unq.circuito.model;
 
+import javax.persistence.Embeddable;
 
-public enum Genero {
-    PUNK,PUNK_ROCK,ROCK,HARD_ROCK,HARDCORE,HARDCORE_PUNK,ROCK_AND_ROLL,METAL,NEW_METAL,REGGAE,BLUES,JAZZ,ELECTRONICO;
+@Embeddable
+public class Genero {
+
+    private String genero;
+
+    public Genero(String Genero) {
+        this.genero = Genero;
+    }
+
+    public Genero() {
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String Genero) {
+        this.genero = Genero;
+    }
+
 }

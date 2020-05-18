@@ -1,8 +1,10 @@
 package ar.edu.unq.circuito.util;
 
+import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.Genero;
 import ar.edu.unq.circuito.model.Recital;
 import ar.edu.unq.circuito.repo.RecitalRepository;
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Arrays;
@@ -20,22 +22,22 @@ public class DatabaseLoader {
         this.recitalRepository = recitalRepository;
     }
 
-//    @Override
     public void run(String... args) throws Exception {
-
+        Banda banda = BandaBuilderForLoader.conNombre("MAÑACO").conInfo("").conImagen("").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
+        
+        
         recitalRepository.deleteAllInBatch();
-
+        
         Recital recitalUno = RecitalBuilderForLoader
                 .conNombre("Convención de Batmans")
                 .conDescripcion("MAÑACO se presenta con su nueva formación en El bar del fondo no te lo pierdas")
                 .conBandas(Arrays.asList("MAÑACO", "ETILIKO", "Sin Fronteras"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.METAL, Genero.PUNK))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
                 .conDireccion("Alvares tomas 2015")
                 .conLugar("Bar del fondo")
-//                .conImagen("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMyXyrm9xL_dEbm3gZVD_4wru7ITpJAWxgEZYbQcDfR4WvKsrp&usqp=CAU")
+                //                .conImagen("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMyXyrm9xL_dEbm3gZVD_4wru7ITpJAWxgEZYbQcDfR4WvKsrp&usqp=CAU")
                 .conImagen("https://depositosonoro.com/wp-content/uploads/2019/04/55478027_1689594917851261_4586995436853657600_o.jpg")
                 .conPrecio(0).build();
 
@@ -43,7 +45,6 @@ public class DatabaseLoader {
                 .conNombre("Aluminosis")
                 .conDescripcion("Aluminosis se presenta con su nueva formación en El bar del fondo no te lo pierdas")
                 .conBandas(Arrays.asList("Aluminosis", "ETILIKO"))
-                .conGeneros(Arrays.asList(Genero.ROCK_AND_ROLL))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
@@ -56,7 +57,6 @@ public class DatabaseLoader {
                 .conNombre("Lolapeluza")
                 .conDescripcion("Potencial Hardcore se presenta al Lolapeluza con todo su rock punk no te lo podes perder")
                 .conBandas(Arrays.asList("Potencial", "ETILIKO"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.METAL, Genero.HARDCORE, Genero.PUNK, Genero.PUNK_ROCK))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("San Isidro")
@@ -69,7 +69,6 @@ public class DatabaseLoader {
                 .conNombre("REGGAE for ever")
                 .conDescripcion("DESORBITADOS se presenta para festejar su aniversario junto a los GONDWANA, en el Club Tucumán")
                 .conBandas(Arrays.asList("DESORBITADOS", "GONDWANA"))
-                .conGeneros(Arrays.asList(Genero.METAL, Genero.REGGAE))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
@@ -82,7 +81,6 @@ public class DatabaseLoader {
                 .conNombre("Escuela de Blues")
                 .conDescripcion("Hoy una noche de puro rock y Blues en La Barra. Tenemos show en vivo de AMNECIA, FORASTEROS, La Mississippi y ConurbanoBlues. Los esperamos! Las mejores noches de rock están en La Barra")
                 .conBandas(Arrays.asList("AMNECIA", "FORASTEROS", "LaMississippi", "ConurbanoBlues"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.BLUES))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
@@ -95,7 +93,6 @@ public class DatabaseLoader {
                 .conNombre("Furias del metal")
                 .conDescripcion("Hoy Noche de Metal Argento en La caldera. Se presenta Demoledor juto a Furias del metal.Los esperamos! Las mejores noches de rock están en La caldera")
                 .conBandas(Arrays.asList("Furias del metal", "Demoledor"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.METAL, Genero.NEW_METAL))
                 .conFecha(LocalDate.of(2020, 6, 22))
                 .conHora(LocalTime.of(21, 00, 00))
                 .conLocalidad("Avellaneda")
@@ -108,7 +105,6 @@ public class DatabaseLoader {
                 .conNombre("Las ex")
                 .conDescripcion("Hoy una noche de a puro Punk Rock en el Salon Pueyrredón. Las ex presentan su nuevo disco en casa. No te lo podes perder! Las mejores noches de rock están en Salon Pueyrredón")
                 .conBandas(Arrays.asList("AMNECIA", "FORASTEROS", "LaMississippi", "ConurbanoBlues"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.PUNK,Genero.PUNK_ROCK))
                 .conFecha(LocalDate.of(2020, 8, 10))
                 .conHora(LocalTime.of(20, 30, 00))
                 .conLocalidad("Palermo")
@@ -121,7 +117,6 @@ public class DatabaseLoader {
                 .conNombre("Don Cabot")
                 .conDescripcion("Hoy una noche de a Rock and Roll  y blus en El faro. Gandes exponentes del rockandroll local se Presentan en El faro tu lugar")
                 .conBandas(Arrays.asList("Don Cabot", "Piojosos", "LaMississippi"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.BLUES,Genero.ROCK_AND_ROLL))
                 .conFecha(LocalDate.of(2018, 7, 16))
                 .conHora(LocalTime.of(23, 15, 00))
                 .conLocalidad("Lanus")
@@ -133,8 +128,7 @@ public class DatabaseLoader {
         Recital recitalNueve = RecitalBuilderForLoader
                 .conNombre("Recitales en resistencia")
                 .conDescripcion("Una nueva ediccion de Recitales en recistencia se llevara a cabo en el complejo cultural Maria Ocampo.No te lo podes perder.Entrada totalmente gratuita.")
-                .conBandas(Arrays.asList("MAÑACO", "KONTRA VIOLENCIA", "Don Cabot", "ETILIKO","Sin fronteras","Desahogo"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.PUNK, Genero.PUNK_ROCK, Genero.HARDCORE_PUNK, Genero.ROCK_AND_ROLL))
+                .conBandas(Arrays.asList("MAÑACO", "KONTRA VIOLENCIA", "Don Cabot", "ETILIKO", "Sin fronteras", "Desahogo"))
                 .conFecha(LocalDate.of(2020, 12, 16))
                 .conHora(LocalTime.of(16, 00, 00))
                 .conLocalidad("Banfield")
@@ -146,8 +140,7 @@ public class DatabaseLoader {
         Recital recitalDiez = RecitalBuilderForLoader
                 .conNombre("Solventes de Todo")
                 .conDescripcion("La legendaria banda del corurbano vuelve a los ecenarios de la mano con nuevo materia y vos no te lo podes perder.")
-                .conBandas(Arrays.asList("Solventes de Todo","La mocosa"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.METAL, Genero.ROCK_AND_ROLL))
+                .conBandas(Arrays.asList("Solventes de Todo", "La mocosa"))
                 .conFecha(LocalDate.of(2020, 6, 16))
                 .conHora(LocalTime.of(20, 30, 00))
                 .conLocalidad("Solano")
@@ -159,8 +152,7 @@ public class DatabaseLoader {
         Recital recitalOnce = RecitalBuilderForLoader
                 .conNombre("La tia Mary")
                 .conDescripcion("Vuelve La tia Mary al barrio que los vio nacer, se presenta en festival solidario por el merendero las comadrejas junto a bandas amigas. ")
-                .conBandas(Arrays.asList("La tia Mary", "FORASTEROS", "LaMississippi", "ConurbanoBlues","MAÑACO"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.BLUES, Genero.ROCK_AND_ROLL, Genero.NEW_METAL, Genero.REGGAE))
+                .conBandas(Arrays.asList("La tia Mary", "FORASTEROS", "LaMississippi", "ConurbanoBlues", "MAÑACO"))
                 .conFecha(LocalDate.of(2020, 8, 20))
                 .conHora(LocalTime.of(14, 00, 00))
                 .conLocalidad("Lanus")
@@ -173,7 +165,6 @@ public class DatabaseLoader {
                 .conNombre("Incognitos de la noche")
                 .conDescripcion("Hoy una noche de a puro rock en La Barra. Tenemos el show en vivo de Incognitos de la noche, FORASTEROS, La Mississippi y Conurbano Blues. Los esperamos! Las mejores noches de rock están en La Barra")
                 .conBandas(Arrays.asList("Incognitos de la noche", "FORASTEROS", "LaMississippi", "ConurbanoBlues"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.BLUES, Genero.HARD_ROCK, Genero.ELECTRONICO))
                 .conFecha(LocalDate.of(2020, 05, 15))
                 .conHora(LocalTime.of(21, 00, 00))
                 .conLocalidad("Quilmes")
@@ -186,7 +177,6 @@ public class DatabaseLoader {
                 .conNombre("Silencio del vacio")
                 .conDescripcion("La legendaria banda de Valenti Alsina presenta su nuevo disco tocando en vivo para todos su seguidores. Entrada libre y gratuita")
                 .conBandas(Arrays.asList("Silencio del vacio", "La Katana"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.BLUES, Genero.HARD_ROCK))
                 .conFecha(LocalDate.of(2020, 10, 11))
                 .conHora(LocalTime.of(20, 00, 00))
                 .conLocalidad("Avellaneda")
@@ -194,12 +184,11 @@ public class DatabaseLoader {
                 .conLugar("El Catar")
                 .conImagen("https://media.datachaco.com/adjuntos/244/imagenes/000/896/0000896826.jpg")
                 .conPrecio(0).build();
-        
+
         Recital recitalCatorce = RecitalBuilderForLoader
                 .conNombre("Volátil")
                 .conDescripcion("Volátil se presenta junto a grandes colegas del under local. No te lo podes perder")
                 .conBandas(Arrays.asList("Camus", "Los de siempre"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.ROCK_AND_ROLL))
                 .conFecha(LocalDate.of(2020, 9, 21))
                 .conHora(LocalTime.of(23, 00, 00))
                 .conLocalidad("Burzaco")
@@ -212,7 +201,6 @@ public class DatabaseLoader {
                 .conNombre("Festival musical Todos por Juan")
                 .conDescripcion("Gran festival musical 'Todos Por Juan' participa de esta campaña solidaria y apoya el rock independiente. Entrada un alimento no precedero")
                 .conBandas(Arrays.asList("Dueños de la nada", "Demoledor", "La Mississippi", "Conurbano Blues", "Un poco de pan"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.BLUES, Genero.METAL, Genero.ROCK_AND_ROLL, Genero.HARD_ROCK))
                 .conFecha(LocalDate.of(2020, 06, 22))
                 .conHora(LocalTime.of(16, 30, 00))
                 .conLocalidad("Lomas de Zamora")
@@ -223,8 +211,7 @@ public class DatabaseLoader {
 
         Recital recitalDieciSeis = RecitalBuilderForLoader
                 .conNombre("Dementes")
-                .conDescripcion("Hoy una noche de a puro rock y blues la Terraza. Tenemos show en vivo de Dementes, El concilio, La pavada, Ojos turbios. Los esperamos! Las mejores noches de rock están en La terraza")                .conBandas(Arrays.asList("Dementes", "El concilio", "La pavada", "Ojos turbios"))
-                .conGeneros(Arrays.asList(Genero.ROCK, Genero.BLUES, Genero.METAL, Genero.NEW_METAL, Genero.ROCK_AND_ROLL))
+                .conDescripcion("Hoy una noche de a puro rock y blues la Terraza. Tenemos show en vivo de Dementes, El concilio, La pavada, Ojos turbios. Los esperamos! Las mejores noches de rock están en La terraza").conBandas(Arrays.asList("Dementes", "El concilio", "La pavada", "Ojos turbios"))
                 .conFecha(LocalDate.of(2020, 11, 20))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Berazategui")
@@ -232,7 +219,6 @@ public class DatabaseLoader {
                 .conLugar("La Terraza")
                 .conImagen("https://www.inforegion.com.ar/wp-content/uploads/2019/08/banda1200.jpg")
                 .conPrecio(0).build();
-
 
         recitalRepository.save(recitalUno);
         recitalRepository.save(recitalDos);

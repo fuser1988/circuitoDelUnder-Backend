@@ -10,7 +10,8 @@ import ar.edu.unq.circuito.repo.RecitalRepository;
 import ar.edu.unq.circuito.util.DatabaseLoader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import javax.transaction.Transactional;
+@Transactional
 @Service
 public class RecitalService {
 
@@ -31,7 +32,7 @@ public class RecitalService {
         return recitalRepository.findByGeneros(genero.toUpperCase());
     }
 
-    public Recital BuscarPorId(long id) {
+    public Recital buscarPorId(long id) {
         return recitalRepository.findById(id).get();
     }
 
@@ -44,3 +45,4 @@ public class RecitalService {
     }
 
 }
+ 
