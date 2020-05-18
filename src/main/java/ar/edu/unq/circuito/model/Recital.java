@@ -10,23 +10,18 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Recital {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     @NotNull
     private String nombre;
     @NotNull
     private String descripcion;
-    @ElementCollection
-    private List<String> bandas;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Banda> bandas;
     @NotNull
     private LocalDate fecha;
     @NotNull
     private LocalTime hora;
-    @NotNull
-    @ElementCollection
-    @Enumerated(EnumType.STRING)
-    private List<Genero> generos;
     @NotNull
     private String direccion;
     @NotNull
@@ -65,11 +60,11 @@ public class Recital {
         this.descripcion = descripcion;
     }
 
-    public List<String> getBandas() {
+    public List<Banda> getBandas() {
         return bandas;
     }
 
-    public void setBandas(List<String> bandas) {
+    public void setBandas(List<Banda> bandas) {
         this.bandas = bandas;
     }
 
@@ -87,14 +82,6 @@ public class Recital {
 
     public void setHora(LocalTime hora) {
         this.hora = hora;
-    }
-
-    public List<Genero> getGeneros() {
-        return generos;
-    }
-
-    public void setGeneros(List<Genero> generos) {
-        this.generos = generos;
     }
 
     public String getDireccion() {

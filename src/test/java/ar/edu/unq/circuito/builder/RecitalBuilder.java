@@ -1,6 +1,6 @@
 package ar.edu.unq.circuito.builder;
 
-import ar.edu.unq.circuito.model.Genero;
+import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.Recital;
 import com.somospnt.test.builder.AbstractPersistenceBuilder;
 import java.time.LocalDate;
@@ -11,13 +11,15 @@ import java.util.List;
 public class RecitalBuilder extends AbstractPersistenceBuilder<Recital> {
     
     private RecitalBuilder(){
+    	Banda laRenga = new Banda();
+    	laRenga.setNombre("La Renga");
+    	
         instance = new Recital();
         instance.setNombre("El Recital");
         instance.setDescripcion("nos volvemso a encontrar en laa roca bar para compartir una noche a puro rock");
-        instance.setBandas(Arrays.asList("MAÑACO", "ETILIKO", "SinFronteras"));
+        instance.setBandas(Arrays.asList(laRenga));
         instance.setFecha(LocalDate.of(2018, 10, 30));
         instance.setHora(LocalTime.of(22, 00, 00));
-        instance.setGeneros(Arrays.asList(Genero.ROCK, Genero.METAL, Genero.PUNK));
         instance.setDireccion("Mitre 2154");
         instance.setLocalidad("Berazategui");
         instance.setLugar("Bar Del Fondo");
@@ -41,7 +43,7 @@ public class RecitalBuilder extends AbstractPersistenceBuilder<Recital> {
         return this;
     }
 
-    public RecitalBuilder conBandas(List<String> bandas) {
+    public RecitalBuilder conBandas(List<Banda> bandas) {
         instance.setBandas(bandas);     
         return this;
     }
@@ -54,12 +56,6 @@ public class RecitalBuilder extends AbstractPersistenceBuilder<Recital> {
     public RecitalBuilder conHora(LocalTime hora) {
         instance.setHora(hora);
         return this;
-    }
-    
-    public static RecitalBuilder conGeneros(List<Genero> generos) {
-    	RecitalBuilder builder = new RecitalBuilder(); 
-    	builder.instance.setGeneros(generos);
-        return builder;
     }
     
     public RecitalBuilder conLocalidad(String localidad) {
