@@ -5,21 +5,21 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Genero {
 
-    private String genero;
+    private String nombre;
 
     public Genero(String Genero) {
-        this.genero = Genero;
+        this.nombre = Genero;
     }
 
     public Genero() {
     }
 
-    public String getGenero() {
-        return genero;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setGenero(String Genero) {
-        this.genero = Genero;
+    public void setNombre(String Genero) {
+        this.nombre = Genero;
     }
 
 }
