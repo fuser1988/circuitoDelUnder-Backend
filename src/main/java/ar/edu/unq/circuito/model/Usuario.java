@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Usuario {
@@ -14,6 +15,8 @@ public class Usuario {
     private String email;
     private String nombre;
     private TipoUsuario tipoUsuario;
+    @OneToOne(mappedBy="usuario")
+    private Banda banda;
 
     public Usuario(long id, long idDeReferrencia, String email, String nombre, TipoUsuario tipoUsuario) {
         this.id = id;
@@ -67,4 +70,11 @@ public class Usuario {
         this.tipoUsuario = tipoUsuario;
     }
 
+    public Banda getBanda() {
+        return banda;
+    }
+
+    public void setBanda(Banda banda) {
+        this.banda = banda;
+    }
 }

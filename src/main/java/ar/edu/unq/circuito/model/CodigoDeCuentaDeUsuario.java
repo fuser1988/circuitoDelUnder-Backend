@@ -12,13 +12,8 @@ public class CodigoDeCuentaDeUsuario {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private long usuarioId;
-    private String Codigo;
+    private String codigo;
 
-    public CodigoDeCuentaDeUsuario(long idUsuario, String Codigo) {
-        this.usuarioId = idUsuario;
-        this.Codigo = Codigo;
-    }
-    
     public long getId() {
         return id;
     }
@@ -27,20 +22,20 @@ public class CodigoDeCuentaDeUsuario {
         this.id = id;
     }
 
-    public long getIdUsuario() {
+    public long getUsuarioId() {
         return usuarioId;
     }
 
-    public void setIdUsuario(long idUsuario) {
-        this.usuarioId = idUsuario;
+    public void setUsuarioId(long usuarioId) {
+        this.usuarioId = usuarioId;
     }
 
     public String getCodigo() {
-        return Codigo;
+        return codigo;
     }
 
-    public void setCodigo(String Codigo) {
-        this.Codigo = Codigo;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
 }

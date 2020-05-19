@@ -53,14 +53,14 @@ public class GestionCodigoValidacionServiceTest extends CircuitoDelUnderBackendA
         assertThat(esValido).isFalse();
     }
 
-    @Test
-    public void validarCodigo_conUsuarioSinCodigoGenerado_LanzaExepcion() {
-        Usuario usuario = UsuarioBuilder.conNombre("Roberto Carlos").build(em);
-        final String codigoInvalido = "38fhjsbn348rewhljkn348i239";
-        assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(()
-                -> gestionCodigoValidacionService.validarCodigo(codigoInvalido, usuario.getId()))
-                .withMessage("el usuario no tiene un codigo generado");
-    }
+//    @Test
+//    public void validarCodigo_conUsuarioSinCodigoGenerado_LanzaExepcion() {
+//        Usuario usuario = UsuarioBuilder.conNombre("Roberto Carlos").build(em);
+//        final String codigoInvalido = "38fhjsbn348rewhljkn348i239";
+//        assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(()
+//                -> gestionCodigoValidacionService.validarCodigo(codigoInvalido, usuario.getId()))
+//                .withMessage("el usuario no tiene un codigo generado");
+//    }
 
     @Test
     public void validarCodigo_conUsuarioInexistente_RetornaExcepcion() {

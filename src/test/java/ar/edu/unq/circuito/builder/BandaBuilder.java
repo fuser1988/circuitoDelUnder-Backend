@@ -3,6 +3,7 @@ package ar.edu.unq.circuito.builder;
 import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.Genero;
 import ar.edu.unq.circuito.model.Material;
+import ar.edu.unq.circuito.model.Usuario;
 import com.somospnt.test.builder.AbstractPersistenceBuilder;
 import java.util.Arrays;
 import java.util.List;
@@ -43,6 +44,12 @@ public class BandaBuilder extends AbstractPersistenceBuilder<Banda> {
         instance.setMaterial(material);
         return this;
     }
+    
+    public BandaBuilder conUsuario(Usuario usuario) {
+        instance.setUsuario(usuario);
+        return this;
+    }
+    
     
     
 }

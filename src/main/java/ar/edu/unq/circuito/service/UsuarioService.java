@@ -37,18 +37,18 @@ public class UsuarioService {
     }
 
     public Usuario identificarUsuarioPorReferencia(ReferenciaUsuarioVo referenciaUsuarioVo) {
-        return usuarioRepository.findByReferenciaId(referenciaUsuarioVo.getIdDeReferrencia())
+        return usuarioRepository.findByReferenciaId(referenciaUsuarioVo.getReferenciaId())
                 .orElseGet(() -> {
                     Usuario usuario = new Usuario();
-                    usuario.setReferenciaId(referenciaUsuarioVo.getIdDeReferrencia());
+                    usuario.setReferenciaId(referenciaUsuarioVo.getReferenciaId());
                     usuario.setEmail(referenciaUsuarioVo.getEmail());
                     usuario.setNombre(referenciaUsuarioVo.getNombre());
                     usuario.setTipoUsuario(TipoUsuario.REGISTRADO_SIN_CONFIRMACION);
-                    
+                    usuarioRepository.save(usuario);
                     String codigo = gestionCodigoValidacionService.generarCodigoValidacion(usuario.getId());
                     
                     emailService.enviarCodigoDeValidacion(codigo, usuario);
-                    return usuarioRepository.save(usuario);
+                    return usuario;
                 });
 
     }

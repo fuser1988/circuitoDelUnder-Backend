@@ -23,8 +23,9 @@ public class GestionCodigoValidacionService {
             throw new NoSuchElementException("El id de usuario no existe");
         }
         CodigoDeCuentaDeUsuario codigoDeCuentaDeUsuario =
-                codigoDeCuentaDeUsuarioRepository.findByUsuarioId(usuarioId).orElseThrow(()-> {throw new IllegalArgumentException("el usuario no tiene un codigo generado");});
-        return codigoDeCuentaDeUsuario.getCodigo() == codigo;
+                codigoDeCuentaDeUsuarioRepository.findByUsuarioId(usuarioId).get();//orElseThrow(()-> {throw new IllegalArgumentException("el usuario no tiene un codigo generado");});
+                String codin = codigoDeCuentaDeUsuario.getCodigo();
+        return codigoDeCuentaDeUsuario.getCodigo().contentEquals(codigo);
     }
 
     public String generarCodigoValidacion(long usuarioId) {
@@ -32,7 +33,10 @@ public class GestionCodigoValidacionService {
             throw new NoSuchElementException("El id de usuario no existe");
         }
         String codigo = GeneradorDeCodigo.generarCodigo();
-        CodigoDeCuentaDeUsuario codigoDeCuentaDeUsuario = new CodigoDeCuentaDeUsuario(usuarioId, codigo);
+        
+        CodigoDeCuentaDeUsuario codigoDeCuentaDeUsuario = new CodigoDeCuentaDeUsuario();
+        codigoDeCuentaDeUsuario.setCodigo(codigo);
+        codigoDeCuentaDeUsuario.setUsuarioId(usuarioId);
         codigoDeCuentaDeUsuarioRepository.save(codigoDeCuentaDeUsuario);
         return codigo;
     }

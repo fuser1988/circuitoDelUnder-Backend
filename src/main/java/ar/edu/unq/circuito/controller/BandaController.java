@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.service.BandaService;
+import ar.edu.unq.circuito.vo.BandaVo;
 
 @RestController
 @RequestMapping("/circuito_under")
@@ -22,8 +23,8 @@ public class BandaController {
 
     @CrossOrigin
     @PostMapping("/banda")
-    public Banda guardar(@RequestBody Banda banda) {
-        return bandaService.guardar(banda);
+    public Banda guardar(@RequestBody BandaVo bandavo) {
+        return bandaService.guardarBandaNueva(bandavo);
     }
 
     @CrossOrigin
