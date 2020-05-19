@@ -37,7 +37,7 @@ public class EmailService {
 	        			+ "<body>"
 	        				+ "<div>Sr Usuario,"
 	        	             	+ "<div>Su código de validación es:</div>"
-	        	             	+ "<div><strong>Algo:</strong></div>"
+	        	             	+ "<div><strong>"+ usuario.getEmail() +"</strong></div>"
 	        	                + "<div>Gracias</div>"
 	        	                + "Circuito del Under"
 	        	                + "<img src= 'https://raw.githubusercontent.com/fuser1988/circuitoDelUnder-Documentacion/master/Circuito-del-under.png'/>"
