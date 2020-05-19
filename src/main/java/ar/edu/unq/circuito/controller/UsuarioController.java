@@ -1,8 +1,11 @@
 package ar.edu.unq.circuito.controller;
 
 
+import javax.mail.MessagingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,11 +31,17 @@ public class UsuarioController {
 		return usuarioService.identificarUsuarioPorReferencia(referenciaUsuarioVo);
 	}
 	
-        @CrossOrigin
+    @CrossOrigin
 	@PostMapping("/usuario/validacion")
 	public Usuario validarCodigoDeVerificacionDeCuenta(@RequestBody CodigoVo codigoVo) {
 		return usuarioService.validarCodigoDeUsuario(codigoVo.getCodigo(), codigoVo.getUsuarioId());
 	}
-	
+    
+    @CrossOrigin
+	@GetMapping("/usuario/info2")
+	public String validarCodigoDeVerificacionDeCuenta2() {
+		usuarioService.sendMail();
+		return "";
+    }
 
 }

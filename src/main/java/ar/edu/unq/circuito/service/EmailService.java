@@ -55,7 +55,7 @@ public class EmailService {
 		MimeMessageHelper helper;
 		try {
 			helper = new MimeMessageHelper(mailMessage,true);
-			helper.setTo("esroj2891@hotmail.com");
+			helper.setTo(""); // algun mail
 	        helper.setSubject("Código De Validación");
 	        helper.setText(
 	        		"<html>"
