@@ -37,11 +37,5 @@ public class UsuarioController {
 		return usuarioService.validarCodigoDeUsuario(codigoVo.getCodigo(), codigoVo.getUsuarioId());
 	}
     
-    @CrossOrigin
-	@GetMapping("/usuario/info2")
-	public String validarCodigoDeVerificacionDeCuenta2() {
-		usuarioService.sendMail();
-		return "";
-    }
 
 }

@@ -5,7 +5,6 @@ import ar.edu.unq.circuito.model.Usuario;
 import ar.edu.unq.circuito.repo.UsuarioRepository;
 import ar.edu.unq.circuito.vo.ReferenciaUsuarioVo;
 
-import javax.mail.MessagingException;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,14 +48,10 @@ public class UsuarioService {
                     usuarioRepository.save(usuario);
                     String codigo = gestionCodigoValidacionService.generarCodigoValidacion(usuario.getId());
                     
-                    emailService.enviarCodigoDeValidacion("codigo", usuario);
+                    emailService.enviarCodigoDeValidacion(codigo, usuario);
                     return usuario;
                 });
 
     }
 
-	public void sendMail() {
-		emailService.sendMail();
-		
-	}
 }

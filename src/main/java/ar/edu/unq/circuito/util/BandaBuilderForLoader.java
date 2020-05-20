@@ -19,6 +19,7 @@ public class BandaBuilderForLoader {
         banda.setInfo(info);
         banda.setImagen(imagen);
         banda.setGeneros(generos);
+        banda.setMaterial(material);
         return banda;
     }
 

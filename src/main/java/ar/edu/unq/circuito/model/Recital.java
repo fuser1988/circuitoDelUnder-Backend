@@ -17,7 +17,8 @@ public class Recital {
     private String nombre;
     @NotNull
     private String descripcion;
-    @OneToMany
+    @NotNull
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Banda> bandas;
     @NotNull
     private LocalDate fecha;

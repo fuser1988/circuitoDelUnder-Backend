@@ -31,11 +31,7 @@ public class Banda {
     @NotNull
     private String info;
     
-    @OneToMany(
-            cascade = CascadeType.ALL,
-            orphanRemoval = true,
-            fetch = FetchType.EAGER
-    )
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Material> material;
     
     @OneToOne(fetch = FetchType.LAZY)
