@@ -1,13 +1,18 @@
 package ar.edu.unq.circuito.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.Recital;
+import ar.edu.unq.circuito.repo.BandaRepository;
 import ar.edu.unq.circuito.repo.RecitalRepository;
 import ar.edu.unq.circuito.util.DatabaseLoader;
+import ar.edu.unq.circuito.vo.RecitalVo;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.transaction.Transactional;
@@ -19,12 +24,35 @@ public class RecitalService {
     private RecitalRepository recitalRepository;
     @Autowired
     private DatabaseLoader dataBaseLoader;
-
-    public Recital guardar(Recital recital) {
-        return recitalRepository.save(recital);
+    @Autowired
+    private BandaRepository bandaRepository;
+    
+    public Recital guardar(RecitalVo recitalVo) {
+    	Recital res = new Recital();
+    	res.setNombre(recitalVo.getNombre());
+    	res.setDescripcion(recitalVo.getDescripcion());
+    	res.setDireccion(recitalVo.getDireccion());
+    	res.setFecha(recitalVo.getFecha());
+    	res.setHora(recitalVo.getHora());
+    	res.setLocalidad(recitalVo.getLocalidad());
+    	res.setLugar(recitalVo.getLugar());
+    	res.setImagen(recitalVo.getImagen());
+    	res.setPrecio(recitalVo.getPrecio());
+    	res.setBandas(procesarBandas(recitalVo.getBandas()));
+        
+    	return recitalRepository.save(res);
     }
 
-    public List<Recital> buscarTodos() {
+    private List<Banda> procesarBandas(List<Long> bandasVo) {
+		List<Banda> listaBandas = new ArrayList<Banda>();
+		bandasVo.forEach((id) -> {
+			Banda bandaObtenida = bandaRepository.findById(id).get();
+			listaBandas.add(bandaObtenida);
+		});
+		return listaBandas;
+	}
+
+	public List<Recital> buscarTodos() {
         return recitalRepository.findAll();
     }
 

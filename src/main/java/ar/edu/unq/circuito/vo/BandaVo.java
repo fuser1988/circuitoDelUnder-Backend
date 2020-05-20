@@ -7,14 +7,24 @@ import java.util.List;
 
 public class BandaVo {
     
+	private long id;
     private String nombre;
     private List<String> generos;
     private String imagen;
     private String info;
     private List<Material> material;
     private long usuarioId;
+    
+    public BandaVo() {};
+    public long getId() {
+		return id;
+	}
 
-    public String getNombre() {
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
         return nombre;
     }
 

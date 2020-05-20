@@ -1,5 +1,6 @@
 package ar.edu.unq.circuito.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,8 +44,16 @@ public class BandaService {
        return generos.stream().map((genero)->{return new Genero(genero);}).collect(Collectors.toList());
     }
 
-    public List<Banda> buscarTodos() {
-        return bandaRepository.findAll();
+    public List<BandaVo> buscarTodos() {
+        List<Banda> listaBanda = bandaRepository.findAll();
+        List<BandaVo> listaBandaVo = new ArrayList<BandaVo>();
+        listaBanda.forEach((b) ->{
+        	BandaVo newB = new BandaVo();
+        	newB.setId(b.getId());
+        	newB.setNombre(b.getNombre());
+        	listaBandaVo.add(newB);
+        });
+        return listaBandaVo;
     }
 
 }

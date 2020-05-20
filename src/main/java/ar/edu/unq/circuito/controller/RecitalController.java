@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ar.edu.unq.circuito.model.Recital;
 import ar.edu.unq.circuito.service.RecitalService;
+import ar.edu.unq.circuito.vo.RecitalVo;
+
 import org.springframework.web.bind.annotation.PathVariable;
 
 
@@ -25,9 +27,9 @@ public class RecitalController {
 	
 	@CrossOrigin
 	@PostMapping("/recitales")
-	public Recital guardar(@RequestBody Recital recital) {
-		recital.setFecha(recital.getFecha());
-		return recitalService.guardar(recital);
+	public Recital guardar(@RequestBody RecitalVo recitalVo) {
+		recitalVo.setFecha(recitalVo.getFecha());
+		return recitalService.guardar(recitalVo);
 	}
 	
 	@CrossOrigin
