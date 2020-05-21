@@ -54,4 +54,3 @@ public class ExceptionControllerAdvice {
         return mensaje.substring(indiceComienzoCausa);
     }
 }
-

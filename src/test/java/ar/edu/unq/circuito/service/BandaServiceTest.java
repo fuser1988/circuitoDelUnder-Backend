@@ -32,11 +32,11 @@ public class BandaServiceTest extends CircuitoDelUnderBackendApplicationTests {
         List<BandaVo> bandasrecuperados = bandaService.buscarTodos();
         assertThat(bandasrecuperados).size().isEqualTo(3);
     }
-    
+
     @Test
     public void guaradarBandaNueva_conUsuarioExistente_RetornaBandaCreada() {
         Usuario usuario = UsuarioBuilder.conNombre("Felipe").conTipoUsuario(TipoUsuario.REGISTRADO_SIN_BANDA).build(em);
-        
+
         BandaVo bandaVo = new BandaVo();
         bandaVo.setNombre("MAÑACO");
         bandaVo.setGeneros(Arrays.asList("HARDCORE"));
@@ -48,7 +48,7 @@ public class BandaServiceTest extends CircuitoDelUnderBackendApplicationTests {
         Banda bandaCreada = bandaService.guardarBandaNueva(bandaVo);
         assertThat(bandaCreada.getUsuario().getId()).isEqualTo(usuario.getId());
     }
-    
+
     @Test
     public void guaradarBandaNueva_conUsuarioInexistente_RetornaUnaExcepcion() {
         long usuarioIdInexistente = 999999;
@@ -59,10 +59,10 @@ public class BandaServiceTest extends CircuitoDelUnderBackendApplicationTests {
         bandaVo.setInfo("Mañaco es una banda de zona sur que surgio a finales del 2014");
         bandaVo.setMaterial(Arrays.asList());
         bandaVo.setUsuarioId(usuarioIdInexistente);
-        
+
         assertThatExceptionOfType(NoSuchElementException.class).isThrownBy(()
                 -> bandaService.guardarBandaNueva(bandaVo))
                 .withMessage("El id de usuario no existe");
-         
+
     }
 }

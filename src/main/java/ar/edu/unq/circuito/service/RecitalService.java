@@ -16,6 +16,7 @@ import ar.edu.unq.circuito.vo.RecitalVo;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.transaction.Transactional;
+
 @Transactional
 @Service
 public class RecitalService {
@@ -26,33 +27,33 @@ public class RecitalService {
     private DatabaseLoader dataBaseLoader;
     @Autowired
     private BandaRepository bandaRepository;
-    
+
     public Recital guardar(RecitalVo recitalVo) {
-    	Recital res = new Recital();
-    	res.setNombre(recitalVo.getNombre());
-    	res.setDescripcion(recitalVo.getDescripcion());
-    	res.setDireccion(recitalVo.getDireccion());
-    	res.setFecha(recitalVo.getFecha());
-    	res.setHora(recitalVo.getHora());
-    	res.setLocalidad(recitalVo.getLocalidad());
-    	res.setLugar(recitalVo.getLugar());
-    	res.setImagen(recitalVo.getImagen());
-    	res.setPrecio(recitalVo.getPrecio());
-    	res.setBandas(procesarBandas(recitalVo.getBandas()));
-        
-    	return recitalRepository.save(res);
+        Recital res = new Recital();
+        res.setNombre(recitalVo.getNombre());
+        res.setDescripcion(recitalVo.getDescripcion());
+        res.setDireccion(recitalVo.getDireccion());
+        res.setFecha(recitalVo.getFecha());
+        res.setHora(recitalVo.getHora());
+        res.setLocalidad(recitalVo.getLocalidad());
+        res.setLugar(recitalVo.getLugar());
+        res.setImagen(recitalVo.getImagen());
+        res.setPrecio(recitalVo.getPrecio());
+        res.setBandas(procesarBandas(recitalVo.getBandas()));
+
+        return recitalRepository.save(res);
     }
 
     private List<Banda> procesarBandas(List<Long> bandasVo) {
-		List<Banda> listaBandas = new ArrayList<Banda>();
-		bandasVo.forEach((id) -> {
-			Banda bandaObtenida = bandaRepository.findById(id).get();
-			listaBandas.add(bandaObtenida);
-		});
-		return listaBandas;
-	}
+        List<Banda> listaBandas = new ArrayList<Banda>();
+        bandasVo.forEach((id) -> {
+            Banda bandaObtenida = bandaRepository.findById(id).get();
+            listaBandas.add(bandaObtenida);
+        });
+        return listaBandas;
+    }
 
-	public List<Recital> buscarTodos() {
+    public List<Recital> buscarTodos() {
         return recitalRepository.findAll();
     }
 
@@ -73,4 +74,3 @@ public class RecitalService {
     }
 
 }
- 

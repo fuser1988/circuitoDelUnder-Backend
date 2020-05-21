@@ -8,18 +8,17 @@ import org.springframework.data.jpa.repository.Query;
 
 import ar.edu.unq.circuito.model.Recital;
 
+public interface RecitalRepository extends JpaRepository<Recital, Long> {
 
-public interface RecitalRepository extends JpaRepository<Recital, Long>{
+    @Query(value = "SELECT distinct r.* "
+            + "FROM recital r "
+            + "INNER JOIN recital_bandas c ON r.id = c.recital_id "
+            + "INNER JOIN  banda b  ON c.bandas_id = b.id "
+            + "INNER JOIN  genero g  ON g.banda_id = b.id "
+            + "AND g.nombre LIKE %?1% ;",
+            nativeQuery = true)
+    List<Recital> findByGeneros(String genero);
 
-	@Query(value = "SELECT distinct r.* "
-                        + "FROM recital r "
-                        + "INNER JOIN recital_bandas c ON r.id = c.recital_id "
-                        + "INNER JOIN  banda b  ON c.bandas_id = b.id "
-                        + "INNER JOIN  genero g  ON g.banda_id = b.id "
-                        + "AND g.nombre LIKE %?1% ;"
-                        , nativeQuery = true)
-	List<Recital> findByGeneros(String genero);
-
-	Optional<Recital> findById(Long id);
+    Optional<Recital> findById(Long id);
 
 }

@@ -17,43 +17,42 @@ import ar.edu.unq.circuito.vo.RecitalVo;
 
 import org.springframework.web.bind.annotation.PathVariable;
 
-
 @RestController
 @RequestMapping("/circuito_under")
 public class RecitalController {
 
-	@Autowired
-	RecitalService recitalService;
-	
-	@CrossOrigin
-	@PostMapping("/recitales")
-	public Recital guardar(@RequestBody RecitalVo recitalVo) {
-		recitalVo.setFecha(recitalVo.getFecha());
-		return recitalService.guardar(recitalVo);
-	}
-	
-	@CrossOrigin
-	@PostMapping("/recitales/fake")
-	public void DataLoad() {
-		recitalService.cargarDatos();
-	}
-	
-	@CrossOrigin
-	@GetMapping("/recitales")
-	public List<Recital> buscar() {
-		return recitalService.buscarTodos();
-	}
-	
-	@CrossOrigin
-	@GetMapping("/recitales/bandas")
-	public List<Recital> filterGenero(@RequestParam(value = "genero") String genero) {
-		return recitalService.filterGenero(genero);
-	}
-	
-	@CrossOrigin
-	@GetMapping("/recitales/{id}")
-	public Recital obtenerRecitalId(@PathVariable(value = "id") Long id) {
-		return recitalService.buscarPorId(id);
-	}
+    @Autowired
+    RecitalService recitalService;
+
+    @CrossOrigin
+    @PostMapping("/recitales")
+    public Recital guardar(@RequestBody RecitalVo recitalVo) {
+        recitalVo.setFecha(recitalVo.getFecha());
+        return recitalService.guardar(recitalVo);
+    }
+
+    @CrossOrigin
+    @PostMapping("/recitales/fake")
+    public void DataLoad() {
+        recitalService.cargarDatos();
+    }
+
+    @CrossOrigin
+    @GetMapping("/recitales")
+    public List<Recital> buscar() {
+        return recitalService.buscarTodos();
+    }
+
+    @CrossOrigin
+    @GetMapping("/recitales/bandas")
+    public List<Recital> filterGenero(@RequestParam(value = "genero") String genero) {
+        return recitalService.filterGenero(genero);
+    }
+
+    @CrossOrigin
+    @GetMapping("/recitales/{id}")
+    public Recital obtenerRecitalId(@PathVariable(value = "id") Long id) {
+        return recitalService.buscarPorId(id);
+    }
 
 }

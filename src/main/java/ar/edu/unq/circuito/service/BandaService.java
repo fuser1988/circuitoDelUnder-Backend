@@ -25,7 +25,7 @@ public class BandaService {
     private UsuarioRepository usuarioRepository;
 
     public Banda guardarBandaNueva(BandaVo bandaVo) {
-        if (!usuarioRepository.existsById(bandaVo.getUsuarioId())){
+        if (!usuarioRepository.existsById(bandaVo.getUsuarioId())) {
             throw new NoSuchElementException("El id de usuario no existe");
         }
         Usuario usuario = usuarioRepository.findById(bandaVo.getUsuarioId()).get();
@@ -39,19 +39,21 @@ public class BandaService {
         banda.setMaterial(bandaVo.getMaterial());
         return bandaRepository.save(banda);
     }
-    
-    private List<Genero> procesarGeneros(List<String> generos){
-       return generos.stream().map((genero)->{return new Genero(genero);}).collect(Collectors.toList());
+
+    private List<Genero> procesarGeneros(List<String> generos) {
+        return generos.stream().map((genero) -> {
+            return new Genero(genero);
+        }).collect(Collectors.toList());
     }
 
     public List<BandaVo> buscarTodos() {
         List<Banda> listaBanda = bandaRepository.findAll();
         List<BandaVo> listaBandaVo = new ArrayList<BandaVo>();
-        listaBanda.forEach((b) ->{
-        	BandaVo newB = new BandaVo();
-        	newB.setId(b.getId());
-        	newB.setNombre(b.getNombre());
-        	listaBandaVo.add(newB);
+        listaBanda.forEach((b) -> {
+            BandaVo newB = new BandaVo();
+            newB.setId(b.getId());
+            newB.setNombre(b.getNombre());
+            listaBandaVo.add(newB);
         });
         return listaBandaVo;
     }

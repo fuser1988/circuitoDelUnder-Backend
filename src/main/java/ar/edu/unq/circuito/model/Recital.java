@@ -18,7 +18,7 @@ public class Recital {
     @NotNull
     private String descripcion;
     @NotNull
-    @OneToMany
+    @ManyToMany
     private List<Banda> bandas;
     @NotNull
     private LocalDate fecha;

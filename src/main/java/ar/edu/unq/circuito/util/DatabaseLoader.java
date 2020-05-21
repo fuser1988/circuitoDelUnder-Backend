@@ -5,6 +5,7 @@ import ar.edu.unq.circuito.model.Genero;
 import ar.edu.unq.circuito.model.Material;
 import ar.edu.unq.circuito.model.Recital;
 import ar.edu.unq.circuito.model.TipoMaterial;
+import ar.edu.unq.circuito.repo.BandaRepository;
 import ar.edu.unq.circuito.repo.RecitalRepository;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -17,10 +18,12 @@ import org.springframework.stereotype.Component;
 public class DatabaseLoader {
 
     private RecitalRepository recitalRepository;
+    private BandaRepository bandaRepository;
 
     @Autowired
-    public DatabaseLoader(RecitalRepository recitalRepository) {
+    public DatabaseLoader(RecitalRepository recitalRepository, BandaRepository bandaRepository ) {
         this.recitalRepository = recitalRepository;
+        this.bandaRepository = bandaRepository;
     }
 
     public void run(String... args) throws Exception {
@@ -57,6 +60,24 @@ public class DatabaseLoader {
         Banda camus = BandaBuilderForLoader.conNombre("Camus").conInfo("somos una banda del sur de Buenos aires, hacemos rock").conImagen("http://www.laizquierdadiario.com/IMG/arton3346.jpg").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
         Banda dementes = BandaBuilderForLoader.conNombre("Dementes").conInfo("somos una banda de rock").conImagen("http://dementesska.es/wp-content/uploads/2016/01/footer-logo.png").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();  
         Banda laRenga = BandaBuilderForLoader.conNombre("La Renga").conInfo("somos una banda del sur de Buenos aires, hacemos metal").conImagen("https://www.larenga.com/images/logo.png").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(Arrays.asList(videoLaRenga, albunRenga)).build();
+        
+        bandaRepository.save(banda);
+        bandaRepository.save(elBanda);
+        bandaRepository.save(aluminosis);
+        bandaRepository.save(etiliko);
+        bandaRepository.save(potencial);
+        bandaRepository.save(desorbitados);
+        bandaRepository.save(gondwana);
+        bandaRepository.save(amnecia);
+        bandaRepository.save(forasteros);
+        bandaRepository.save(laMississippi);
+        bandaRepository.save(demoledor);
+        bandaRepository.save(donCabot);
+        bandaRepository.save(laMocosa);
+        bandaRepository.save(laKatana);
+        bandaRepository.save(camus);
+        bandaRepository.save(dementes);
+        bandaRepository.save(laRenga);
         
         //ConurbanoBlues
         //Furias del metal

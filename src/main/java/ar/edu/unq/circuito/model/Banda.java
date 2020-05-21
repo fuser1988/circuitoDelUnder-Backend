@@ -32,10 +32,10 @@ public class Banda {
     private String imagen;
     @NotNull
     private String info;
-    
+
     @OneToMany(cascade = CascadeType.ALL)
     private List<Material> material;
-    
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
@@ -95,5 +95,5 @@ public class Banda {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-    
+
 }
