@@ -27,7 +27,7 @@ public class UsuarioServiiceTest extends CircuitoDelUnderBackendApplicationTests
         ReferenciaUsuarioVo referenciaUsuarioVo = new ReferenciaUsuarioVo();
         referenciaUsuarioVo.setReferenciaId(idReferenciaNoRegistrado);
         referenciaUsuarioVo.setNombre("Juan carlso");
-        referenciaUsuarioVo.setEmail("juanCarlos@gmail.com");
+        referenciaUsuarioVo.setEmail("sergioluke35@gmail.com");
         Usuario usuario = usuarioService.identificarUsuarioPorReferencia(referenciaUsuarioVo);
         assertThat(usuario).hasFieldOrPropertyWithValue("tipoUsuario", TipoUsuario.REGISTRADO_SIN_CONFIRMACION);;
     }
