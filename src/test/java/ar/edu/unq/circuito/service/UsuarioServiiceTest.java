@@ -6,7 +6,6 @@ import ar.edu.unq.circuito.builder.UsuarioBuilder;
 import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.TipoUsuario;
 import ar.edu.unq.circuito.model.Usuario;
-import ar.edu.unq.circuito.repo.RecitalRepository;
 import ar.edu.unq.circuito.vo.ReferenciaUsuarioVo;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;

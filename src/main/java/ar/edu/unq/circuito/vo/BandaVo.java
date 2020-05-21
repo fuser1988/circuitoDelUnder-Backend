@@ -1,8 +1,6 @@
 package ar.edu.unq.circuito.vo;
 
-import ar.edu.unq.circuito.model.Genero;
 import ar.edu.unq.circuito.model.Material;
-import ar.edu.unq.circuito.model.Usuario;
 import java.util.List;
 
 public class BandaVo {
