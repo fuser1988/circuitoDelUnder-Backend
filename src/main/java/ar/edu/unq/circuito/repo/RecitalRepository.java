@@ -16,7 +16,7 @@ public interface RecitalRepository extends JpaRepository<Recital, Long>{
                         + "INNER JOIN recital_bandas c ON r.id = c.recital_id "
                         + "INNER JOIN  banda b  ON c.bandas_id = b.id "
                         + "INNER JOIN  genero g  ON g.banda_id = b.id "
-                        + "AND g.genero LIKE %?1% ;"
+                        + "AND g.nombre LIKE %?1% ;"
                         , nativeQuery = true)
 	List<Recital> findByGeneros(String genero);
 

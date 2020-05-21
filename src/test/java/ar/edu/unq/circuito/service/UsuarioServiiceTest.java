@@ -6,7 +6,6 @@ import ar.edu.unq.circuito.builder.UsuarioBuilder;
 import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.TipoUsuario;
 import ar.edu.unq.circuito.model.Usuario;
-import ar.edu.unq.circuito.repo.RecitalRepository;
 import ar.edu.unq.circuito.vo.ReferenciaUsuarioVo;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
@@ -28,7 +27,7 @@ public class UsuarioServiiceTest extends CircuitoDelUnderBackendApplicationTests
         ReferenciaUsuarioVo referenciaUsuarioVo = new ReferenciaUsuarioVo();
         referenciaUsuarioVo.setReferenciaId(idReferenciaNoRegistrado);
         referenciaUsuarioVo.setNombre("Juan carlso");
-        referenciaUsuarioVo.setEmail("juanCarlos@gmail.com");
+        referenciaUsuarioVo.setEmail("sergioluke35@gmail.com");
         Usuario usuario = usuarioService.identificarUsuarioPorReferencia(referenciaUsuarioVo);
         assertThat(usuario).hasFieldOrPropertyWithValue("tipoUsuario", TipoUsuario.REGISTRADO_SIN_CONFIRMACION);;
     }

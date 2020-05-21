@@ -24,11 +24,13 @@ public class DatabaseLoader {
     }
 
     public void run(String... args) throws Exception {
-    	Material videoEtiliko = new Material();
+    	
+        Material videoEtiliko = new Material();
     	videoEtiliko.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
     	videoEtiliko.setUrl("https://www.youtube.com/embed/Qmb1pGtgj8I?list=PLHL_xXZsGfMY9V4VjjsHqNofLS55hyCbH");
     	videoEtiliko.setComentario("Video del tema Su Falso Mundo del álbun No hay agua");
-    	Material videoLaRenga = new Material();
+    	
+        Material videoLaRenga = new Material();
     	videoLaRenga.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
     	videoLaRenga.setUrl("https://www.youtube.com/embed/rEETm_4BPDc");
     	videoLaRenga.setComentario("Video del tema Corazón Fugitivo del albun Pesados Vestigios");

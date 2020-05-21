@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
@@ -27,6 +28,7 @@ public class Banda {
     @CollectionTable(name = "genero", joinColumns = @JoinColumn(name = "banda_id"))
     private List<Genero> generos;
     @NotNull
+    @Lob
     private String imagen;
     @NotNull
     private String info;

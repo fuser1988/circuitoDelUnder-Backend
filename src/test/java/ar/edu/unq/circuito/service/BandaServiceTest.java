@@ -29,7 +29,7 @@ public class BandaServiceTest extends CircuitoDelUnderBackendApplicationTests {
         Banda banda2 = BandaBuilder.conNombre("Desorbitados").build(em);
         Banda banda3 = BandaBuilder.conNombre("Demoledor").build(em);
 
-        List<Banda> bandasrecuperados = bandaService.buscarTodos();
+        List<BandaVo> bandasrecuperados = bandaService.buscarTodos();
         assertThat(bandasrecuperados).size().isEqualTo(3);
     }
     
