@@ -14,6 +14,7 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
+import org.hibernate.annotations.Type;
 
 @Entity
 public class Banda {
@@ -29,6 +30,7 @@ public class Banda {
     private List<Genero> generos;
     @NotNull
     @Lob
+    @Type(type = "text")
     private String imagen;
     @NotNull
     private String info;
