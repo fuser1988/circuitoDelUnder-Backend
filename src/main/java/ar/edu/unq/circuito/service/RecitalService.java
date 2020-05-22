@@ -11,6 +11,7 @@ import ar.edu.unq.circuito.model.Recital;
 import ar.edu.unq.circuito.repo.BandaRepository;
 import ar.edu.unq.circuito.repo.RecitalRepository;
 import ar.edu.unq.circuito.util.DatabaseLoader;
+import ar.edu.unq.circuito.vo.BandaVo;
 import ar.edu.unq.circuito.vo.RecitalVo;
 
 import java.util.logging.Level;
@@ -43,10 +44,10 @@ public class RecitalService {
     	return recitalRepository.save(res);
     }
 
-    private List<Banda> procesarBandas(List<Long> bandasVo) {
+    private List<Banda> procesarBandas(List<BandaVo> bandasVo) {
 		List<Banda> listaBandas = new ArrayList<Banda>();
-		bandasVo.forEach((id) -> {
-			Banda bandaObtenida = bandaRepository.findById(id).get();
+		bandasVo.forEach((banda) -> {
+			Banda bandaObtenida = bandaRepository.findById(banda.getId()).get();
 			listaBandas.add(bandaObtenida);
 		});
 		return listaBandas;
