@@ -1,6 +1,8 @@
 package ar.edu.unq.circuito.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,7 +17,8 @@ public class Usuario {
     private String email;
     private String nombre;
     private TipoUsuario tipoUsuario;
-    @OneToOne(mappedBy="usuario")
+    @OneToOne(mappedBy="usuario",fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("usuario")
     private Banda banda;
 
     public Usuario(long id, long idDeReferrencia, String email, String nombre, TipoUsuario tipoUsuario) {

@@ -32,7 +32,7 @@ public class GestionCodigoValidacionService {
         if ( ! usuarioRepository.existsById(usuarioId)) {
             throw new NoSuchElementException("El id de usuario no existe");
         }
-        String codigo = GeneradorDeCodigo.generarCodigo();
+        final String codigo = GeneradorDeCodigo.generarCodigo();
         
         CodigoDeCuentaDeUsuario codigoDeCuentaDeUsuario = new CodigoDeCuentaDeUsuario();
         codigoDeCuentaDeUsuario.setCodigo(codigo);
