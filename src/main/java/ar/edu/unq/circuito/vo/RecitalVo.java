@@ -8,7 +8,7 @@ public class RecitalVo {
 
 	private String nombre;
     private String descripcion;
-    private List<Long> bandas;
+    private List<BandaVo> bandas;
     private LocalDate fecha;
     private LocalTime hora;
     private String direccion;
@@ -29,10 +29,10 @@ public class RecitalVo {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public List<Long> getBandas() {
+	public List<BandaVo> getBandas() {
 		return bandas;
 	}
-	public void setBandas(List<Long> bandas) {
+	public void setBandas(List<BandaVo> bandas) {
 		this.bandas = bandas;
 	}
 	public LocalDate getFecha() {
