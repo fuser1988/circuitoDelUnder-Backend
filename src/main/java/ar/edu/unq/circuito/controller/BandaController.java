@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ar.edu.unq.circuito.model.Banda;
@@ -31,5 +32,17 @@ public class BandaController {
     @GetMapping("/bandas")
     public List<BandaVo> buscar() {
         return bandaService.buscarTodos();
+    }
+    
+    @CrossOrigin
+    @GetMapping("/bandas/genero")
+    public List<Banda> filterGenero(@RequestParam(value = "genero") String genero) {
+        return bandaService.filterGenero(genero);
+    }
+    
+    @CrossOrigin
+    @GetMapping("/bandas/banda")
+    public List<Banda> filterNombre(@RequestParam(value = "nombre") String nombre) {
+        return bandaService.filterNombre(nombre);
     }
 }

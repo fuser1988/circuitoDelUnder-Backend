@@ -58,4 +58,12 @@ public class BandaService {
         return listaBandaVo;
     }
 
+	public List<Banda> filterGenero(String genero) {
+		return bandaRepository.findByGeneros(genero.toUpperCase());
+	}
+
+	public List<Banda> filterNombre(String nombre) {
+		return bandaRepository.findByNombre(nombre.toLowerCase());
+	}
+
 }
