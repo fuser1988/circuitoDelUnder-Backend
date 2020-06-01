@@ -29,8 +29,14 @@ public class BandaController {
     }
 
     @CrossOrigin
+    @GetMapping("/bandasRef")
+    public List<BandaVo> buscarRef() {
+        return bandaService.buscarTodosRef();
+    }
+    
+    @CrossOrigin
     @GetMapping("/bandas")
-    public List<BandaVo> buscar() {
+    public List<Banda> buscar() {
         return bandaService.buscarTodos();
     }
     
