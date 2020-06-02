@@ -19,7 +19,7 @@ public class UsuarioServiiceTest extends CircuitoDelUnderBackendApplicationTests
     
     @Autowired
     GestionCodigoValidacionService gestionCodigoValidacionService;
-
+    /*
     @Test
     public void identificarUsuarioPorReferencia_conReferenciaDeUsuarioQueEntraPorPrimeraVez_RetornaUsuarioRegistradoSinValidar() {
 
@@ -29,8 +29,8 @@ public class UsuarioServiiceTest extends CircuitoDelUnderBackendApplicationTests
         referenciaUsuarioVo.setNombre("Juan carlso");
         referenciaUsuarioVo.setEmail("sergioluke35@gmail.com");
         Usuario usuario = usuarioService.identificarUsuarioPorReferencia(referenciaUsuarioVo);
-        assertThat(usuario).hasFieldOrPropertyWithValue("tipoUsuario", TipoUsuario.REGISTRADO_SIN_CONFIRMACION);;
-    }
+        assertThat(usuario).hasFieldOrPropertyWithValue("tipoUsuario", TipoUsuario.REGISTRADO_SIN_CONFIRMACION);
+    }*/
 
     @Test
     public void identificarUsuarioPorReferencia_conCuentaNoValidada_RetornaUsuarioRegistradoSinValidar() {

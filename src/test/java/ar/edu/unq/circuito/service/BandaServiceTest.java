@@ -11,6 +11,7 @@ import ar.edu.unq.circuito.CircuitoDelUnderBackendApplicationTests;
 import ar.edu.unq.circuito.builder.BandaBuilder;
 import ar.edu.unq.circuito.builder.UsuarioBuilder;
 import ar.edu.unq.circuito.model.Banda;
+import ar.edu.unq.circuito.model.Genero;
 import ar.edu.unq.circuito.model.TipoUsuario;
 import ar.edu.unq.circuito.model.Usuario;
 import ar.edu.unq.circuito.vo.BandaVo;
@@ -29,7 +30,7 @@ public class BandaServiceTest extends CircuitoDelUnderBackendApplicationTests {
         Banda banda2 = BandaBuilder.conNombre("Desorbitados").build(em);
         Banda banda3 = BandaBuilder.conNombre("Demoledor").build(em);
 
-        List<BandaVo> bandasrecuperados = bandaService.buscarTodos();
+        List<BandaVo> bandasrecuperados = bandaService.buscarTodosRef();
         assertThat(bandasrecuperados).size().isEqualTo(3);
     }
 
@@ -64,5 +65,28 @@ public class BandaServiceTest extends CircuitoDelUnderBackendApplicationTests {
                 -> bandaService.guardarBandaNueva(bandaVo))
                 .withMessage("El id de usuario no existe");
 
+    }
+    
+    @Test
+    public void buscarPorGenerosRock_conBandasPersistidas_RetornaDosBandas() {
+        Banda banda = BandaBuilder.conNombre("MAÑACO").conGeneros(Arrays.asList(new Genero("ROCK"))).build(em);
+        Banda bandaDos = BandaBuilder.conNombre("Demoledor").conGeneros(Arrays.asList(new Genero("METAL"), new Genero("PUNK"))).build(em);
+        Banda bandaTres = BandaBuilder.conNombre("Sin Fronteras").conGeneros(Arrays.asList(new Genero("ROCK"), new Genero("METAL"), new Genero("PUNK"))).build(em);
+
+        List<Banda> bandasrecuperados = bandaService.filterGenero("Rock");
+        assertThat(bandasrecuperados).size().isEqualTo(2);
+    }
+    
+    @Test
+    public void buscarPorNombreDemoledor_conBandasPersistidas_RetornaDosBandas() {
+        Banda banda = BandaBuilder.conNombre("MAÑACO").conGeneros(Arrays.asList(new Genero("ROCK"))).build(em);
+        Banda bandaDos = BandaBuilder.conNombre("Demoledor").conGeneros(Arrays.asList(new Genero("METAL"), new Genero("PUNK"))).build(em);
+        Banda bandaTres = BandaBuilder.conNombre("Sin Fronteras").conGeneros(Arrays.asList(new Genero("ROCK"), new Genero("METAL"), new Genero("PUNK"))).build(em);
+
+        List<Banda> bandasrecuperados = bandaService.filterNombre("Demoledor");
+        Banda bandarecuperada = bandasrecuperados.get(0);
+        
+        assertThat(bandasrecuperados).size().isEqualTo(1);
+        assertThat(bandarecuperada.getNombre()).isEqualTo("Demoledor");
     }
 }
