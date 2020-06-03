@@ -48,7 +48,7 @@ public class BandaService {
 
     public List<BandaVo> buscarTodosRef() {
         List<Banda> listaBanda = bandaRepository.findAll();
-        List<BandaVo> listaBandaVo = new ArrayList<BandaVo>();
+        List<BandaVo> listaBandaVo = new ArrayList();
         listaBanda.forEach((b) -> {
             BandaVo newB = new BandaVo();
             newB.setId(b.getId());
@@ -57,17 +57,17 @@ public class BandaService {
         });
         return listaBandaVo;
     }
-    
+
     public List<Banda> buscarTodos() {
-    	return bandaRepository.findAll();
+        return bandaRepository.findAll();
     }
 
-	public List<Banda> filterGenero(String genero) {
-		return bandaRepository.findByGeneros(genero.toUpperCase());
-	}
+    public List<Banda> filterGenero(String genero) {
+        return bandaRepository.findByGeneros(genero.toUpperCase());
+    }
 
-	public List<Banda> filterNombre(String nombre) {
-		return bandaRepository.findByNombre(nombre.toLowerCase());
-	}
+    public List<Banda> filterNombre(String nombre) {
+        return bandaRepository.findByNombre(nombre.toLowerCase());
+    }
 
 }

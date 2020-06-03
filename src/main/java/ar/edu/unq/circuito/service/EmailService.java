@@ -36,10 +36,11 @@ public class EmailService {
                     + "<div> Bienvenido" + usuario.getNombre()+ "</div>"
                     + "<div>Tu código de validación es:</div>"
                     + "<div><strong>" + codigo + "</strong></div>"
-                    + "<div>Gracias</div>"
-                    + "Circuito del Under"
                     + "<img src= 'https://raw.githubusercontent.com/fuser1988/circuitoDelUnder-Documentacion/master/Circuito-del-under.png'/>"
-                    + "</div></body>"
+                    + "</div>"
+                    + "<div>Circuito del Under</div>"
+                    + "<div>Gracias</div>"
+                    + "</body>"
                     + "</html>", true);
 
             javaMailSender.send(mailMessage);

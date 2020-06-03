@@ -11,6 +11,7 @@ import ar.edu.unq.circuito.vo.ReferenciaUsuarioVo;
 import static org.assertj.core.api.Java6Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 public class UsuarioServiiceTest extends CircuitoDelUnderBackendApplicationTests {
 
@@ -19,7 +20,10 @@ public class UsuarioServiiceTest extends CircuitoDelUnderBackendApplicationTests
     
     @Autowired
     GestionCodigoValidacionService gestionCodigoValidacionService;
-    /*
+    
+    @MockBean
+    EmailService emailService;
+    
     @Test
     public void identificarUsuarioPorReferencia_conReferenciaDeUsuarioQueEntraPorPrimeraVez_RetornaUsuarioRegistradoSinValidar() {
 
@@ -30,7 +34,7 @@ public class UsuarioServiiceTest extends CircuitoDelUnderBackendApplicationTests
         referenciaUsuarioVo.setEmail("sergioluke35@gmail.com");
         Usuario usuario = usuarioService.identificarUsuarioPorReferencia(referenciaUsuarioVo);
         assertThat(usuario).hasFieldOrPropertyWithValue("tipoUsuario", TipoUsuario.REGISTRADO_SIN_CONFIRMACION);
-    }*/
+    }
 
     @Test
     public void identificarUsuarioPorReferencia_conCuentaNoValidada_RetornaUsuarioRegistradoSinValidar() {
