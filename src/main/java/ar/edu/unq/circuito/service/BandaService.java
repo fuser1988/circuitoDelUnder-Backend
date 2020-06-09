@@ -70,4 +70,8 @@ public class BandaService {
         return bandaRepository.findByNombre(nombre.toLowerCase());
     }
 
+	public Banda buscarPorId(Long id) {
+		return bandaRepository.findById(id).get();
+	}
+
 }
