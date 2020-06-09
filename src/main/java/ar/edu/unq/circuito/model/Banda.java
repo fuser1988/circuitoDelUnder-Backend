@@ -1,5 +1,6 @@
 package ar.edu.unq.circuito.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -42,6 +43,7 @@ public class Banda {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id")
     @JsonIgnoreProperties("banda")
+    @JsonIgnore
     private Usuario usuario;
 
     public long getId() {

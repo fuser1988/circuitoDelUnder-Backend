@@ -4,25 +4,27 @@ import ar.edu.unq.circuito.model.Material;
 import java.util.List;
 
 public class BandaVo {
-    
-	private long id;
+
+    private long id;
     private String nombre;
     private List<String> generos;
     private String imagen;
     private String info;
     private List<Material> material;
     private long usuarioId;
-    
-    public BandaVo() {};
+
+    public BandaVo() {
+    }
+
     public long getId() {
-		return id;
-	}
+        return id;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
@@ -69,6 +71,5 @@ public class BandaVo {
     public void setUsuarioId(long usuarioId) {
         this.usuarioId = usuarioId;
     }
-    
-    
+
 }
