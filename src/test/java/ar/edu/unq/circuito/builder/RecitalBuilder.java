@@ -2,6 +2,8 @@ package ar.edu.unq.circuito.builder;
 
 import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.Recital;
+import ar.edu.unq.circuito.model.Ubicacion;
+
 import com.somospnt.test.builder.AbstractPersistenceBuilder;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -23,6 +25,7 @@ public class RecitalBuilder extends AbstractPersistenceBuilder<Recital> {
         instance.setLugar("Bar Del Fondo");
         instance.setImagen("www.UnaUmagen.com/imagen");
         instance.setPrecio(0);
+        instance.setUbicacion(new Ubicacion(-34.706501,-58.2807187));
     }
 
     public RecitalBuilder conId(Long id) {
@@ -78,6 +81,11 @@ public class RecitalBuilder extends AbstractPersistenceBuilder<Recital> {
 
     public RecitalBuilder conPrecio(int precio) {
         instance.setPrecio(precio);
+        return this;
+    }
+    
+    public RecitalBuilder conUbicacion(Ubicacion ubicacion) {
+        instance.setUbicacion(ubicacion);
         return this;
     }
 }

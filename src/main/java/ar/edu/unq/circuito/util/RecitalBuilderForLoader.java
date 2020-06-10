@@ -2,6 +2,8 @@ package ar.edu.unq.circuito.util;
 
 import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.Recital;
+import ar.edu.unq.circuito.model.Ubicacion;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
@@ -18,6 +20,7 @@ public class RecitalBuilderForLoader {
     private String lugar;
     private String imagen;
     private int precio;
+    private Ubicacion ubicacion;
     
     public Recital build(){
         Recital recital = new Recital();
@@ -31,6 +34,7 @@ public class RecitalBuilderForLoader {
         recital.setLugar(lugar);
         recital.setImagen(imagen);
         recital.setPrecio(precio);
+        recital.setUbicacion(ubicacion);
         return recital;
     }
     
@@ -87,6 +91,11 @@ public class RecitalBuilderForLoader {
     
     public RecitalBuilderForLoader conPrecio(int precio) {
         this.precio = precio;
+        return this;
+    }
+    
+    public RecitalBuilderForLoader conUbicacion(Ubicacion ubicacion) {
+        this.ubicacion = ubicacion;
         return this;
     }
 }

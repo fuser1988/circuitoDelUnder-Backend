@@ -5,6 +5,7 @@ import ar.edu.unq.circuito.model.Genero;
 import ar.edu.unq.circuito.model.Material;
 import ar.edu.unq.circuito.model.Recital;
 import ar.edu.unq.circuito.model.TipoMaterial;
+import ar.edu.unq.circuito.model.Ubicacion;
 import ar.edu.unq.circuito.repo.BandaRepository;
 import ar.edu.unq.circuito.repo.RecitalRepository;
 import java.time.LocalDate;
@@ -111,7 +112,8 @@ public class DatabaseLoader {
                 .conDireccion("Alvares tomas 2015")
                 .conLugar("Bar del fondo")
                 .conImagen("https://depositosonoro.com/wp-content/uploads/2019/04/55478027_1689594917851261_4586995436853657600_o.jpg")
-                .conPrecio(0).build();
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.706501,-58.2807187)).build();
 
         Recital recitalDos = RecitalBuilderForLoader
                 .conNombre("Aluminosis")
@@ -123,7 +125,8 @@ public class DatabaseLoader {
                 .conDireccion("alvares tomas 2015")
                 .conLugar("Bar del fondo")
                 .conImagen("https://vudum.com.ar/wp-content/uploads/2018/06/DSC_8132-768x513.jpg")
-                .conPrecio(0).build();
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.481620, -58.522587)).build();
 
         Recital recitalTres = RecitalBuilderForLoader
                 .conNombre("Lolapeluza")
@@ -135,7 +138,8 @@ public class DatabaseLoader {
                 .conDireccion("Bernabe marquez 800")
                 .conLugar("Hipódromo de San Isidro")
                 .conImagen("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTaKkBYrBRb131SvqD4Nfw000qaBFtvL5L1WOvL2K7vStRzKtss&usqp=CAU")
-                .conPrecio(0).build();
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.481620, -58.522587)).build();
 
         Recital recitalCuatro = RecitalBuilderForLoader
                 .conNombre("REGGAE for ever")
@@ -147,7 +151,8 @@ public class DatabaseLoader {
                 .conDireccion("Andres baranda 941")
                 .conLugar("Club Tucuman")
                 .conImagen("https://pxb.cdn.0221.com.ar/0221/022019/1549635228344.jpg?x=18&y=95&width=1463&height=732&rotate=0&scaleX=1&scaleY=1&ow=1500&oh=964&&cw=1920&ch=950")
-                .conPrecio(0).build();
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.725068, -58.269700)).build();
 
         Recital recitalCinco = RecitalBuilderForLoader
                 .conNombre("Escuela de Blues")
@@ -159,7 +164,8 @@ public class DatabaseLoader {
                 .conDireccion("almirante brown 662")
                 .conLugar("La Barra")
                 .conImagen("https://pxb.cdn.elchubut.com.ar/chubut/022020/1582235138036/Hoy%20terapia%2001.jpeg")
-                .conPrecio(0).build();
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.722511, -58.255382)).build();
 
         Recital recitalSeis = RecitalBuilderForLoader
                 .conNombre("Furias del metal")
@@ -171,8 +177,9 @@ public class DatabaseLoader {
                 .conDireccion("Mitre 2250")
                 .conLugar("La caldera")
                 .conImagen("http://cdn-d15c.kxcdn.com/contenidos/201904/2a53ef1d-6e6c-4b34-bc65-3f85e202f217.png")
-                .conPrecio(0).build();
-
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.672205, -58.351802)).build();
+        
         Recital recitalSiete = RecitalBuilderForLoader
                 .conNombre("Las ex")
                 .conDescripcion("Hoy una noche de a puro Punk Rock en el Salon Pueyrredón. Las ex presentan su nuevo disco en casa. No te lo podes perder! Las mejores noches de rock están en Salon Pueyrredón")
@@ -183,8 +190,9 @@ public class DatabaseLoader {
                 .conDireccion("Av. Santafe 2585")
                 .conLugar("Salon Pueyrredón")
                 .conImagen("https://video-images.vice.com/_uncategorized/1539281513314-Paltax.jpeg")
-                .conPrecio(0).build();
-
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.579117, -58.425141)).build();
+/*
         Recital recitalOcho = RecitalBuilderForLoader
                 .conNombre("Don Cabot")
                 .conDescripcion("Hoy una noche de a Rock and Roll  y blus en El faro. Gandes exponentes del rockandroll local se Presentan en El faro tu lugar")
@@ -195,8 +203,9 @@ public class DatabaseLoader {
                 .conDireccion("Ortusar 6582")
                 .conLugar("El faro")
                 .conImagen("https://lh3.googleusercontent.com/proxy/Z_w7AOCOJdYNkYvBfzioLGDcGuE5bFzN-0PPkriGhbJaUufICCpsTFSSkHU8jB0DeRNfnxEOInQSALDGbePokayH13Zqr0sfGM0brntXvCv25Q")
-                .conPrecio(0).build();
-
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.579117, -58.425141)).build();
+        		
         Recital recitalNueve = RecitalBuilderForLoader
                 .conNombre("Recitales en resistencia")
                 .conDescripcion("Una nueva ediccion de Recitales en recistencia se llevara a cabo en el complejo cultural Maria Ocampo.No te lo podes perder.Entrada totalmente gratuita.")
@@ -207,8 +216,9 @@ public class DatabaseLoader {
                 .conDireccion("Rio bamba 2255")
                 .conLugar("Centro cultural Maria Campo")
                 .conImagen("http://www.chacofederal.com/galeria/recital0507.jpg")
-                .conPrecio(0).build();
-
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.579117, -58.425141)).build();
+*/
         Recital recitalDiez = RecitalBuilderForLoader
                 .conNombre("Solventes de Todo")
                 .conDescripcion("La legendaria banda del corurbano vuelve a los ecenarios de la mano con nuevo materia y vos no te lo podes perder.")
@@ -219,8 +229,9 @@ public class DatabaseLoader {
                 .conDireccion("San martin 2258")
                 .conLugar("Sudaka")
                 .conImagen("http://entreriosahora.com/wp-content/uploads/2019/06/rock-759x500.jpg")
-                .conPrecio(0).build();
-
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.769387, -58.316998)).build();
+/*
         Recital recitalOnce = RecitalBuilderForLoader
                 .conNombre("La tia Mary")
                 .conDescripcion("Vuelve La tia Mary al barrio que los vio nacer, se presenta en festival solidario por el merendero las comadrejas junto a bandas amigas. ")
@@ -231,8 +242,9 @@ public class DatabaseLoader {
                 .conDireccion("Garatica 2158")
                 .conLugar("Plaza lagarde")
                 .conImagen("https://3.bp.blogspot.com/-bsRZkKNAB50/UaOhvlD_FbI/AAAAAAAAADM/5IAAXTrJfs4/s1600/lavarropas.jpg")
-                .conPrecio(0).build();
-
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.769387, -58.316998)).build();
+*/
         Recital recitalDoce = RecitalBuilderForLoader
                 .conNombre("Incognitos de la noche")
                 .conDescripcion("Hoy una noche de a puro rock en La Barra. Tenemos el show en vivo de Incognitos de la noche, FORASTEROS, La Mississippi y Conurbano Blues. Los esperamos! Las mejores noches de rock están en La Barra")
@@ -243,7 +255,8 @@ public class DatabaseLoader {
                 .conDireccion("almirante brown 662")
                 .conLugar("La Barra")
                 .conImagen("https://lh3.googleusercontent.com/proxy/H6iV9jvILKjgrKCjjgmXUCQ-fqBHDrpjZyWetvdd3ixfIhsDO2D9CHtIoTMC03dmSOfiwlObB00YrPDrm1Fz50mJe2bw0yG5OPBREYIYv5T5LqThrdOw9dLe")
-                .conPrecio(0).build();
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.722511, -58.255382)).build();
 
         Recital recitalTrece = RecitalBuilderForLoader
                 .conNombre("Silencio del vacio")
@@ -252,10 +265,13 @@ public class DatabaseLoader {
                 .conFecha(LocalDate.of(2020, 10, 11))
                 .conHora(LocalTime.of(20, 00, 00))
                 .conLocalidad("Avellaneda")
-                .conDireccion("Mitre 2245")
-                .conLugar("El Catar")
+                //.conDireccion("Mitre 2245")
+                //.conLugar("El Catar")
+                .conDireccion("Mitre 2226")
+                .conLugar("Asociación Cultural y Folklórica Martín Fierro")
                 .conImagen("https://media.datachaco.com/adjuntos/244/imagenes/000/896/0000896826.jpg")
-                .conPrecio(0).build();
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.672135, -58.352027)).build();
 
         Recital recitalCatorce = RecitalBuilderForLoader
                 .conNombre("Volátil")
@@ -264,12 +280,14 @@ public class DatabaseLoader {
                 .conFecha(LocalDate.of(2020, 9, 21))
                 .conHora(LocalTime.of(23, 00, 00))
                 .conLocalidad("Burzaco")
-                .conDireccion("Pedro moran 6622")
+                //.conDireccion("Pedro moran 6622")
+                .conDireccion("Carlos Pellegrini 788")
                 .conLugar("El Amparo")
                 .conImagen("http://03442.com.ar/noticias/wp-content/uploads/2016/08/VOLATIL-ROCK-EN-BS-AS-1-e1471890391969.jpg")
-                .conPrecio(0).build();
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.825670, -58.390322)).build();
 
-        Recital recitalQuince = RecitalBuilderForLoader
+      /*  Recital recitalQuince = RecitalBuilderForLoader
                 .conNombre("Festival musical Todos por Juan")
                 .conDescripcion("Gran festival musical 'Todos Por Juan' participa de esta campaña solidaria y apoya el rock independiente. Entrada un alimento no precedero")
                 .conBandas(Arrays.asList(demoledor, laMississippi))
@@ -279,7 +297,7 @@ public class DatabaseLoader {
                 .conDireccion("Almirante brown 2258")
                 .conLugar("Plaza Cerrano")
                 .conImagen("https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/31/2016/04/15130500/1dondeescucharmusicaenvivoenbuenosaires.jpg")
-                .conPrecio(0).build();
+                .conPrecio(0).build();*/
 
         Recital recitalDieciSeis = RecitalBuilderForLoader
                 .conNombre("Dementes")
@@ -291,7 +309,8 @@ public class DatabaseLoader {
                 .conDireccion("Rocha 662")
                 .conLugar("La Terraza")
                 .conImagen("https://www.inforegion.com.ar/wp-content/uploads/2019/08/banda1200.jpg")
-                .conPrecio(0).build();
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.770335, -58.244218)).build();
 
         recitalRepository.save(recitalUno);
         recitalRepository.save(recitalDos);
@@ -300,14 +319,14 @@ public class DatabaseLoader {
         recitalRepository.save(recitalCinco);
         recitalRepository.save(recitalSeis);
         recitalRepository.save(recitalSiete);
-        recitalRepository.save(recitalOcho);
-        recitalRepository.save(recitalNueve);
+        //recitalRepository.save(recitalOcho);
+        //recitalRepository.save(recitalNueve);
         recitalRepository.save(recitalDiez);
-        recitalRepository.save(recitalOnce);
+        //recitalRepository.save(recitalOnce);
         recitalRepository.save(recitalDoce);
         recitalRepository.save(recitalTrece);
         recitalRepository.save(recitalCatorce);
-        recitalRepository.save(recitalQuince);
+        //recitalRepository.save(recitalQuince);
         recitalRepository.save(recitalDieciSeis);
 
     }
