@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
+import ar.edu.unq.circuito.model.Ubicacion;
+
 public class RecitalVo {
 
 	private String nombre;
@@ -16,6 +18,7 @@ public class RecitalVo {
     private String lugar;
     private String imagen;
     private int precio;
+    private Ubicacion ubicacion;
     
 	public String getNombre() {
 		return nombre;
@@ -76,6 +79,12 @@ public class RecitalVo {
 	}
 	public void setPrecio(int precio) {
 		this.precio = precio;
+	}
+	public Ubicacion getUbicacion() {
+		return ubicacion;
+	}
+	public void setUbicacion(Ubicacion ubicacion) {
+		this.ubicacion = ubicacion;
 	}
     
 }

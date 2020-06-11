@@ -41,7 +41,8 @@ public class RecitalService {
         res.setImagen(recitalVo.getImagen());
         res.setPrecio(recitalVo.getPrecio());
         res.setBandas(procesarBandas(recitalVo.getBandas()));
-
+        res.setUbicacion(recitalVo.getUbicacion());
+        
         return recitalRepository.save(res);
     }
 
