@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unq.circuito.model.Banda;
@@ -55,12 +57,12 @@ public class RecitalService {
         return listaBandas;
     }
 
-    public List<Recital> buscarTodos() {
-        return recitalRepository.findAll();
+    public Page<Recital> buscarTodos(Pageable pageable) {
+        return recitalRepository.findAll(pageable);
     }
 
-    public List<Recital> filterGenero(String genero) {
-        return recitalRepository.findByGeneros(genero.toUpperCase());
+    public Page<Recital> filterGenero(String genero, Pageable pageable) {
+        return recitalRepository.findByGeneros(genero.toUpperCase(), pageable);
     }
 
     public Recital buscarPorId(long id) {

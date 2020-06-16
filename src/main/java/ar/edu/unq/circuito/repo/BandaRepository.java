@@ -3,6 +3,8 @@ package ar.edu.unq.circuito.repo;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -15,12 +17,18 @@ public interface BandaRepository extends JpaRepository<Banda, Long> {
 	@Query(value = "SELECT DISTINCT b.* "
             + "FROM banda b "
             + "INNER JOIN  genero g  ON g.banda_id = b.id "
+            + "AND g.nombre LIKE %?1%",
+            countQuery = "SELECT DISTINCT COUNT(*) "
+            + "FROM banda b "
+            + "INNER JOIN  genero g  ON g.banda_id = b.id "
             + "AND g.nombre LIKE %?1% ;",
             nativeQuery = true)
-	List<Banda> findByGeneros(String genero);
+	Page<Banda> findByGeneros(String genero, Pageable pageable);
 	
 	@Query(value = "SELECT DISTINCT * "
+			+ "FROM banda b WHERE LOWER(b.nombre) LIKE %?1%",
+			countQuery = "SELECT DISTINCT COUNT(*) "
 			+ "FROM banda b WHERE LOWER(b.nombre) LIKE %?1% ;",
             nativeQuery = true)
-	List<Banda> findByNombre(String nombre);
+	Page<Banda> findByNombre(String nombre, Pageable pageable);
 }

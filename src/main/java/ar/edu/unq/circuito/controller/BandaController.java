@@ -3,6 +3,8 @@ package ar.edu.unq.circuito.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,20 +39,20 @@ public class BandaController {
     
     @CrossOrigin
     @GetMapping("/bandas")
-    public List<Banda> buscar() {
-        return bandaService.buscarTodos();
+    public Page<Banda> buscar(Pageable pageable) {
+        return bandaService.buscarTodos(pageable);
     }
     
     @CrossOrigin
     @GetMapping("/bandas/genero")
-    public List<Banda> filterGenero(@RequestParam(value = "genero") String genero) {
-        return bandaService.filterGenero(genero);
+    public Page<Banda> filterGenero(@RequestParam(value = "genero") String genero, Pageable pageable) {
+        return bandaService.filterGenero(genero, pageable);
     }
     
     @CrossOrigin
     @GetMapping("/bandas/banda")
-    public List<Banda> filterNombre(@RequestParam(value = "nombre") String nombre) {
-        return bandaService.filterNombre(nombre);
+    public Page<Banda> filterNombre(@RequestParam(value = "nombre") String nombre, Pageable pageable) {
+        return bandaService.filterNombre(nombre, pageable);
     }
     
     @CrossOrigin

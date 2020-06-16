@@ -3,6 +3,8 @@ package ar.edu.unq.circuito.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,14 +41,14 @@ public class RecitalController {
 
     @CrossOrigin
     @GetMapping("/recitales")
-    public List<Recital> buscar() {
-        return recitalService.buscarTodos();
+    public Page<Recital> buscar(Pageable pageable) {
+        return recitalService.buscarTodos(pageable);
     }
 
     @CrossOrigin
     @GetMapping("/recitales/bandas")
-    public List<Recital> filterGenero(@RequestParam(value = "genero") String genero) {
-        return recitalService.filterGenero(genero);
+    public Page<Recital> filterGenero(@RequestParam(value = "genero") String genero, Pageable pageable) {
+        return recitalService.filterGenero(genero, pageable);
     }
 
     @CrossOrigin

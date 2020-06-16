@@ -6,6 +6,9 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 import ar.edu.unq.circuito.CircuitoDelUnderBackendApplicationTests;
 import ar.edu.unq.circuito.builder.BandaBuilder;
@@ -73,7 +76,9 @@ public class BandaServiceTest extends CircuitoDelUnderBackendApplicationTests {
         Banda bandaDos = BandaBuilder.conNombre("Demoledor").conGeneros(Arrays.asList(new Genero("METAL"), new Genero("PUNK"))).build(em);
         Banda bandaTres = BandaBuilder.conNombre("Sin Fronteras").conGeneros(Arrays.asList(new Genero("ROCK"), new Genero("METAL"), new Genero("PUNK"))).build(em);
 
-        List<Banda> bandasrecuperados = bandaService.filterGenero("Rock");
+        Pageable paging = PageRequest.of(0, 2);
+        Page<Banda> bandasrecuperados = bandaService.filterGenero("Rock",paging);
+       
         assertThat(bandasrecuperados).size().isEqualTo(2);
     }
     
@@ -83,10 +88,10 @@ public class BandaServiceTest extends CircuitoDelUnderBackendApplicationTests {
         Banda bandaDos = BandaBuilder.conNombre("Demoledor").conGeneros(Arrays.asList(new Genero("METAL"), new Genero("PUNK"))).build(em);
         Banda bandaTres = BandaBuilder.conNombre("Sin Fronteras").conGeneros(Arrays.asList(new Genero("ROCK"), new Genero("METAL"), new Genero("PUNK"))).build(em);
 
-        List<Banda> bandasrecuperados = bandaService.filterNombre("Demoledor");
-        Banda bandarecuperada = bandasrecuperados.get(0);
-        
-        assertThat(bandasrecuperados).size().isEqualTo(1);
-        assertThat(bandarecuperada.getNombre()).isEqualTo("Demoledor");
+        Pageable paging = PageRequest.of(0, 2);
+        Page<Banda> bandasrecuperados = bandaService.filterNombre("Demoledor",paging);
+
+        assertThat(bandasrecuperados.getTotalElements()).isEqualTo(1);
+        assertThat(bandasrecuperados.getContent().get(0).getNombre()).isEqualTo("Demoledor");
     }
 }

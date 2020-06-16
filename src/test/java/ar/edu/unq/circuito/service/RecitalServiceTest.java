@@ -13,6 +13,9 @@ import java.util.List;
 import static org.assertj.core.api.Java6Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 public class RecitalServiceTest extends CircuitoDelUnderBackendApplicationTests {
 
@@ -28,8 +31,10 @@ public class RecitalServiceTest extends CircuitoDelUnderBackendApplicationTests 
         Recital recitalPersistidoDos = RecitalBuilder.conNombre("Convencion de Batmans ").build(em);
         Recital recitalPersistidoTres = RecitalBuilder.conNombre("El rotage").build(em);
 
-        List<Recital> recitalesrecuperados = recitalService.buscarTodos();
-        assertThat(recitalesrecuperados).size().isEqualTo(3);
+        Pageable paging = PageRequest.of(0, 2);
+        Page<Recital> recitalesrecuperados = recitalService.buscarTodos(paging);
+        
+        assertThat(recitalesrecuperados.getTotalElements()).isEqualTo(3);
     }
 
     @Test
@@ -50,7 +55,9 @@ public class RecitalServiceTest extends CircuitoDelUnderBackendApplicationTests 
         Recital recitalPersistidoDos = RecitalBuilder.conNombre("Festi metal").conBandas(Arrays.asList(bandaDos)).build(em);
         Recital recitalPersistidoTres = RecitalBuilder.conNombre("Sin fronteras").conBandas(Arrays.asList(bandaTres)).build(em);
 
-        List<Recital> recitalesrecuperados = recitalService.filterGenero("Rock");
-        assertThat(recitalesrecuperados).size().isEqualTo(2);
+        Pageable paging = PageRequest.of(0, 2);
+        Page<Recital> recitalesrecuperados = recitalService.filterGenero("Rock",paging);
+        
+        assertThat(recitalesrecuperados.getTotalElements()).isEqualTo(2);
     }
 }
