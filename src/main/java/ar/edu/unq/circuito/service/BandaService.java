@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.Genero;
+import ar.edu.unq.circuito.model.Material;
+import ar.edu.unq.circuito.model.TipoMaterial;
 import ar.edu.unq.circuito.model.TipoUsuario;
 import ar.edu.unq.circuito.model.Usuario;
 import ar.edu.unq.circuito.repo.BandaRepository;
@@ -38,8 +40,30 @@ public class BandaService {
         banda.setInfo(bandaVo.getInfo());
         banda.setGeneros(procesarGeneros(bandaVo.getGeneros()));
         banda.setUsuario(usuario);
-        banda.setMaterial(bandaVo.getMaterial());
+
+        List<Material> listaDeMaterial = bandaVo.getMaterial()
+                .stream()
+                .map(material -> (Material) material)
+                .map((material)->{
+                    return adaptarVideo(material);
+                })
+                .collect(Collectors.toList());
+
+        banda.setMaterial(listaDeMaterial);
+
         return bandaRepository.save(banda);
+    }
+
+    private Material adaptarVideo(Material material) {
+        Material materialResultado = material;
+//        if (TipoMaterial.TIPO_VIDEO == material.getTipoMaterial()) {
+            String urlMaterial = material.getUrl();
+            String pathVideo = urlMaterial.substring(32);
+            materialResultado.setUrl("https://www.youtube.com/embed/" + pathVideo);
+
+//        } 
+        return materialResultado;
+        
     }
 
     private List<Genero> procesarGeneros(List<String> generos) {
@@ -72,8 +96,8 @@ public class BandaService {
         return bandaRepository.findByNombre(nombre.toLowerCase(), pageable);
     }
 
-	public Banda buscarPorId(Long id) {
-		return bandaRepository.findById(id).get();
-	}
+    public Banda buscarPorId(Long id) {
+        return bandaRepository.findById(id).get();
+    }
 
 }
