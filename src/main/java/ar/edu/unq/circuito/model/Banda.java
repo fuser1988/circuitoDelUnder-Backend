@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -35,6 +36,7 @@ public class Banda {
     @Type(type = "text")
     private String imagen;
     @NotNull
+    @Column(columnDefinition = "TEXT")
     private String info;
 
     @OneToMany(cascade = CascadeType.ALL)

@@ -11,6 +11,7 @@ import ar.edu.unq.circuito.repo.RecitalRepository;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -43,18 +44,30 @@ public class DatabaseLoader {
     	albunRenga.setTipoMaterial(TipoMaterial.TIPO_ALBUM);
     	albunRenga.setUrl("https://open.spotify.com/album/1LcPYKYAui0A4MNHbbdnvS");
     	albunRenga.setComentario("Albun Trueno Tierra en Spotify");
+        
+        Material videoExplenden = new Material();
+    	videoExplenden.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
+    	videoExplenden.setUrl("https://www.youtube.com/embed/4h18GNtqjcc");
+    	videoExplenden.setComentario("Tus pupilas- en plaza sanmartin");
 
-    	Banda banda = BandaBuilderForLoader.conNombre("MAÑACO").conInfo("").conImagen("").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
-        Banda elBanda = BandaBuilderForLoader.conNombre("El Banda").conInfo("somos una banda del sur de Buenos aires, hacemos metal").conImagen("https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg").conGeneros(Arrays.asList(new Genero("METAL"))).conMaterial(null).build();
-        Banda aluminosis = BandaBuilderForLoader.conNombre("Aluminosis").conInfo("somos una banda española, hacemos rock").conImagen("https://a4-images.myspacecdn.com/images02/8/08beda0e2bd4463c833321ee33ce402e/full.jpg").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
+    	Material albumExplenden = new Material();
+    	albumExplenden.setTipoMaterial(TipoMaterial.TIPO_ALBUM);
+    	albumExplenden.setUrl("https://www.youtube.com/embed/9xtYdCX-CYI");
+    	albumExplenden.setComentario("Jardin de Omar- Disco 20014");
+        
+        List<Material> explendenMaterial =Arrays.asList(videoExplenden, albumExplenden); 
+
+    	Banda banda = BandaBuilderForLoader.conNombre("MAÑACO").conInfo("").conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/87357485_1533890093453193_2906730567674363904_n.jpg?_nc_cat=109&_nc_sid=7aed08&_nc_oc=AQmSwa-ISI-cqXDlwy58Vzqnb5VgpNa68LhKJIQLWffXm2RW48RAPLlb9SXP1l5PgUQRucrb8pzKHLb7VcH9u1fK&_nc_ht=scontent.faep4-1.fna&oh=2c1eb31f80d50519b399f447ab83f176&oe=5F080E90").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
+        Banda elBanda = BandaBuilderForLoader.conNombre("Explenden").conInfo("EXPLENDEN se formó en enero del 2001, y originalmente la banda estaba integrada por amigos de la escuela que se reunían en Villa Urquiza por las tardes y las noches de aquel verano. La idea por aquel entonces fue hacer temas que siguieran la línea de las influencias musicales de sus integrantes: Mal Momento y Flema como referentes locales, y Ramones, Sex Pistols, Buzzcocks o La Polla Records desde el exterior, entre muchos otros.").conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/p960x960/68701583_2644002115632614_3536889436358836224_o.jpg?_nc_cat=110&_nc_sid=85a577&_nc_oc=AQnSRFnE1QVTAT6XzhbH_JtLyc4BV0SF5OHps2Rrij43a9yY9Qqpxx_SHbGhoxOMxynNcoTTB2Lh7RkYOQgfYoNy&_nc_ht=scontent.faep4-1.fna&_nc_tp=6&oh=d36589d0292d112e3bf15c3a47b468c9&oe=5F09F62C").conGeneros(Arrays.asList(new Genero("PUNK"),new Genero("PUNK_ROCK"),new Genero("ROCK"))).conMaterial(explendenMaterial).build();
+        Banda aluminosis = BandaBuilderForLoader.conNombre("Aluminosis").conInfo("somos una banda española, hacemos rock").conImagen("https://gp1.wac.edgecastcdn.net/802892/http_public_production/artists/images/2331471/original/resize:600x600/crop:x44y48w516h386/aspect:1.0/hash:1467286589/1327535155_AGRO_2_BLANC_MODEL_2.JPG?1467286589").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
         Banda etiliko = BandaBuilderForLoader.conNombre("ETILIKO").conInfo("somos un grupo punk procedente de Salvatierra, País Vasco").conImagen("https://i.ytimg.com/vi/ct9Sz6PbCFE/hqdefault.jpg").conGeneros(Arrays.asList(new Genero("PUNK"))).conMaterial(Arrays.asList(videoEtiliko)).build();
         Banda potencial = BandaBuilderForLoader.conNombre("Potencial Hardcore").conInfo("somos una banda de Madrid, hacemos punk").conImagen("http://www.potencialhardcore.org/WebRoot/StoreES2/Shops/64798605/Styles/Fold[7]/logo.jpg").conGeneros(Arrays.asList(new Genero("PUNK"))).conMaterial(null).build();
-        Banda desorbitados = BandaBuilderForLoader.conNombre("DESORBITADOS").conInfo("Desorbitados, una gran banda de reggae, algo diferente para los tiempos que corren").conImagen("https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg").conGeneros(Arrays.asList(new Genero("REGGAE"))).conMaterial(null).build();
+        Banda desorbitados = BandaBuilderForLoader.conNombre("DESORBITADOS").conInfo("Desorbitados, una gran banda de reggae, algo diferente para los tiempos que corren").conImagen("https://res.cloudinary.com/plugmusix/image/upload/q_auto:good,c_fill,g_faces:center,h_400,w_1000/cnrptxbdfmple3ncgywn.png").conGeneros(Arrays.asList(new Genero("REGGAE"))).conMaterial(null).build();
         Banda gondwana = BandaBuilderForLoader.conNombre("GONDWANA").conInfo("Gondwana es un grupo musical de reggae chileno").conImagen("https://sites.google.com/site/reggaeenchile/_/rsrc/1370535858801/gondwana/gondwana.jpg").conGeneros(Arrays.asList(new Genero("REGGAE"))).conMaterial(null).build();
         Banda amnecia = BandaBuilderForLoader.conNombre("AMNECIA").conInfo("banda de blues").conImagen("http://www.amnesiabluesband.com/_Media/hailstone-front-cover_med-4.jpeg").conGeneros(Arrays.asList(new Genero("BLUES"))).conMaterial(null).build();
         Banda forasteros = BandaBuilderForLoader.conNombre("FORASTEROS").conInfo("somos un grupo olavarriense").conImagen("http://7400noticias.com.ar/wp-content/uploads/2015/09/forasteros3.jpg").conGeneros(Arrays.asList(new Genero("METAL"), new Genero("BLUES"))).conMaterial(null).build();
         Banda laMississippi = BandaBuilderForLoader.conNombre("La Mississippi").conInfo("La Mississippi Blues Band es una banda de blues rock argentino").conImagen("http://www.lamississippi.com.ar/home/wp-content/uploads/2017/11/DSC_4803-copy-uai-1032x691.jpg").conGeneros(Arrays.asList(new Genero("BLUES"))).conMaterial(null).build();
-        Banda demoledor = BandaBuilderForLoader.conNombre("Demoledor").conInfo("somos una banda metalera de Florencio Varela").conImagen("https://www.alta-fruta.net/applications/sslimageproxy/interface/image.php?url=http://cayu.com.ar/wp-content/uploads/2014/12/11.jpg").conGeneros(Arrays.asList(new Genero("METAL"))).conMaterial(null).build();
+        Banda demoledor = BandaBuilderForLoader.conNombre("Demoledor").conInfo("somos una banda metalera de Florencio Varela").conImagen("https://www.miciudadrock.com.ar/media/cache/a5/7d/a57dc7ba0bcfd4f25767871a1fe377cd.jpg").conGeneros(Arrays.asList(new Genero("METAL"))).conMaterial(null).build();
         Banda donCabot = BandaBuilderForLoader.conNombre("Don Cabot").conInfo("es una banda de barrio que se formó en un espontaneo junte de músicos en busca de un espacio en la ruta del rock").conImagen("https://pbs.twimg.com/profile_images/778377437801541632/_FL9yvP3_400x400.jpg").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
         Banda laMocosa = BandaBuilderForLoader.conNombre(" La Mocosa").conInfo("La Mocosa es una banda de rock independiente formada en Buenos Aires durante el año 2000").conImagen("https://revistamutt.com/wp-content/uploads/2017/06/Gjira-7-1024x683.jpg").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
         Banda laKatana = BandaBuilderForLoader.conNombre("La Katana").conInfo("banda de rock").conImagen("https://i.ytimg.com/vi/WDe_VkCZEIs/maxresdefault.jpg").conGeneros(Arrays.asList(new Genero("METAL"))).conMaterial(null).build();
@@ -254,7 +267,7 @@ public class DatabaseLoader {
                 .conLocalidad("Quilmes")
                 .conDireccion("almirante brown 662")
                 .conLugar("La Barra")
-                .conImagen("https://lh3.googleusercontent.com/proxy/H6iV9jvILKjgrKCjjgmXUCQ-fqBHDrpjZyWetvdd3ixfIhsDO2D9CHtIoTMC03dmSOfiwlObB00YrPDrm1Fz50mJe2bw0yG5OPBREYIYv5T5LqThrdOw9dLe")
+                .conImagen("https://elpais.com/cultura/imagenes/2017/04/27/actualidad/1493298698_864661_1493301183_noticia_grande.jpg")
                 .conPrecio(0)
                 .conUbicacion(new Ubicacion(-34.722511, -58.255382)).build();
 
@@ -283,7 +296,7 @@ public class DatabaseLoader {
                 //.conDireccion("Pedro moran 6622")
                 .conDireccion("Carlos Pellegrini 788")
                 .conLugar("El Amparo")
-                .conImagen("http://03442.com.ar/noticias/wp-content/uploads/2016/08/VOLATIL-ROCK-EN-BS-AS-1-e1471890391969.jpg")
+                .conImagen("https://pbs.twimg.com/media/DGtg4VlXgAQqIkn?format=jpg&name=small")
                 .conPrecio(0)
                 .conUbicacion(new Ubicacion(-34.825670, -58.390322)).build();
 

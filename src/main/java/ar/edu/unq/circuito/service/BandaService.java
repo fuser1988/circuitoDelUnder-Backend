@@ -54,12 +54,12 @@ public class BandaService {
 
     private Material adaptarVideo(Material material) {
         Material materialResultado = material;
-        if (TipoMaterial.TIPO_VIDEO == material.getTipoMaterial()) {
+//        if (TipoMaterial.TIPO_VIDEO == material.getTipoMaterial()) {
             String urlMaterial = material.getUrl();
             String pathVideo = urlMaterial.substring(32);
             materialResultado.setUrl("https://www.youtube.com/embed/" + pathVideo);
 
-        } 
+//        } 
         return materialResultado;
         
     }
