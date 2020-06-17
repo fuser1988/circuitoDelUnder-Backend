@@ -12,13 +12,13 @@ import ar.edu.unq.circuito.model.Recital;
 
 public interface RecitalRepository extends JpaRepository<Recital, Long> {
 
-    @Query(value = "SELECT distinct r.* "
+    @Query(value = "SELECT DISTINCT r.* "
             + "FROM recital r "
             + "INNER JOIN recital_bandas c ON r.id = c.recital_id "
             + "INNER JOIN  banda b  ON c.bandas_id = b.id "
             + "INNER JOIN  genero g  ON g.banda_id = b.id "
             + "AND g.nombre LIKE %?1%",
-            countQuery = "SELECT DISTINCT COUNT(r.*) "
+            countQuery = "SELECT COUNT(DISTINCT r.*) "
             + "FROM recital r "
             + "INNER JOIN recital_bandas c ON r.id = c.recital_id "
             + "INNER JOIN  banda b  ON c.bandas_id = b.id "

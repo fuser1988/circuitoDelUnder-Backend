@@ -18,7 +18,7 @@ public interface BandaRepository extends JpaRepository<Banda, Long> {
             + "FROM banda b "
             + "INNER JOIN  genero g  ON g.banda_id = b.id "
             + "AND g.nombre LIKE %?1%",
-            countQuery = "SELECT DISTINCT COUNT(*) "
+            countQuery = "SELECT COUNT(DISTINCT *) "
             + "FROM banda b "
             + "INNER JOIN  genero g  ON g.banda_id = b.id "
             + "AND g.nombre LIKE %?1% ;",
@@ -27,7 +27,7 @@ public interface BandaRepository extends JpaRepository<Banda, Long> {
 	
 	@Query(value = "SELECT DISTINCT * "
 			+ "FROM banda b WHERE LOWER(b.nombre) LIKE %?1%",
-			countQuery = "SELECT DISTINCT COUNT(*) "
+			countQuery = "SELECT COUNT(DISTINCT *) "
 			+ "FROM banda b WHERE LOWER(b.nombre) LIKE %?1% ;",
             nativeQuery = true)
 	Page<Banda> findByNombre(String nombre, Pageable pageable);
