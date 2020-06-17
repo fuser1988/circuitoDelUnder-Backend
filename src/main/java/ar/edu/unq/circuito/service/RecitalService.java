@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.Recital;
+import ar.edu.unq.circuito.model.Ubicacion;
 import ar.edu.unq.circuito.repo.BandaRepository;
 import ar.edu.unq.circuito.repo.RecitalRepository;
 import ar.edu.unq.circuito.util.DatabaseLoader;
@@ -76,5 +77,9 @@ public class RecitalService {
             Logger.getLogger(RecitalService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+	public Page<Recital> filterUbicacion(Ubicacion ubicacion, Pageable pageable) {
+		return recitalRepository.findByUbicacion(ubicacion.getLatitud(), ubicacion.getLongitud(), pageable);
+	}
 
 }

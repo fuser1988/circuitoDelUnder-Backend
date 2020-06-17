@@ -83,7 +83,7 @@ public class BandaServiceTest extends CircuitoDelUnderBackendApplicationTests {
     }
     
     @Test
-    public void buscarPorNombreDemoledor_conBandasPersistidas_RetornaDosBandas() {
+    public void buscarPorNombreDemoledor_conBandasPersistidas_RetornaUnaBanda() {
         Banda banda = BandaBuilder.conNombre("MAÑACO").conGeneros(Arrays.asList(new Genero("ROCK"))).build(em);
         Banda bandaDos = BandaBuilder.conNombre("Demoledor").conGeneros(Arrays.asList(new Genero("METAL"), new Genero("PUNK"))).build(em);
         Banda bandaTres = BandaBuilder.conNombre("Sin Fronteras").conGeneros(Arrays.asList(new Genero("ROCK"), new Genero("METAL"), new Genero("PUNK"))).build(em);
@@ -93,5 +93,17 @@ public class BandaServiceTest extends CircuitoDelUnderBackendApplicationTests {
 
         assertThat(bandasrecuperados.getTotalElements()).isEqualTo(1);
         assertThat(bandasrecuperados.getContent().get(0).getNombre()).isEqualTo("Demoledor");
+    }
+    
+    @Test
+    public void buscarPorNombreLa_conBandasPersistidas_RetornaDosBandas() {
+        Banda banda = BandaBuilder.conNombre("La Renga").conGeneros(Arrays.asList(new Genero("ROCK"))).build(em);
+        Banda bandaDos = BandaBuilder.conNombre("La Mocosa").conGeneros(Arrays.asList(new Genero("METAL"), new Genero("PUNK"))).build(em);
+        Banda bandaTres = BandaBuilder.conNombre("Sin Fronteras").conGeneros(Arrays.asList(new Genero("ROCK"), new Genero("METAL"), new Genero("PUNK"))).build(em);
+
+        Pageable paging = PageRequest.of(0, 2);
+        Page<Banda> bandasrecuperados = bandaService.filterNombre("La",paging);
+
+        assertThat(bandasrecuperados.getTotalElements()).isEqualTo(2);
     }
 }

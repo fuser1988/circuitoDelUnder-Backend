@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ar.edu.unq.circuito.model.Recital;
+import ar.edu.unq.circuito.model.Ubicacion;
 import ar.edu.unq.circuito.service.RecitalService;
 import ar.edu.unq.circuito.vo.RecitalVo;
 
@@ -57,4 +58,9 @@ public class RecitalController {
         return recitalService.buscarPorId(id);
     }
 
+    @CrossOrigin
+    @GetMapping("/recitales/ubicacion")
+    public Page<Recital> filterUbicacion(@RequestParam(value = "ubicacion") Ubicacion ubicacion, Pageable pageable) {
+        return recitalService.filterUbicacion(ubicacion, pageable);
+    }
 }
