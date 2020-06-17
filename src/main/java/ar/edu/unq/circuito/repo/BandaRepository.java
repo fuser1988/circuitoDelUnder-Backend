@@ -18,10 +18,10 @@ public interface BandaRepository extends JpaRepository<Banda, Long> {
             + "FROM banda b "
             + "INNER JOIN  genero g  ON g.banda_id = b.id "
             + "AND g.nombre LIKE %?1%",
-            countQuery = "SELECT COUNT(DISTINCT *) "
-            + "FROM banda b "
+            countQuery = "SELECT COUNT(bg.*) "
+            + "FROM (SELECT DISTINCT b.* FROM banda b "
             + "INNER JOIN  genero g  ON g.banda_id = b.id "
-            + "AND g.nombre LIKE %?1% ;",
+            + "AND g.nombre LIKE %?1%) bg ;",
             nativeQuery = true)
 	Page<Banda> findByGeneros(String genero, Pageable pageable);
 	

@@ -18,12 +18,12 @@ public interface RecitalRepository extends JpaRepository<Recital, Long> {
             + "INNER JOIN  banda b  ON c.bandas_id = b.id "
             + "INNER JOIN  genero g  ON g.banda_id = b.id "
             + "AND g.nombre LIKE %?1%",
-            countQuery = "SELECT COUNT(DISTINCT r.*) "
-            + "FROM recital r "
-            + "INNER JOIN recital_bandas c ON r.id = c.recital_id "
-            + "INNER JOIN  banda b  ON c.bandas_id = b.id "
-            + "INNER JOIN  genero g  ON g.banda_id = b.id "
-            + "AND g.nombre LIKE %?1%",
+            countQuery = "SELECT COUNT(rg.*) "
+                    + "FROM (SELECT DISTINCT r.* FROM recital r "
+                    + "INNER JOIN recital_bandas c ON r.id = c.recital_id "
+                    + "INNER JOIN  banda b  ON c.bandas_id = b.id "
+                    + "INNER JOIN  genero g  ON g.banda_id = b.id "
+                    + "AND g.nombre LIKE %?1%) rg;",
             nativeQuery = true)
     Page<Recital> findByGeneros(String genero, Pageable pageable);
 
