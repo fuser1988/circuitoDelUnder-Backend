@@ -42,7 +42,7 @@ public class RecitalController {
 
     @CrossOrigin
     @GetMapping("/recitales")
-    public Page<Recital> buscar(Pageable pageable) {
+    public Page<Recital> buscarTodos(Pageable pageable) {
         return recitalService.buscarTodos(pageable);
     }
 
@@ -51,16 +51,22 @@ public class RecitalController {
     public Page<Recital> filterGenero(@RequestParam(value = "genero") String genero, Pageable pageable) {
         return recitalService.filterGenero(genero, pageable);
     }
+    
+    @CrossOrigin
+    @GetMapping("/recitales/banda/{id}")
+    public Page<Recital> buscarrecitalesDeUnaBanda(@PathVariable(value = "id") Long id, Pageable pageable) {
+        return recitalService.buscarRecitalesPorBandaId(id, pageable);
+    }
 
     @CrossOrigin
     @GetMapping("/recitales/{id}")
-    public Recital obtenerRecitalId(@PathVariable(value = "id") Long id) {
+    public Recital obtenerRecitalPorId(@PathVariable(value = "id") Long id) {
         return recitalService.buscarPorId(id);
     }
 
     @CrossOrigin
     @GetMapping("/recitales/ubicacion")
-    public Page<Recital> filterUbicacion(@RequestParam(value = "ubicacion") Ubicacion ubicacion, Pageable pageable) {
+    public Page<Recital> obtenerRecitalesPorUbicacion(@RequestParam(value = "ubicacion") Ubicacion ubicacion, Pageable pageable) {
         return recitalService.filterUbicacion(ubicacion, pageable);
     }
 }

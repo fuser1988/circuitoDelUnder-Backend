@@ -45,7 +45,7 @@ public class RecitalService {
         res.setPrecio(recitalVo.getPrecio());
         res.setBandas(procesarBandas(recitalVo.getBandas()));
         res.setUbicacion(recitalVo.getUbicacion());
-        
+
         return recitalRepository.save(res);
     }
 
@@ -65,6 +65,10 @@ public class RecitalService {
     public Page<Recital> filterGenero(String genero, Pageable pageable) {
         return recitalRepository.findByGeneros(genero.toUpperCase(), pageable);
     }
+    
+    public Page<Recital> buscarRecitalesPorBandaId(Long id, Pageable pageable) {
+        return recitalRepository.findByBandasId(id, pageable);
+    }
 
     public Recital buscarPorId(long id) {
         return recitalRepository.findById(id).get();
@@ -78,8 +82,8 @@ public class RecitalService {
         }
     }
 
-	public Page<Recital> filterUbicacion(Ubicacion ubicacion, Pageable pageable) {
-		return recitalRepository.findByUbicacion(ubicacion.getLatitud(), ubicacion.getLongitud(), pageable);
-	}
+    public Page<Recital> filterUbicacion(Ubicacion ubicacion, Pageable pageable) {
+        return recitalRepository.findByUbicacion(ubicacion.getLatitud(), ubicacion.getLongitud(), pageable);
+    }
 
 }

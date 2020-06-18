@@ -131,7 +131,7 @@ public class DatabaseLoader {
         Recital recitalDos = RecitalBuilderForLoader
                 .conNombre("Aluminosis")
                 .conDescripcion("Aluminosis se presenta con su nueva formación en El bar del fondo no te lo pierdas")
-                .conBandas(Arrays.asList(aluminosis, etiliko))
+                .conBandas(Arrays.asList(aluminosis, etiliko, banda))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
@@ -183,7 +183,7 @@ public class DatabaseLoader {
         Recital recitalSeis = RecitalBuilderForLoader
                 .conNombre("Furias del metal")
                 .conDescripcion("Hoy Noche de Metal Argento en La caldera. Se presenta Demoledor juto a Furias del metal.Los esperamos! Las mejores noches de rock están en La caldera")
-                .conBandas(Arrays.asList(demoledor))
+                .conBandas(Arrays.asList(demoledor,banda))
                 .conFecha(LocalDate.of(2020, 6, 22))
                 .conHora(LocalTime.of(21, 00, 00))
                 .conLocalidad("Avellaneda")
