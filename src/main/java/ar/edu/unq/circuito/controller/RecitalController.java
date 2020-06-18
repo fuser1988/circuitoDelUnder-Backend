@@ -53,8 +53,8 @@ public class RecitalController {
     }
     
     @CrossOrigin
-    @GetMapping("/recitales/banda/{id}")
-    public Page<Recital> buscarrecitalesDeUnaBanda(@PathVariable(value = "id") Long id, Pageable pageable) {
+    @GetMapping("/recitales/banda")
+    public Page<Recital> buscarrecitalesDeUnaBanda(@RequestParam(value = "banda") Long id, Pageable pageable) {
         return recitalService.buscarRecitalesPorBandaId(id, pageable);
     }
 
