@@ -75,9 +75,8 @@ public class RecitalServiceTest extends CircuitoDelUnderBackendApplicationTests 
         Recital recitalPersistidoTres = RecitalBuilder.conNombre("Sin fronteras").conBandas(Arrays.asList(bandaTres))
         		.conLugar("Sudaka").conUbicacion(new Ubicacion(-34.769387, -58.316998)).build(em);
 
-        Ubicacion estacionQuilmes = new Ubicacion(-35.401167, -57.171079);
         Pageable paging = PageRequest.of(0, 3);
-        Page<Recital> recitalesrecuperados = recitalService.filterUbicacion(estacionQuilmes,paging);
+        Page<Recital> recitalesrecuperados = recitalService.filterUbicacion(-35.401167, -57.171079,paging);
         
         assertThat(recitalesrecuperados.getTotalElements()).isEqualTo(3);
         assertThat(recitalesrecuperados.getContent().get(0).getLugar()).isEqualTo("La Barra");

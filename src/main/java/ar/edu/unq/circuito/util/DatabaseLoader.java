@@ -139,7 +139,7 @@ public class DatabaseLoader {
                 .conLugar("Bar del fondo")
                 .conImagen("https://vudum.com.ar/wp-content/uploads/2018/06/DSC_8132-768x513.jpg")
                 .conPrecio(0)
-                .conUbicacion(new Ubicacion(-34.481620, -58.522587)).build();
+                .conUbicacion(new Ubicacion(-34.804382, -58.294734)).build();
 
         Recital recitalTres = RecitalBuilderForLoader
                 .conNombre("Lolapeluza")

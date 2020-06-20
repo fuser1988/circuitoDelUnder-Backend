@@ -66,7 +66,7 @@ public class RecitalController {
 
     @CrossOrigin
     @GetMapping("/recitales/ubicacion")
-    public Page<Recital> obtenerRecitalesPorUbicacion(@RequestParam(value = "ubicacion") Ubicacion ubicacion, Pageable pageable) {
-        return recitalService.filterUbicacion(ubicacion, pageable);
+    public Page<Recital> obtenerRecitalesPorUbicacion(@RequestParam(value = "latitud") double latitud, @RequestParam double longitud, Pageable pageable) {
+    	return recitalService.filterUbicacion(latitud, longitud, pageable);
     }
 }

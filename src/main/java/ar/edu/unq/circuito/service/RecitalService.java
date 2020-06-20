@@ -82,8 +82,8 @@ public class RecitalService {
         }
     }
 
-    public Page<Recital> filterUbicacion(Ubicacion ubicacion, Pageable pageable) {
-        return recitalRepository.findByUbicacion(ubicacion.getLatitud(), ubicacion.getLongitud(), pageable);
+    public Page<Recital> filterUbicacion(double latitud, double longitud, Pageable pageable) {
+        return recitalRepository.findByUbicacion(latitud, longitud, pageable);
     }
 
 }
