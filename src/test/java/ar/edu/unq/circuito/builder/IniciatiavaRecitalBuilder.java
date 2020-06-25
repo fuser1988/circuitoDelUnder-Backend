@@ -19,6 +19,7 @@ public class IniciatiavaRecitalBuilder extends AbstractPersistenceBuilder<Inicia
         instance.setLocalidad("Quilmes");
         instance.setDireccion("almirante brown 662");
         instance.setLugar("La Barra");
+        instance.setTelefono(123456);
 	}
 	
 	public IniciatiavaRecitalBuilder conId(Long id) {
@@ -59,6 +60,11 @@ public class IniciatiavaRecitalBuilder extends AbstractPersistenceBuilder<Inicia
 	
 	public IniciatiavaRecitalBuilder conDireccion(String direccion) {
         instance.setDireccion(direccion);
+        return this;
+    }
+	
+	public IniciatiavaRecitalBuilder conTelefono(int telefono) {
+        instance.setTelefono(telefono);
         return this;
     }
 }
