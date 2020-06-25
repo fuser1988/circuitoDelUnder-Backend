@@ -15,6 +15,8 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import ar.edu.unq.circuito.vo.BandaVo;
+
 @Entity
 public class IniciativaRecital {
 	
@@ -38,8 +40,10 @@ public class IniciativaRecital {
     @NotNull
     private int telefono;
     @OneToOne(fetch = FetchType.LAZY)
+    private Banda banda;
+    @OneToOne(fetch = FetchType.LAZY)
     private Usuario usuario;
-
+    
     public IniciativaRecital() {
     }
 
@@ -122,5 +126,12 @@ public class IniciativaRecital {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-    
+
+	public Banda getBanda() {
+		return banda;
+	}
+
+	public void setBanda(Banda banda) {
+		this.banda = banda;
+	}
 }

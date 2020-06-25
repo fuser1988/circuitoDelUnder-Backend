@@ -5,6 +5,7 @@ import java.time.LocalTime;
 
 import com.somospnt.test.builder.AbstractPersistenceBuilder;
 
+import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.IniciativaRecital;
 
 public class IniciatiavaRecitalBuilder extends AbstractPersistenceBuilder<IniciativaRecital>{
@@ -65,6 +66,11 @@ public class IniciatiavaRecitalBuilder extends AbstractPersistenceBuilder<Inicia
 	
 	public IniciatiavaRecitalBuilder conTelefono(int telefono) {
         instance.setTelefono(telefono);
+        return this;
+    }
+	
+	public IniciatiavaRecitalBuilder conBanda(Banda banda) {
+        instance.setBanda(banda);
         return this;
     }
 }

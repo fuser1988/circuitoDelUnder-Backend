@@ -9,7 +9,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 import ar.edu.unq.circuito.CircuitoDelUnderBackendApplicationTests;
+import ar.edu.unq.circuito.builder.BandaBuilder;
 import ar.edu.unq.circuito.builder.IniciatiavaRecitalBuilder;
+import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.IniciativaRecital;
 import ar.edu.unq.circuito.repo.IniciativaRecitalRepository;
 
@@ -23,14 +25,19 @@ public class IniciativaRecitalTest extends CircuitoDelUnderBackendApplicationTes
     
     @Test
     public void buscarTodos_conIniciativaRecitalesenEnLaBaseDeDatos_RetornaTresiniciativaRecitales() {
-        IniciativaRecital iniciativaRecitalPersistidoUno = IniciatiavaRecitalBuilder.conNombre("ElRecintoRock").build(em);
-        IniciativaRecital iniciativaRecitalPersistidoDos = IniciatiavaRecitalBuilder.conNombre("Convencion de Batmans ").build(em);
-        IniciativaRecital iniciativaRecitalPersistidoTres = IniciatiavaRecitalBuilder.conNombre("El rotage").build(em);
+    	Banda banda1 = BandaBuilder.conNombre("La Renga").build(em);
+        Banda banda2 = BandaBuilder.conNombre("Desorbitados").build(em);
+        Banda banda3 = BandaBuilder.conNombre("Demoledor").build(em);
+        
+    	IniciativaRecital iniciativaRecitalPersistidoUno = IniciatiavaRecitalBuilder.conNombre("ElRecintoRock").conBanda(banda1).build(em);
+        IniciativaRecital iniciativaRecitalPersistidoDos = IniciatiavaRecitalBuilder.conNombre("Convencion de Batmans ").conBanda(banda2).build(em);
+        IniciativaRecital iniciativaRecitalPersistidoTres = IniciatiavaRecitalBuilder.conNombre("El rotage").conBanda(banda3).build(em);
 
         Pageable paging = PageRequest.of(0, 2);
         Page<IniciativaRecital> iniciativaRecitalesrecuperados = iniciativaService.buscarTodos(paging);
         
         assertThat(iniciativaRecitalesrecuperados.getTotalElements()).isEqualTo(3);
+        assertThat(iniciativaRecitalesrecuperados.getNumberOfElements()).isEqualTo(2);
     }
 
 }
