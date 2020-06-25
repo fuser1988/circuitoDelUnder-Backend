@@ -2,11 +2,13 @@ package ar.edu.unq.circuito.util;
 
 import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.Genero;
+import ar.edu.unq.circuito.model.IniciativaRecital;
 import ar.edu.unq.circuito.model.Material;
 import ar.edu.unq.circuito.model.Recital;
 import ar.edu.unq.circuito.model.TipoMaterial;
 import ar.edu.unq.circuito.model.Ubicacion;
 import ar.edu.unq.circuito.repo.BandaRepository;
+import ar.edu.unq.circuito.repo.IniciativaRecitalRepository;
 import ar.edu.unq.circuito.repo.RecitalRepository;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -21,11 +23,13 @@ public class DatabaseLoader {
 
     private RecitalRepository recitalRepository;
     private BandaRepository bandaRepository;
-
+    private IniciativaRecitalRepository iniciativaRecitalRepository;
+    
     @Autowired
-    public DatabaseLoader(RecitalRepository recitalRepository, BandaRepository bandaRepository ) {
+    public DatabaseLoader(RecitalRepository recitalRepository, BandaRepository bandaRepository, IniciativaRecitalRepository iniciativaRecitalRepository) {
         this.recitalRepository = recitalRepository;
         this.bandaRepository = bandaRepository;
+        this.iniciativaRecitalRepository = iniciativaRecitalRepository; 
     }
 
     public void run(String... args) throws Exception {
@@ -342,6 +346,32 @@ public class DatabaseLoader {
         //recitalRepository.save(recitalQuince);
         recitalRepository.save(recitalDieciSeis);
 
+
+    
+
+        IniciativaRecital iniciativa1 = new IniciativaRecitalBuilderForLoader()
+                .conNombre("Dementes")
+                .conDescripcion("Bunas colegas, estamos organizando una fechita en la cobacha burzaco, un bar chiquito pero amistoso, podemos tocar hasta 4 bandas, el sonido corre por cuenta de el lugar pero las bandas se encargarian del resto.")
+                .conBanda(forasteros)
+                .conFecha(LocalDate.of(2020, 9, 18))
+                .conHora(LocalTime.of(22, 00, 00))
+                .conLocalidad("Burzaco")
+                .conDireccion("Rocha 662")
+                .conLugar("La Terraza").build();
+
+        IniciativaRecital iniciativa2 = new IniciativaRecitalBuilderForLoader()
+        		.conNombre("Lobos")
+                .conDescripcion("El 20 de Noviembre es Hoy una noche de a puro rock y blues la Terraza. Tenemos show en vivo de Dementes, auqellos interesados en tocar juntos a la banda comuniquese hay 4 lugares")
+                .conBanda(dementes)
+                .conFecha(LocalDate.of(2020, 11, 20))
+                .conHora(LocalTime.of(22, 00, 00))
+                .conLocalidad("Berazategui")
+                .conDireccion("Rocha 662")
+                .conLugar("La Terraza").build();
+        
+        iniciativaRecitalRepository.save(iniciativa1);
+        iniciativaRecitalRepository.save(iniciativa2);
+        
     }
 
 }

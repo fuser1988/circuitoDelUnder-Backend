@@ -14,6 +14,7 @@ import ar.edu.unq.circuito.builder.IniciatiavaRecitalBuilder;
 import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.IniciativaRecital;
 import ar.edu.unq.circuito.repo.IniciativaRecitalRepository;
+import ar.edu.unq.circuito.vo.IniciativaRecitalVo;
 
 public class IniciativaRecitalTest extends CircuitoDelUnderBackendApplicationTests {
 
@@ -34,7 +35,7 @@ public class IniciativaRecitalTest extends CircuitoDelUnderBackendApplicationTes
         IniciativaRecital iniciativaRecitalPersistidoTres = IniciatiavaRecitalBuilder.conNombre("El rotage").conBanda(banda3).build(em);
 
         Pageable paging = PageRequest.of(0, 2);
-        Page<IniciativaRecital> iniciativaRecitalesrecuperados = iniciativaService.buscarTodos(paging);
+        Page<IniciativaRecitalVo> iniciativaRecitalesrecuperados = iniciativaService.buscarTodos(paging);
         
         assertThat(iniciativaRecitalesrecuperados.getTotalElements()).isEqualTo(3);
         assertThat(iniciativaRecitalesrecuperados.getNumberOfElements()).isEqualTo(2);

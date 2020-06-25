@@ -1,52 +1,24 @@
-package ar.edu.unq.circuito.model;
+package ar.edu.unq.circuito.vo;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import ar.edu.unq.circuito.model.Usuario;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import ar.edu.unq.circuito.vo.BandaVo;
-
-@Entity
-public class IniciativaRecital {
+public class IniciativaRecitalVo {
 	
-	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-	@NotNull
-    private String nombre;
-    @NotNull
+	private long id;
+	private String nombre;
     private String descripcion;
-    @NotNull
     private LocalDate fecha;
-    @NotNull
     private LocalTime hora;
-    @NotNull
     private String direccion;
-    @NotNull
     private String localidad;
-    @NotNull
     private String lugar;
-    @NotNull
     private int telefono;
-    @NotNull
-    @OneToOne(fetch = FetchType.LAZY)
-    private Banda banda;
-    @OneToOne(fetch = FetchType.LAZY)
+    private BandaVo banda;
     private Usuario usuario;
-    
-    public IniciativaRecital() {
-    }
+
+    public IniciativaRecitalVo() {}
 
 	public long getId() {
 		return id;
@@ -120,6 +92,14 @@ public class IniciativaRecital {
 		this.telefono = telefono;
 	}
 
+	public BandaVo getBanda() {
+		return banda;
+	}
+
+	public void setBanda(BandaVo banda) {
+		this.banda = banda;
+	}
+
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -127,12 +107,5 @@ public class IniciativaRecital {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-
-	public Banda getBanda() {
-		return banda;
-	}
-
-	public void setBanda(Banda banda) {
-		this.banda = banda;
-	}
+    
 }

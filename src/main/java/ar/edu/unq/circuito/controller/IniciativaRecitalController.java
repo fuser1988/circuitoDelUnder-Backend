@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ar.edu.unq.circuito.model.IniciativaRecital;
 import ar.edu.unq.circuito.service.IniciativaRecitalService;
+import ar.edu.unq.circuito.vo.IniciativaRecitalVo;
 
 @RestController
 @RequestMapping("/circuito_under")
@@ -21,14 +22,14 @@ public class IniciativaRecitalController {
 	IniciativaRecitalService iniciativaService;
 	
 	@CrossOrigin
-    @PostMapping("/iniciatica_recitales")
+    @PostMapping("/iniciativa_recitales")
     public void guardar(@RequestBody IniciativaRecital iniciativa) {
         iniciativaService.guardar(iniciativa);
     }
 	
 	@CrossOrigin
-    @GetMapping("/iniciatica_recitales")
-	public Page<IniciativaRecital> buscarTodos(Pageable pageable) {
+    @GetMapping("/iniciativa_recitales")
+	public Page<IniciativaRecitalVo> buscarTodos(Pageable pageable) {
         return iniciativaService.buscarTodos(pageable);
     }
 }
