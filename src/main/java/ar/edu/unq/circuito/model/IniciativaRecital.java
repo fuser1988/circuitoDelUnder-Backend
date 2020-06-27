@@ -24,8 +24,6 @@ public class IniciativaRecital {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 	@NotNull
-    private String nombre;
-    @NotNull
     private String descripcion;
     @NotNull
     private LocalDate fecha;
@@ -54,14 +52,6 @@ public class IniciativaRecital {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
 	}
 
 	public String getDescripcion() {

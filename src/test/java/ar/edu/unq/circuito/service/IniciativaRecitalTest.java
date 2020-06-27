@@ -30,9 +30,9 @@ public class IniciativaRecitalTest extends CircuitoDelUnderBackendApplicationTes
         Banda banda2 = BandaBuilder.conNombre("Desorbitados").build(em);
         Banda banda3 = BandaBuilder.conNombre("Demoledor").build(em);
         
-    	IniciativaRecital iniciativaRecitalPersistidoUno = IniciatiavaRecitalBuilder.conNombre("ElRecintoRock").conBanda(banda1).build(em);
-        IniciativaRecital iniciativaRecitalPersistidoDos = IniciatiavaRecitalBuilder.conNombre("Convencion de Batmans ").conBanda(banda2).build(em);
-        IniciativaRecital iniciativaRecitalPersistidoTres = IniciatiavaRecitalBuilder.conNombre("El rotage").conBanda(banda3).build(em);
+    	IniciativaRecital iniciativaRecitalPersistidoUno = IniciatiavaRecitalBuilder.conDescripcion("ElRecintoRock").conBanda(banda1).build(em);
+        IniciativaRecital iniciativaRecitalPersistidoDos = IniciatiavaRecitalBuilder.conDescripcion("Convencion de Batmans ").conBanda(banda2).build(em);
+        IniciativaRecital iniciativaRecitalPersistidoTres = IniciatiavaRecitalBuilder.conDescripcion("El rotage").conBanda(banda3).build(em);
 
         Pageable paging = PageRequest.of(0, 2);
         Page<IniciativaRecitalVo> iniciativaRecitalesrecuperados = iniciativaService.buscarTodos(paging);

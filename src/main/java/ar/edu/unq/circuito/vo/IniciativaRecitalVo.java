@@ -7,7 +7,6 @@ import ar.edu.unq.circuito.model.Usuario;
 public class IniciativaRecitalVo {
 	
 	private long id;
-	private String nombre;
     private String descripcion;
     private LocalDate fecha;
     private LocalTime hora;
@@ -16,7 +15,7 @@ public class IniciativaRecitalVo {
     private String lugar;
     private int telefono;
     private BandaVo banda;
-    private Usuario usuario;
+    private long usuarioId;
 
     public IniciativaRecitalVo() {}
 
@@ -26,14 +25,6 @@ public class IniciativaRecitalVo {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
 	}
 
 	public String getDescripcion() {
@@ -100,12 +91,12 @@ public class IniciativaRecitalVo {
 		this.banda = banda;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public long getUsuarioId() {
+		return usuarioId;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setUsuarioId(long usuarioId) {
+		this.usuarioId = usuarioId;
 	}
     
 }

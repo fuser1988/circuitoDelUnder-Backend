@@ -23,7 +23,7 @@ public class IniciativaRecitalController {
 	
 	@CrossOrigin
     @PostMapping("/iniciativa_recitales")
-    public void guardar(@RequestBody IniciativaRecital iniciativa) {
+    public void guardar(@RequestBody IniciativaRecitalVo iniciativa) {
         iniciativaService.guardar(iniciativa);
     }
 	

@@ -8,7 +8,6 @@ import ar.edu.unq.circuito.model.IniciativaRecital;
 
 public class IniciativaRecitalBuilderForLoader {
 	private long id;
-    private String nombre;
     private String descripcion;
     private LocalDate fecha;
     private LocalTime hora;
@@ -20,7 +19,6 @@ public class IniciativaRecitalBuilderForLoader {
     
     public IniciativaRecital build() {
     	IniciativaRecital iniciativa = new IniciativaRecital();
-    	iniciativa.setNombre(nombre);
     	iniciativa.setDescripcion(descripcion);
     	iniciativa.setFecha(fecha);
     	iniciativa.setHora(hora);
@@ -34,11 +32,6 @@ public class IniciativaRecitalBuilderForLoader {
     
     public IniciativaRecitalBuilderForLoader conId(Long id) {
         this.id = id;
-        return this;
-    }
-	
-	public IniciativaRecitalBuilderForLoader conNombre(String nombre) {
-		this.nombre = nombre;
         return this;
     }
 	

@@ -13,8 +13,7 @@ public class IniciatiavaRecitalBuilder extends AbstractPersistenceBuilder<Inicia
 	private IniciatiavaRecitalBuilder() {
 		
 		instance = new IniciativaRecital();
-		instance.setNombre("El Recital");
-        instance.setDescripcion("nos volvemso a encontrar en laa roca bar para compartir una noche a puro rock");
+		instance.setDescripcion("nos volvemso a encontrar en laa roca bar para compartir una noche a puro rock");
         instance.setFecha(LocalDate.of(2018, 10, 30));
         instance.setHora(LocalTime.of(22, 00, 00));
         instance.setLocalidad("Quilmes");
@@ -27,16 +26,11 @@ public class IniciatiavaRecitalBuilder extends AbstractPersistenceBuilder<Inicia
         instance.setId(id);
         return this;
     }
-	
-	public static IniciatiavaRecitalBuilder conNombre(String nombre) {
+		
+	public static IniciatiavaRecitalBuilder conDescripcion(String descripcion) {
 		IniciatiavaRecitalBuilder builder = new IniciatiavaRecitalBuilder();
-		builder.instance.setNombre(nombre);
+		builder.instance.setDescripcion(descripcion);
         return builder;
-    }
-	
-	public IniciatiavaRecitalBuilder conDescripcion(String descripcion) {
-        instance.setDescripcion(descripcion);
-        return this;
     }
 	
 	public IniciatiavaRecitalBuilder conFecha(LocalDate fecha) {
