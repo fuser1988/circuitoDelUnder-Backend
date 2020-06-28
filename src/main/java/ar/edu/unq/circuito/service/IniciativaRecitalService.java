@@ -91,4 +91,8 @@ public class IniciativaRecitalService {
         return new PageImpl<>(listaIniciativaRecitalVo, pageable, listaIniciativaRecital.getTotalElements());
     }
 
+    public void borrar(long id) {
+        iniciativaRepository.deleteById(id);
+    }
+
 }
