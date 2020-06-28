@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +24,7 @@ public class IniciativaRecitalController {
 	IniciativaRecitalService iniciativaService;
 	
 	@CrossOrigin
-    @PostMapping("/iniciativa_recitales")
+    @PostMapping("/iniciativa_recital")
     public void guardar(@RequestBody IniciativaRecitalVo iniciativa) {
         iniciativaService.guardar(iniciativa);
     }
@@ -32,4 +34,10 @@ public class IniciativaRecitalController {
 	public Page<IniciativaRecitalVo> buscarTodos(Pageable pageable) {
         return iniciativaService.buscarTodos(pageable);
     }
+	
+	@CrossOrigin
+	@DeleteMapping("/iniciativa_recital/{id}")
+	public void borrar(@PathVariable(value = "id") long id) {
+		iniciativaService.borrar(id);
+	}
 }
