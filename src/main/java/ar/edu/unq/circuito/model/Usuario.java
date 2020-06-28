@@ -1,6 +1,7 @@
 package ar.edu.unq.circuito.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -9,7 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Usuario {
+public class Usuario implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -17,7 +19,7 @@ public class Usuario {
     private String email;
     private String nombre;
     private TipoUsuario tipoUsuario;
-    @OneToOne(mappedBy="usuario",fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "usuario", fetch = FetchType.LAZY)
     @JsonIgnoreProperties("usuario")
     private Banda banda;
 
@@ -31,7 +33,7 @@ public class Usuario {
 
     public Usuario() {
     }
-    
+
     public long getId() {
         return id;
     }
@@ -47,7 +49,6 @@ public class Usuario {
     public void setReferenciaId(long referenciaId) {
         this.referenciaId = referenciaId;
     }
-    
 
     public String getEmail() {
         return email;

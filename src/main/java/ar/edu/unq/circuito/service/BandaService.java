@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.Genero;
 import ar.edu.unq.circuito.model.Material;
-import ar.edu.unq.circuito.model.TipoMaterial;
 import ar.edu.unq.circuito.model.TipoUsuario;
 import ar.edu.unq.circuito.model.Usuario;
 import ar.edu.unq.circuito.repo.BandaRepository;
@@ -44,7 +43,7 @@ public class BandaService {
         List<Material> listaDeMaterial = bandaVo.getMaterial()
                 .stream()
                 .map(material -> (Material) material)
-                .map((material)->{
+                .map((material) -> {
                     return adaptarVideo(material);
                 })
                 .collect(Collectors.toList());
@@ -57,13 +56,13 @@ public class BandaService {
     private Material adaptarVideo(Material material) {
         Material materialResultado = material;
 //        if (TipoMaterial.TIPO_VIDEO == material.getTipoMaterial()) {
-            String urlMaterial = material.getUrl();
-            String pathVideo = urlMaterial.substring(32);
-            materialResultado.setUrl("https://www.youtube.com/embed/" + pathVideo);
+        String urlMaterial = material.getUrl();
+        String pathVideo = urlMaterial.substring(32);
+        materialResultado.setUrl("https://www.youtube.com/embed/" + pathVideo);
 
 //        } 
         return materialResultado;
-        
+
     }
 
     private List<Genero> procesarGeneros(List<String> generos) {
@@ -89,7 +88,7 @@ public class BandaService {
     }
 
     public Page<Banda> filterGenero(String genero, Pageable pageable) {
-    	return bandaRepository.findByGeneros(genero.toUpperCase(), pageable);
+        return bandaRepository.findByGeneros(genero.toUpperCase(), pageable);
     }
 
     public Page<Banda> filterNombre(String nombre, Pageable pageable) {

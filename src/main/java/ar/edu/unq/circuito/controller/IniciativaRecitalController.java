@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ar.edu.unq.circuito.model.IniciativaRecital;
 import ar.edu.unq.circuito.service.IniciativaRecitalService;
 import ar.edu.unq.circuito.vo.IniciativaRecitalVo;
 
@@ -18,18 +17,18 @@ import ar.edu.unq.circuito.vo.IniciativaRecitalVo;
 @RequestMapping("/circuito_under")
 public class IniciativaRecitalController {
 
-	@Autowired
-	IniciativaRecitalService iniciativaService;
-	
-	@CrossOrigin
+    @Autowired
+    IniciativaRecitalService iniciativaService;
+
+    @CrossOrigin
     @PostMapping("/iniciativa_recitales")
     public void guardar(@RequestBody IniciativaRecitalVo iniciativa) {
         iniciativaService.guardar(iniciativa);
     }
-	
-	@CrossOrigin
+
+    @CrossOrigin
     @GetMapping("/iniciativa_recitales")
-	public Page<IniciativaRecitalVo> buscarTodos(Pageable pageable) {
+    public Page<IniciativaRecitalVo> buscarTodos(Pageable pageable) {
         return iniciativaService.buscarTodos(pageable);
     }
 }

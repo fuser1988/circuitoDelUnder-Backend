@@ -1,12 +1,13 @@
 package ar.edu.unq.circuito.model;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Material {
+public class Material implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,36 +19,36 @@ public class Material {
     public Material() {
     }
 
-	public long getId() {
-		return id;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public TipoMaterial getTipoMaterial() {
-		return tipoMaterial;
-	}
+    public TipoMaterial getTipoMaterial() {
+        return tipoMaterial;
+    }
 
-	public void setTipoMaterial(TipoMaterial tipoMaterial) {
-		this.tipoMaterial = tipoMaterial;
-	}
+    public void setTipoMaterial(TipoMaterial tipoMaterial) {
+        this.tipoMaterial = tipoMaterial;
+    }
 
-	public String getUrl() {
-		return url;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	public String getComentario() {
-		return comentario;
-	}
+    public String getComentario() {
+        return comentario;
+    }
 
-	public void setComentario(String comentario) {
-		this.comentario = comentario;
-	}
-    
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+
 }

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import ar.edu.unq.circuito.model.Banda;
 import ar.edu.unq.circuito.model.Recital;
-import ar.edu.unq.circuito.model.Ubicacion;
 import ar.edu.unq.circuito.repo.BandaRepository;
 import ar.edu.unq.circuito.repo.RecitalRepository;
 import ar.edu.unq.circuito.util.DatabaseLoader;
@@ -65,7 +64,7 @@ public class RecitalService {
     public Page<Recital> filterGenero(String genero, Pageable pageable) {
         return recitalRepository.findByGeneros(genero.toUpperCase(), pageable);
     }
-    
+
     public Page<Recital> buscarRecitalesPorBandaId(Long id, Pageable pageable) {
         return recitalRepository.findByBandasId(id, pageable);
     }

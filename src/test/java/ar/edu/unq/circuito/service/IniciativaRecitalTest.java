@@ -18,25 +18,25 @@ import ar.edu.unq.circuito.vo.IniciativaRecitalVo;
 
 public class IniciativaRecitalTest extends CircuitoDelUnderBackendApplicationTests {
 
-	@Autowired
+    @Autowired
     IniciativaRecitalService iniciativaService;
 
     @Autowired
     IniciativaRecitalRepository iniciativaRepository;
-    
+
     @Test
     public void buscarTodos_conIniciativaRecitalesenEnLaBaseDeDatos_RetornaTresiniciativaRecitales() {
-    	Banda banda1 = BandaBuilder.conNombre("La Renga").build(em);
+        Banda banda1 = BandaBuilder.conNombre("La Renga").build(em);
         Banda banda2 = BandaBuilder.conNombre("Desorbitados").build(em);
         Banda banda3 = BandaBuilder.conNombre("Demoledor").build(em);
-        
-    	IniciativaRecital iniciativaRecitalPersistidoUno = IniciatiavaRecitalBuilder.conDescripcion("ElRecintoRock").conBanda(banda1).build(em);
+
+        IniciativaRecital iniciativaRecitalPersistidoUno = IniciatiavaRecitalBuilder.conDescripcion("ElRecintoRock").conBanda(banda1).build(em);
         IniciativaRecital iniciativaRecitalPersistidoDos = IniciatiavaRecitalBuilder.conDescripcion("Convencion de Batmans ").conBanda(banda2).build(em);
         IniciativaRecital iniciativaRecitalPersistidoTres = IniciatiavaRecitalBuilder.conDescripcion("El rotage").conBanda(banda3).build(em);
 
         Pageable paging = PageRequest.of(0, 2);
         Page<IniciativaRecitalVo> iniciativaRecitalesrecuperados = iniciativaService.buscarTodos(paging);
-        
+
         assertThat(iniciativaRecitalesrecuperados.getTotalElements()).isEqualTo(3);
         assertThat(iniciativaRecitalesrecuperados.getNumberOfElements()).isEqualTo(2);
     }

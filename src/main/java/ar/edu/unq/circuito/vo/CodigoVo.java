@@ -1,6 +1,7 @@
 package ar.edu.unq.circuito.vo;
 
 public class CodigoVo {
+
     private String codigo;
     private long usuarioId;
 
@@ -19,5 +20,5 @@ public class CodigoVo {
     public void setUsuarioId(long usuarioId) {
         this.usuarioId = usuarioId;
     }
-    
+
 }

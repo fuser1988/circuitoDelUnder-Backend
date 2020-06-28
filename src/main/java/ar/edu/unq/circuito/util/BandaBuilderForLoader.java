@@ -6,6 +6,7 @@ import ar.edu.unq.circuito.model.Material;
 import java.util.List;
 
 public class BandaBuilderForLoader {
+
     private Long id;
     private String nombre;
     private List<Genero> generos;

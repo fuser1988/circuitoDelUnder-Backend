@@ -1,5 +1,6 @@
 package ar.edu.unq.circuito.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
@@ -8,7 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Recital {
+public class Recital implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,7 +37,7 @@ public class Recital {
     private int precio;
     @NotNull
     private Ubicacion ubicacion;
-    
+
     public Recital() {
     }
 
@@ -128,12 +129,12 @@ public class Recital {
         this.precio = precio;
     }
 
-	public Ubicacion getUbicacion() {
-		return ubicacion;
-	}
+    public Ubicacion getUbicacion() {
+        return ubicacion;
+    }
 
-	public void setUbicacion(Ubicacion ubicacion) {
-		this.ubicacion = ubicacion;
-	}
-    
+    public void setUbicacion(Ubicacion ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
 }

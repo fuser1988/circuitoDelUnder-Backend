@@ -47,7 +47,7 @@ public class UsuarioService {
                     usuario.setTipoUsuario(TipoUsuario.REGISTRADO_SIN_CONFIRMACION);
                     usuarioRepository.save(usuario);
                     String codigo = gestionCodigoValidacionService.generarCodigoValidacion(usuario.getId());
-                    
+
                     emailService.enviarCodigoDeValidacion(codigo, usuario);
                     return usuario;
                 });

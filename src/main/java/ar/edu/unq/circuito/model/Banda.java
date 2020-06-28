@@ -2,6 +2,7 @@ package ar.edu.unq.circuito.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
@@ -20,7 +21,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.Type;
 
 @Entity
-public class Banda {
+public class Banda implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

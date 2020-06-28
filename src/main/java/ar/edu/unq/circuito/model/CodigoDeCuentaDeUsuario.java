@@ -1,12 +1,13 @@
 package ar.edu.unq.circuito.model;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CodigoDeCuentaDeUsuario {
+public class CodigoDeCuentaDeUsuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

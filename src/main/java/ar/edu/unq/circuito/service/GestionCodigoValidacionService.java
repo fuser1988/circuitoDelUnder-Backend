@@ -12,33 +12,34 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @Service
 public class GestionCodigoValidacionService {
+
     @Autowired
     private CodigoDeCuentaDeUsuarioRepository codigoDeCuentaDeUsuarioRepository;
-    
+
     @Autowired
     private UsuarioRepository usuarioRepository;
-    
+
     public boolean validarCodigo(String codigo, long usuarioId) {
-        if ( ! usuarioRepository.existsById(usuarioId)) {
+        if (!usuarioRepository.existsById(usuarioId)) {
             throw new NoSuchElementException("El id de usuario no existe");
         }
-        CodigoDeCuentaDeUsuario codigoDeCuentaDeUsuario =
-                codigoDeCuentaDeUsuarioRepository.findByUsuarioId(usuarioId).get();//orElseThrow(()-> {throw new IllegalArgumentException("el usuario no tiene un codigo generado");});
-                String codin = codigoDeCuentaDeUsuario.getCodigo();
+        CodigoDeCuentaDeUsuario codigoDeCuentaDeUsuario
+                = codigoDeCuentaDeUsuarioRepository.findByUsuarioId(usuarioId).get();//orElseThrow(()-> {throw new IllegalArgumentException("el usuario no tiene un codigo generado");});
+        String codin = codigoDeCuentaDeUsuario.getCodigo();
         return codigoDeCuentaDeUsuario.getCodigo().contentEquals(codigo);
     }
 
     public String generarCodigoValidacion(long usuarioId) {
-        if ( ! usuarioRepository.existsById(usuarioId)) {
+        if (!usuarioRepository.existsById(usuarioId)) {
             throw new NoSuchElementException("El id de usuario no existe");
         }
         final String codigo = GeneradorDeCodigo.generarCodigo();
-        
+
         CodigoDeCuentaDeUsuario codigoDeCuentaDeUsuario = new CodigoDeCuentaDeUsuario();
         codigoDeCuentaDeUsuario.setCodigo(codigo);
         codigoDeCuentaDeUsuario.setUsuarioId(usuarioId);
         codigoDeCuentaDeUsuarioRepository.save(codigoDeCuentaDeUsuario);
         return codigo;
     }
-    
+
 }

@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @Service
 public class EmailService {
-    
+
     private final JavaMailSender javaMailSender;
 
     @Autowired
@@ -33,7 +33,7 @@ public class EmailService {
                     "<html>"
                     + "<body>"
                     + "<div>"
-                    + "<div> Bienvenido" + usuario.getNombre()+ "</div>"
+                    + "<div> Bienvenido" + usuario.getNombre() + "</div>"
                     + "<div>Tu código de validación es:</div>"
                     + "<div><strong>" + codigo + "</strong></div>"
                     + "<img src= 'https://raw.githubusercontent.com/fuser1988/circuitoDelUnder-Documentacion/master/Circuito-del-under.png'/>"
