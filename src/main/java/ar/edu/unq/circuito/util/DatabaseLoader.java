@@ -352,6 +352,7 @@ public class DatabaseLoader {
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Burzaco")
                 .conDireccion("Rocha 662")
+                .conTelefono(1135781400)
                 .conLugar("La Terraza").build();
 
         IniciativaRecital iniciativa2 = new IniciativaRecitalBuilderForLoader()
@@ -361,6 +362,7 @@ public class DatabaseLoader {
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Berazategui")
                 .conDireccion("Rocha 662")
+                .conTelefono(1135781400)
                 .conLugar("La Terraza").build();
 
         iniciativaRecitalRepository.save(iniciativa1);
