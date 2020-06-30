@@ -11,8 +11,6 @@ public class IniciativaRecitalBuilderForLoader {
     private long id;
     private String descripcion;
     private LocalDate fecha;
-    private LocalTime hora;
-    private String direccion;
     private String localidad;
     private String lugar;
     private int telefono;
@@ -22,8 +20,6 @@ public class IniciativaRecitalBuilderForLoader {
         IniciativaRecital iniciativa = new IniciativaRecital();
         iniciativa.setDescripcion(descripcion);
         iniciativa.setFecha(fecha);
-        iniciativa.setHora(hora);
-        iniciativa.setDireccion(direccion);
         iniciativa.setLocalidad(localidad);
         iniciativa.setLugar(lugar);
         iniciativa.setTelefono(telefono);
@@ -46,11 +42,6 @@ public class IniciativaRecitalBuilderForLoader {
         return this;
     }
 
-    public IniciativaRecitalBuilderForLoader conHora(LocalTime hora) {
-        this.hora = hora;
-        return this;
-    }
-
     public IniciativaRecitalBuilderForLoader conLocalidad(String localidad) {
         this.localidad = localidad;
         return this;
@@ -60,12 +51,7 @@ public class IniciativaRecitalBuilderForLoader {
         this.lugar = lugar;
         return this;
     }
-
-    public IniciativaRecitalBuilderForLoader conDireccion(String direccion) {
-        this.direccion = direccion;
-        return this;
-    }
-
+   
     public IniciativaRecitalBuilderForLoader conTelefono(int telefono) {
         this.telefono = telefono;
         return this;

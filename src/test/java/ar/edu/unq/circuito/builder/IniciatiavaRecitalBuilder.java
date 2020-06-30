@@ -15,9 +15,7 @@ public class IniciatiavaRecitalBuilder extends AbstractPersistenceBuilder<Inicia
 		instance = new IniciativaRecital();
 		instance.setDescripcion("nos volvemso a encontrar en laa roca bar para compartir una noche a puro rock");
         instance.setFecha(LocalDate.of(2018, 10, 30));
-        instance.setHora(LocalTime.of(22, 00, 00));
         instance.setLocalidad("Quilmes");
-        instance.setDireccion("almirante brown 662");
         instance.setLugar("La Barra");
         instance.setTelefono(123456);
 	}
@@ -38,11 +36,6 @@ public class IniciatiavaRecitalBuilder extends AbstractPersistenceBuilder<Inicia
         return this;
     }
 	
-	public IniciatiavaRecitalBuilder conHora(LocalTime hora) {
-        instance.setHora(hora);
-        return this;
-    }
-	
 	public IniciatiavaRecitalBuilder conLocalidad(String localidad) {
         instance.setLocalidad(localidad);
         return this;
@@ -50,11 +43,6 @@ public class IniciatiavaRecitalBuilder extends AbstractPersistenceBuilder<Inicia
 	
 	public IniciatiavaRecitalBuilder conLugar(String lugar) {
         instance.setLugar(lugar);
-        return this;
-    }
-	
-	public IniciatiavaRecitalBuilder conDireccion(String direccion) {
-        instance.setDireccion(direccion);
         return this;
     }
 	

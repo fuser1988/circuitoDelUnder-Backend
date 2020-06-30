@@ -8,8 +8,6 @@ public class IniciativaRecitalVo {
     private long id;
     private String descripcion;
     private LocalDate fecha;
-    private LocalTime hora;
-    private String direccion;
     private String localidad;
     private String lugar;
     private int telefono;
@@ -41,22 +39,6 @@ public class IniciativaRecitalVo {
 
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
-    }
-
-    public LocalTime getHora() {
-        return hora;
-    }
-
-    public void setHora(LocalTime hora) {
-        this.hora = hora;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
     }
 
     public String getLocalidad() {

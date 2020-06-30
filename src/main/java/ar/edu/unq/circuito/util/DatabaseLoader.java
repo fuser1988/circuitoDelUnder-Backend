@@ -349,9 +349,7 @@ public class DatabaseLoader {
                 .conDescripcion("Bunas colegas, estamos organizando una fechita en la cobacha burzaco, un bar chiquito pero amistoso, podemos tocar hasta 4 bandas, el sonido corre por cuenta de el lugar pero las bandas se encargarian del resto.")
                 .conBanda(forasteros)
                 .conFecha(LocalDate.of(2020, 9, 18))
-                .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Burzaco")
-                .conDireccion("Rocha 662")
                 .conTelefono(1135781400)
                 .conLugar("La Terraza").build();
 
@@ -359,9 +357,7 @@ public class DatabaseLoader {
                 .conDescripcion("El 20 de Noviembre es Hoy una noche de a puro rock y blues la Terraza. Tenemos show en vivo de Dementes, auqellos interesados en tocar juntos a la banda comuniquese hay 4 lugares")
                 .conBanda(dementes)
                 .conFecha(LocalDate.of(2020, 11, 20))
-                .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Berazategui")
-                .conDireccion("Rocha 662")
                 .conTelefono(1135781400)
                 .conLugar("La Terraza").build();
 

@@ -50,11 +50,9 @@ public class IniciativaRecitalService {
     private IniciativaRecital crearIniciativaRecital(IniciativaRecitalVo iniciativaVo, Usuario usuario) {
         IniciativaRecital iniciativa = new IniciativaRecital();
         iniciativa.setDescripcion(iniciativaVo.getDescripcion());
-        iniciativa.setDireccion(iniciativaVo.getDireccion());
         iniciativa.setLugar(iniciativaVo.getLugar());
         iniciativa.setLocalidad(iniciativaVo.getLocalidad());
         iniciativa.setFecha(iniciativaVo.getFecha());
-        iniciativa.setHora(iniciativaVo.getHora());
         iniciativa.setTelefono(iniciativaVo.getTelefono());
         iniciativa.setUsuario(usuario);
         iniciativa.setBanda(procesarBanda(iniciativaVo.getBanda()));
@@ -73,8 +71,6 @@ public class IniciativaRecitalService {
             newIniciativa.setId(iniciativaRecital.getId());
             newIniciativa.setDescripcion(iniciativaRecital.getDescripcion());
             newIniciativa.setFecha(iniciativaRecital.getFecha());
-            newIniciativa.setHora(iniciativaRecital.getHora());
-            newIniciativa.setDireccion(iniciativaRecital.getDireccion());
             newIniciativa.setLocalidad(iniciativaRecital.getLocalidad());
             newIniciativa.setLugar(iniciativaRecital.getLugar());
             newIniciativa.setTelefono(iniciativaRecital.getTelefono());
