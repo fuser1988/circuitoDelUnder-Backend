@@ -34,7 +34,18 @@ public class DatabaseLoader {
     }
 
     public void run(String... args) throws Exception {
-
+        String ineptosLogo = ConversorDeArchivos.convertirABase64("images/IneptosLogo.jpg");
+        String fokLogo = ConversorDeArchivos.convertirABase64("images/Fok Logo.jpg");
+        String gritosLogo = ConversorDeArchivos.convertirABase64("images/GritosDe ProtestaLogo.jpg");
+        String higadoLogo = ConversorDeArchivos.convertirABase64("images/HigadoValienteLogo.jpg");
+        String laCautivaLogo = ConversorDeArchivos.convertirABase64("images/LaCautivaLogo.jpg");
+        String lameloidesLogo = ConversorDeArchivos.convertirABase64("images/LameloidesLogo.jpg");
+        String trampososLogo = ConversorDeArchivos.convertirABase64("images/LosTrampososLogo.jpg");
+        String verdaderosLogo = ConversorDeArchivos.convertirABase64("images/LosVerdaderosLogo.jpg");
+        String muffarinisLogo = ConversorDeArchivos.convertirABase64("images/MuffarinisLogo.jpg");
+        String gronchosLogo = ConversorDeArchivos.convertirABase64("images/TheGronchosLogo.jpg");
+        String sagradaLogo = ConversorDeArchivos.convertirABase64("images/Sagrada Logo.jpg");
+        
         Material videoEtiliko = new Material();
         videoEtiliko.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
         videoEtiliko.setUrl("https://www.youtube.com/embed/Qmb1pGtgj8I?list=PLHL_xXZsGfMY9V4VjjsHqNofLS55hyCbH");
@@ -59,10 +70,65 @@ public class DatabaseLoader {
         albumExplenden.setTipoMaterial(TipoMaterial.TIPO_ALBUM);
         albumExplenden.setUrl("https://www.youtube.com/embed/9xtYdCX-CYI");
         albumExplenden.setComentario("Jardin de Omar- Disco 20014");
-
         List<Material> explendenMaterial = Arrays.asList(videoExplenden, albumExplenden);
+        
+        Material videoIneptos = new Material();
+        videoIneptos.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
+        videoIneptos.setUrl("https://www.youtube.com/embed/-tvO2AvEPzc");
+        videoIneptos.setComentario("Este es un demo que realizamos en diciembre del 2019 después de mucho tiempo sin grabar por la gira en el interior del país.");
+        
+        Material videoFok = new Material();
+        videoFok.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
+        videoFok.setUrl("https://www.youtube.com/embed/CdF3s25DXro");
+        videoFok.setComentario("Fok electro chongo- sos tan fácil - video oficial");
 
-        Banda banda = BandaBuilderForLoader.conNombre("MAÑACO").conInfo("").conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/87357485_1533890093453193_2906730567674363904_n.jpg?_nc_cat=109&_nc_sid=7aed08&_nc_oc=AQmSwa-ISI-cqXDlwy58Vzqnb5VgpNa68LhKJIQLWffXm2RW48RAPLlb9SXP1l5PgUQRucrb8pzKHLb7VcH9u1fK&_nc_ht=scontent.faep4-1.fna&oh=2c1eb31f80d50519b399f447ab83f176&oe=5F080E90").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
+        Material videoGritos = new Material();
+        videoGritos.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
+        videoGritos.setUrl("https://www.youtube.com/embed/1RG5gLb3SGE");
+        videoGritos.setComentario("Este es nuestro primer sencillo grabado en la sala de El Peluca el 14 de diciembre 2019, en este tema reflejamos la necesidad de una fraternidad social y la unión.");
+
+        Material videoHigado = new Material();
+        videoHigado.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
+        videoHigado.setUrl("https://www.youtube.com/embed/DwJAHi-BHgY");
+        videoHigado.setComentario("HÍGADO VALIENTE THRASH METAL LES PRESENTAMOS UN VÍDEO PARA TODOS LOS MALDITOS THRASHEROS RABIOSOS... NOCHE TÓXICA PARA USTEDES!!");
+
+        Material videoCautiva = new Material();
+        videoCautiva.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
+        videoCautiva.setUrl("https://www.youtube.com/embed/5ooxqGTMZaE");
+        videoCautiva.setComentario("La Cautiva Rock & Roll – Esas cosas- tema hecho en septiembre del año 2008, grabado en el estudio de El Tano de Florencio Varela.");
+
+        Material videoLameloide = new Material();
+        videoLameloide.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
+        videoLameloide.setUrl("https://www.youtube.com/embed/T5Z5J2_si8Y");
+        videoLameloide.setComentario("Este es nuestro primer sencillo grabado en la sala de El Peluca el 14 de diciembre 2019, en este tema reflejamos la necesidad de una fraternidad social y la unión. ");
+
+        Material videoTramposos = new Material();
+        videoTramposos.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
+        videoTramposos.setUrl("https://www.youtube.com/embed/swOTZYvJQz0");
+        videoTramposos.setComentario("Primer tema del EP &quot;Casanova Open&quot; Grabado, mezclado y masterizado por Tomas Monari en el estudio La clinica.");
+
+        Material videoVerdaderos = new Material();
+        videoVerdaderos.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
+        videoVerdaderos.setUrl("https://www.youtube.com/embed/WJy33m7XQks");
+        videoVerdaderos.setComentario("Los verdaderos, volver (full álbum) año 2006.");
+
+        Material videoMuffarinis = new Material();
+        videoMuffarinis.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
+        videoMuffarinis.setUrl("https://www.youtube.com/embed/lFdVisvUPvQ");
+        videoMuffarinis.setComentario("En Vivo Mendoza Rock Café Cobertura de Compilado Punk Gasolero.");
+
+        Material videoGronchos = new Material();
+        videoGronchos.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
+        videoGronchos.setUrl("https://www.youtube.com/embed/QwrHCkVkXmE");
+        videoGronchos.setComentario("The Gronchos - En Veremos (Videoclip)");
+
+        Material videoSagrada = new Material();
+        videoSagrada.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
+        videoSagrada.setUrl("https://www.youtube.com/embed/t4-VRZHImys");
+        videoSagrada.setComentario("POR LAS CALLES - SRAGADA ETIOPIA PRODUCIDO Y DIRIGIDO POR @DEL_SUR_PRODUCCIONES FACEBOOK");
+
+
+        Banda banda = BandaBuilderForLoader.conNombre("MAÑACO").conInfo("Somos una Banda de Florencio Varela que hacemos Grincore. Nos gusta tocar en vivo y viajar para difundir nuestra musica.").conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/87357485_1533890093453193_2906730567674363904_n.jpg?_nc_cat=109&_nc_sid=7aed08&_nc_oc=AQmSwa-ISI-cqXDlwy58Vzqnb5VgpNa68LhKJIQLWffXm2RW48RAPLlb9SXP1l5PgUQRucrb8pzKHLb7VcH9u1fK&_nc_ht=scontent.faep4-1.fna&oh=2c1eb31f80d50519b399f447ab83f176&oe=5F080E90").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
         Banda elBanda = BandaBuilderForLoader.conNombre("Explenden").conInfo("EXPLENDEN se formó en enero del 2001, y originalmente la banda estaba integrada por amigos de la escuela que se reunían en Villa Urquiza por las tardes y las noches de aquel verano. La idea por aquel entonces fue hacer temas que siguieran la línea de las influencias musicales de sus integrantes: Mal Momento y Flema como referentes locales, y Ramones, Sex Pistols, Buzzcocks o La Polla Records desde el exterior, entre muchos otros.").conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/p960x960/68701583_2644002115632614_3536889436358836224_o.jpg?_nc_cat=110&_nc_sid=85a577&_nc_oc=AQnSRFnE1QVTAT6XzhbH_JtLyc4BV0SF5OHps2Rrij43a9yY9Qqpxx_SHbGhoxOMxynNcoTTB2Lh7RkYOQgfYoNy&_nc_ht=scontent.faep4-1.fna&_nc_tp=6&oh=d36589d0292d112e3bf15c3a47b468c9&oe=5F09F62C").conGeneros(Arrays.asList(new Genero("PUNK"), new Genero("PUNK_ROCK"), new Genero("ROCK"))).conMaterial(explendenMaterial).build();
         Banda aluminosis = BandaBuilderForLoader.conNombre("Aluminosis").conInfo("somos una banda española, hacemos rock").conImagen("https://gp1.wac.edgecastcdn.net/802892/http_public_production/artists/images/2331471/original/resize:600x600/crop:x44y48w516h386/aspect:1.0/hash:1467286589/1327535155_AGRO_2_BLANC_MODEL_2.JPG?1467286589").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
         Banda etiliko = BandaBuilderForLoader.conNombre("ETILIKO").conInfo("somos un grupo punk procedente de Salvatierra, País Vasco").conImagen("https://i.ytimg.com/vi/ct9Sz6PbCFE/hqdefault.jpg").conGeneros(Arrays.asList(new Genero("PUNK"))).conMaterial(Arrays.asList(videoEtiliko)).build();
@@ -71,7 +137,7 @@ public class DatabaseLoader {
         Banda gondwana = BandaBuilderForLoader.conNombre("GONDWANA").conInfo("Gondwana es un grupo musical de reggae chileno").conImagen("https://sites.google.com/site/reggaeenchile/_/rsrc/1370535858801/gondwana/gondwana.jpg").conGeneros(Arrays.asList(new Genero("REGGAE"))).conMaterial(null).build();
         Banda amnecia = BandaBuilderForLoader.conNombre("AMNECIA").conInfo("banda de blues").conImagen("http://www.amnesiabluesband.com/_Media/hailstone-front-cover_med-4.jpeg").conGeneros(Arrays.asList(new Genero("BLUES"))).conMaterial(null).build();
         Banda forasteros = BandaBuilderForLoader.conNombre("FORASTEROS").conInfo("somos un grupo olavarriense").conImagen("http://7400noticias.com.ar/wp-content/uploads/2015/09/forasteros3.jpg").conGeneros(Arrays.asList(new Genero("METAL"), new Genero("BLUES"))).conMaterial(null).build();
-        Banda laMississippi = BandaBuilderForLoader.conNombre("La Mississippi").conInfo("La Mississippi Blues Band es una banda de blues rock argentino").conImagen("http://www.lamississippi.com.ar/home/wp-content/uploads/2017/11/DSC_4803-copy-uai-1032x691.jpg").conGeneros(Arrays.asList(new Genero("BLUES"))).conMaterial(null).build();
+        Banda laMississippi = BandaBuilderForLoader.conNombre("La Mississippi").conInfo("La Mississippi Blues Band es una banda de blues rock argentino").conImagen("https://www.wipe.com.ar/imagenes/i4UViB4tyg3W1yVGDrrpEiee3plbJ6h3.jpg").conGeneros(Arrays.asList(new Genero("BLUES"))).conMaterial(null).build();
         Banda demoledor = BandaBuilderForLoader.conNombre("Demoledor").conInfo("somos una banda metalera de Florencio Varela").conImagen("https://www.miciudadrock.com.ar/media/cache/a5/7d/a57dc7ba0bcfd4f25767871a1fe377cd.jpg").conGeneros(Arrays.asList(new Genero("METAL"))).conMaterial(null).build();
         Banda donCabot = BandaBuilderForLoader.conNombre("Don Cabot").conInfo("es una banda de barrio que se formó en un espontaneo junte de músicos en busca de un espacio en la ruta del rock").conImagen("https://pbs.twimg.com/profile_images/778377437801541632/_FL9yvP3_400x400.jpg").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
         Banda laMocosa = BandaBuilderForLoader.conNombre(" La Mocosa").conInfo("La Mocosa es una banda de rock independiente formada en Buenos Aires durante el año 2000").conImagen("https://revistamutt.com/wp-content/uploads/2017/06/Gjira-7-1024x683.jpg").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
@@ -79,7 +145,20 @@ public class DatabaseLoader {
         Banda camus = BandaBuilderForLoader.conNombre("Camus").conInfo("somos una banda del sur de Buenos aires, hacemos rock").conImagen("http://www.laizquierdadiario.com/IMG/arton3346.jpg").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
         Banda dementes = BandaBuilderForLoader.conNombre("Dementes").conInfo("somos una banda de rock").conImagen("http://dementesska.es/wp-content/uploads/2016/01/footer-logo.png").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
         Banda laRenga = BandaBuilderForLoader.conNombre("La Renga").conInfo("somos una banda del sur de Buenos aires, hacemos metal").conImagen("https://www.larenga.com/images/logo.png").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(Arrays.asList(videoLaRenga, albunRenga)).build();
-
+        
+        Banda ineptos = BandaBuilderForLoader.conNombre("INEPTOS").conInfo("INEPTOS es una banda de la zona oeste del conurbano bonaerense, después de 18 años de no tocar, a fines del año 2018, volvimos a juntarnos con las mismas ganas de hace 20 años atrás. INEPTOS somos Mauro, Alejandro, Pablo, Atilio y Danno.").conImagen(ineptosLogo).conGeneros(Arrays.asList(new Genero("HARDCORE"), new Genero("PUNK ROCK"))).conMaterial(Arrays.asList(videoIneptos)).build();
+        Banda fok = BandaBuilderForLoader.conNombre("FOK").conInfo("Fok Electro chongo es la historia de un músico físicoculturista amante del Tecno-Pop, pero con dificultad para encontrar un cantante para su banda. Eso fue lo que me llevo a ser el cantante, soy un piano-man super musculoso con un notable oído para las melodías y las letras sensibles y/o con gracia. ").conImagen(fokLogo).conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("ALTERNATIVO"), new Genero("PROGRESIVO"))).conMaterial(Arrays.asList(videoFok)).build();
+        Banda gritos = BandaBuilderForLoader.conNombre("GRITOS DE PROTESTA").conInfo("Somos una Banda de punk protestante de un sonido crudo con letras en contra del sistema, la policía, toda autoridad y sobretodo una banda de amigos solidarios con las causas justas y la autogestión de los compañeros punk de toda Latinoamérica unida. ").conImagen(gritosLogo).conGeneros(Arrays.asList(new Genero("HARDCORE"), new Genero("PUNK"),new Genero("METAL"))).conMaterial(Arrays.asList(videoGritos)).build();
+        Banda higado = BandaBuilderForLoader.conNombre("HIGADO VALIENTE").conInfo("Hígado valiente, banda thrash metal de Argentina Bs.As fundada en el 2009... Tenemos dos demo 2011 y 2013, después de tanta lucha en el ambiente del underground pudimos sacar este material para todos ustedes...").conImagen(higadoLogo).conGeneros(Arrays.asList(new Genero("METAL"),new Genero("NEW METAL"),new Genero("TRASH"),new Genero("HARDCORE"))).conMaterial(Arrays.asList(videoHigado)).build();
+        Banda laCautiva = BandaBuilderForLoader.conNombre("LA CAUTIVA").conInfo("LA CAUTIVA banda de Rock, de zona sur de Bs.As. Más precisamente del partido de Fcio. Varela, que tuvo sus comienzos allá por el año 2000 y aun nos mantenemos con el mismo espíritu de rebeldía, recitales, amigos y la energía de siempre.").conImagen(laCautivaLogo).conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("ROCK AND ROLL"),new Genero("BLUEZ"))).conMaterial(Arrays.asList(videoCautiva)).build();
+        Banda lameloides = BandaBuilderForLoader.conNombre("LAMELOIDES").conInfo("Banda formada en el 2013 en el conurbano de buenos aires, con 2 demos y 3 discos de estudio...Con un estilo punk, grunge, rock alternativo con letras de amor, odio y siempre en contra del opresor. Con LEO en voz, DAVID guitarra y coros, FEDE en la batería y MARTIN en bajo...ellos ya están trabajando en otro disco para el 2021.todo su material esta en las plataformas musicales.").conImagen(lameloidesLogo).conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("GRUNGE"),new Genero("PUNK"))).conMaterial(Arrays.asList(videoLameloide)).build();
+        Banda tramposos = BandaBuilderForLoader.conNombre("LOS TRAMPOSOS").conInfo("Gordos, ebrios y viejos haciendo punk rock en el conurbano bonaerense.").conImagen(trampososLogo).conGeneros(Arrays.asList(new Genero("PUNK ROCK"),new Genero("PUNK"),new Genero("ROCK"))).conMaterial(Arrays.asList(videoTramposos)).build();
+        Banda verdaderos = BandaBuilderForLoader.conNombre("LOS VERDADEROS").conInfo("Los Verdaderos surgieron en San Martín, del desprendimiento de otra banda que tenía Mariano, su cantante, y hace 12 años que tocan por todos lados, todos los barrios y algunos lugares más lejanos como Brasil, Chile, y el interior del país.").conImagen(verdaderosLogo).conGeneros(Arrays.asList(new Genero("PROGRSIVO"),new Genero("HARDCORE"),new Genero("METAL"))).conMaterial(Arrays.asList(videoVerdaderos)).build();
+        Banda muffarinis = BandaBuilderForLoader.conNombre("MUFFARINIS").conInfo("Movimiento Musical Melodías simples de Compases Rápidos Anarquismo Autogestión Independencia Nihilismo.").conImagen(muffarinisLogo).conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("PUNK ROCK"),new Genero("PUNK"))).conMaterial(Arrays.asList(videoMuffarinis)).build();
+        Banda gronchos = BandaBuilderForLoader.conNombre("THE GRONCHOS").conInfo("somos una banda del sur de Buenos aires, hacemos PUNK ROCK").conImagen(gronchosLogo).conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("PUNK ROcK"),new Genero("PUNK"))).conMaterial(Arrays.asList(videoGronchos)).build();
+        Banda sagrada = BandaBuilderForLoader.conNombre("SAGRADA UTIOPIA").conInfo("La banda se formó en el 2009 y llevamos nuestra música por  toda la zona sur. Sin embargo, en el 2013 tuvimos un impase y se formaron otras bandas, “Del Barrio Reggae” y “Culto Fakari”; la separación no duró tanto y este año volvimos a reunirnos con la misma mística y pasión por el Reggae.").conImagen(sagradaLogo).conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("ALTERNATIVO"),new Genero("REGGAE"))).conMaterial(Arrays.asList(videoSagrada)).build();
+        
+        
         bandaRepository.save(banda);
         bandaRepository.save(elBanda);
         bandaRepository.save(aluminosis);
@@ -97,6 +176,17 @@ public class DatabaseLoader {
         bandaRepository.save(camus);
         bandaRepository.save(dementes);
         bandaRepository.save(laRenga);
+        bandaRepository.save(ineptos);
+        bandaRepository.save(fok);
+        bandaRepository.save(gritos);
+        bandaRepository.save(higado);
+        bandaRepository.save(laCautiva);
+        bandaRepository.save(lameloides);
+        bandaRepository.save(tramposos);
+        bandaRepository.save(verdaderos);
+        bandaRepository.save(muffarinis);
+        bandaRepository.save(gronchos);
+        bandaRepository.save(sagrada);
 
         //ConurbanoBlues
         //Furias del metal
