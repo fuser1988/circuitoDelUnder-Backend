@@ -121,7 +121,7 @@ public class DatabaseLoader {
 
         Recital recitalUno = RecitalBuilderForLoader
                 .conNombre("Convención de Batmans")
-                .conDescripcion("MAÑACO se presenta con su nueva formación en El bar del fondo no te lo pierdas")
+                .conDescripcion("MAÑACO se presenta con su nueva formación en El Bar del Fondo. Los esperamos juntos a bandas amigas. Entradas gratis")
                 .conBandas(Arrays.asList(banda, elBanda))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
@@ -134,7 +134,7 @@ public class DatabaseLoader {
 
         Recital recitalDos = RecitalBuilderForLoader
                 .conNombre("Aluminosis")
-                .conDescripcion("Aluminosis se presenta con su nueva formación en El bar del fondo no te lo pierdas")
+                .conDescripcion("Aluminosis se presenta con su nueva formación en Bar del Fondo, no te lo pierdas")
                 .conBandas(Arrays.asList(aluminosis, etiliko, banda))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
@@ -159,21 +159,21 @@ public class DatabaseLoader {
                 .conUbicacion(new Ubicacion(-34.481620, -58.522587)).build();
 
         Recital recitalCuatro = RecitalBuilderForLoader
-                .conNombre("REGGAE for ever")
+                .conNombre("REGGAE FOR EVER")
                 .conDescripcion("DESORBITADOS se presenta para festejar su aniversario junto a los GONDWANA, en el Club Tucumán")
                 .conBandas(Arrays.asList(desorbitados, gondwana))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
-                .conDireccion("Andres baranda 941")
-                .conLugar("Club Tucuman")
+                .conDireccion("Andres Baranda 941")
+                .conLugar("Club Tucumán")
                 .conImagen("https://pxb.cdn.0221.com.ar/0221/022019/1549635228344.jpg?x=18&y=95&width=1463&height=732&rotate=0&scaleX=1&scaleY=1&ow=1500&oh=964&&cw=1920&ch=950")
                 .conPrecio(0)
                 .conUbicacion(new Ubicacion(-34.725068, -58.269700)).build();
 
         Recital recitalCinco = RecitalBuilderForLoader
                 .conNombre("Escuela de Blues")
-                .conDescripcion("Hoy una noche de puro rock y Blues en La Barra. Tenemos show en vivo de AMNECIA, FORASTEROS, La Mississippi y ConurbanoBlues. Los esperamos! Las mejores noches de rock están en La Barra")
+                .conDescripcion("Hoy una noche de puro rock y Blues en La Barra. Tenemos show en vivo de AMNECIA, FORASTEROS, La Mississippi y ConurbanoBlues. Los esperamos! Las mejores noches de Rock están en La Barra")
                 .conBandas(Arrays.asList(amnecia, forasteros, laMississippi))
                 .conFecha(LocalDate.of(2018, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
@@ -186,7 +186,7 @@ public class DatabaseLoader {
 
         Recital recitalSeis = RecitalBuilderForLoader
                 .conNombre("Furias del metal")
-                .conDescripcion("Hoy Noche de Metal Argento en La caldera. Se presenta Demoledor juto a Furias del metal.Los esperamos! Las mejores noches de rock están en La caldera")
+                .conDescripcion("Hoy Noche de Metal Argento en La Caldera. Se presenta Demoledor juto a Furias del metal. Los esperamos! Las mejores noches de Rock están en La Caldera")
                 .conBandas(Arrays.asList(demoledor, banda))
                 .conFecha(LocalDate.of(2020, 6, 22))
                 .conHora(LocalTime.of(21, 00, 00))
@@ -199,7 +199,7 @@ public class DatabaseLoader {
 
         Recital recitalSiete = RecitalBuilderForLoader
                 .conNombre("Las ex")
-                .conDescripcion("Hoy una noche de a puro Punk Rock en el Salon Pueyrredón. Las ex presentan su nuevo disco en casa. No te lo podes perder! Las mejores noches de rock están en Salon Pueyrredón")
+                .conDescripcion("Hoy una noche a puro Punk Rock en el Salón Pueyrredón. Las Ex presentan su nuevo disco en casa. No te lo pódes perder tocamos junto a bandas amigas, termina temprano y la entrada es gratuita.")
                 .conBandas(Arrays.asList(amnecia, forasteros, laMississippi))
                 .conFecha(LocalDate.of(2020, 8, 10))
                 .conHora(LocalTime.of(20, 30, 00))
@@ -238,7 +238,7 @@ public class DatabaseLoader {
          */
         Recital recitalDiez = RecitalBuilderForLoader
                 .conNombre("Solventes de Todo")
-                .conDescripcion("La legendaria banda del corurbano vuelve a los ecenarios de la mano con nuevo materia y vos no te lo podes perder.")
+                .conDescripcion("La legendaria banda del conurbano vuelve a los escenarios de la mano con nuevo material y vos no te lo podes perder.")
                 .conBandas(Arrays.asList(laRenga))
                 .conFecha(LocalDate.of(2020, 6, 16))
                 .conHora(LocalTime.of(20, 30, 00))
@@ -264,7 +264,7 @@ public class DatabaseLoader {
          */
         Recital recitalDoce = RecitalBuilderForLoader
                 .conNombre("Incognitos de la noche")
-                .conDescripcion("Hoy una noche de a puro rock en La Barra. Tenemos el show en vivo de Incognitos de la noche, FORASTEROS, La Mississippi y Conurbano Blues. Los esperamos! Las mejores noches de rock están en La Barra")
+                .conDescripcion("Hoy una noche de a puro Rock en La Barra. Show en vivo de INCOGNITOS DE LA NOCHE, FORASTEROS, La MISSISSIPPI y CONURBANO BLUES. Los esperamos! Las mejores noches de rock están en La Barra")
                 .conBandas(Arrays.asList(forasteros, laMississippi))
                 .conFecha(LocalDate.of(2020, 05, 15))
                 .conHora(LocalTime.of(21, 00, 00))
@@ -277,7 +277,7 @@ public class DatabaseLoader {
 
         Recital recitalTrece = RecitalBuilderForLoader
                 .conNombre("Silencio del vacio")
-                .conDescripcion("La legendaria banda de Valenti Alsina presenta su nuevo disco tocando en vivo para todos su seguidores. Entrada libre y gratuita")
+                .conDescripcion("La legendaria banda de Valentín Alsina presenta su nuevo disco tocando en vivo para todos su seguidores. Entrada libre y gratuita")
                 .conBandas(Arrays.asList(laKatana))
                 .conFecha(LocalDate.of(2020, 10, 11))
                 .conHora(LocalTime.of(20, 00, 00))
@@ -292,7 +292,7 @@ public class DatabaseLoader {
 
         Recital recitalCatorce = RecitalBuilderForLoader
                 .conNombre("Volátil")
-                .conDescripcion("Volátil se presenta junto a grandes colegas del under local. No te lo podes perder")
+                .conDescripcion("Volátil se presenta junto a grandes colegas del under local. No te lo podés perder")
                 .conBandas(Arrays.asList(camus))
                 .conFecha(LocalDate.of(2020, 9, 21))
                 .conHora(LocalTime.of(23, 00, 00))
@@ -317,7 +317,7 @@ public class DatabaseLoader {
                 .conPrecio(0).build();*/
         Recital recitalDieciSeis = RecitalBuilderForLoader
                 .conNombre("Dementes")
-                .conDescripcion("Hoy una noche de a puro rock y blues la Terraza. Tenemos show en vivo de Dementes, El concilio, La pavada, Ojos turbios. Los esperamos! Las mejores noches de rock están en La terraza")
+                .conDescripcion("Hoy una noche de puro Rock y Blues en la Terraza. Tenemos show en vivo de DEMENTES, El CONCILIO, LA PAVADA, OJOS TURBIOS. Los esperamos! Las mejores noches de Rock están en La Terraza")
                 .conBandas(Arrays.asList(dementes))
                 .conFecha(LocalDate.of(2020, 11, 20))
                 .conHora(LocalTime.of(22, 00, 00))
@@ -346,7 +346,7 @@ public class DatabaseLoader {
         recitalRepository.save(recitalDieciSeis);
 
         IniciativaRecital iniciativa1 = new IniciativaRecitalBuilderForLoader()
-                .conDescripcion("Bunas colegas, estamos organizando una fechita en la cobacha burzaco, un bar chiquito pero amistoso, podemos tocar hasta 4 bandas, el sonido corre por cuenta de el lugar pero las bandas se encargarian del resto.")
+                .conDescripcion("Buenas colegas, estamos organizando una fechita en la cobacha Burzaco, un bar chiquito pero amistoso, podemos tocar hasta 4 bandas, el sonido corre por cuenta de el lugar, pero las bandas se encargarían del resto.")
                 .conBanda(forasteros)
                 .conFecha(LocalDate.of(2020, 9, 18))
                 .conLocalidad("Burzaco")
@@ -354,7 +354,7 @@ public class DatabaseLoader {
                 .conLugar("La Terraza").build();
 
         IniciativaRecital iniciativa2 = new IniciativaRecitalBuilderForLoader()
-                .conDescripcion("El 20 de Noviembre es Hoy una noche de a puro rock y blues la Terraza. Tenemos show en vivo de Dementes, auqellos interesados en tocar juntos a la banda comuniquese hay 4 lugares")
+                .conDescripcion("Hay un bar en Berazategui que se llama La Terraza que no les cobran a las bandas por tocar. El único detalle es que las bandas que tocan tienen que poner el sonido y los instrumentos. Pueden tocar hasta 4 bandas. La idea es hacer una fecha Punk y Metal")
                 .conBanda(dementes)
                 .conFecha(LocalDate.of(2020, 11, 20))
                 .conLocalidad("Berazategui")
