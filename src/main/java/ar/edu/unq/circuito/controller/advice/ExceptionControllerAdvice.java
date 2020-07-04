@@ -36,7 +36,7 @@ public class ExceptionControllerAdvice {
 
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<String> handleNoSuchElementException(NoSuchElementException exception) {
-        return new ResponseEntity<>(MENSAJE_DEFAULT_NOT_FOUND, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(SocketTimeoutException.class)

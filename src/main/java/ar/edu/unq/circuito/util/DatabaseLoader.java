@@ -128,7 +128,7 @@ public class DatabaseLoader {
         videoSagrada.setComentario("POR LAS CALLES - SRAGADA ETIOPIA PRODUCIDO Y DIRIGIDO POR @DEL_SUR_PRODUCCIONES FACEBOOK");
 
 
-        Banda banda = BandaBuilderForLoader.conNombre("MAÑACO").conInfo("Somos una Banda de Florencio Varela que hacemos Grincore. Nos gusta tocar en vivo y viajar para difundir nuestra musica.").conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/87357485_1533890093453193_2906730567674363904_n.jpg?_nc_cat=109&_nc_sid=7aed08&_nc_oc=AQmSwa-ISI-cqXDlwy58Vzqnb5VgpNa68LhKJIQLWffXm2RW48RAPLlb9SXP1l5PgUQRucrb8pzKHLb7VcH9u1fK&_nc_ht=scontent.faep4-1.fna&oh=2c1eb31f80d50519b399f447ab83f176&oe=5F080E90").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
+        Banda banda = BandaBuilderForLoader.conNombre("MAÑACO").conInfo("Somos una Banda de Florencio Varela que hacemos Grincore. Nos gusta tocar en vivo y viajar para difundir nuestra musica. Mañaco somos Facundo en la guitarra, cachito en el bajo, luka monti en la bata y Monky en la voz.").conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/87357485_1533890093453193_2906730567674363904_n.jpg?_nc_cat=109&_nc_sid=7aed08&_nc_oc=AQmSwa-ISI-cqXDlwy58Vzqnb5VgpNa68LhKJIQLWffXm2RW48RAPLlb9SXP1l5PgUQRucrb8pzKHLb7VcH9u1fK&_nc_ht=scontent.faep4-1.fna&oh=2c1eb31f80d50519b399f447ab83f176&oe=5F080E90").conGeneros(Arrays.asList(new Genero("GRINCORE"),new Genero("HARDCORE"),new Genero("PUNK"))).conMaterial(Arrays.asList(videoMuffarinis)).build();
         Banda elBanda = BandaBuilderForLoader.conNombre("Explenden").conInfo("EXPLENDEN se formó en enero del 2001, y originalmente la banda estaba integrada por amigos de la escuela que se reunían en Villa Urquiza por las tardes y las noches de aquel verano. La idea por aquel entonces fue hacer temas que siguieran la línea de las influencias musicales de sus integrantes: Mal Momento y Flema como referentes locales, y Ramones, Sex Pistols, Buzzcocks o La Polla Records desde el exterior, entre muchos otros.").conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/p960x960/68701583_2644002115632614_3536889436358836224_o.jpg?_nc_cat=110&_nc_sid=85a577&_nc_oc=AQnSRFnE1QVTAT6XzhbH_JtLyc4BV0SF5OHps2Rrij43a9yY9Qqpxx_SHbGhoxOMxynNcoTTB2Lh7RkYOQgfYoNy&_nc_ht=scontent.faep4-1.fna&_nc_tp=6&oh=d36589d0292d112e3bf15c3a47b468c9&oe=5F09F62C").conGeneros(Arrays.asList(new Genero("PUNK"), new Genero("PUNK_ROCK"), new Genero("ROCK"))).conMaterial(explendenMaterial).build();
         Banda aluminosis = BandaBuilderForLoader.conNombre("Aluminosis").conInfo("somos una banda española, hacemos rock").conImagen("https://gp1.wac.edgecastcdn.net/802892/http_public_production/artists/images/2331471/original/resize:600x600/crop:x44y48w516h386/aspect:1.0/hash:1467286589/1327535155_AGRO_2_BLANC_MODEL_2.JPG?1467286589").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
         Banda etiliko = BandaBuilderForLoader.conNombre("ETILIKO").conInfo("somos un grupo punk procedente de Salvatierra, País Vasco").conImagen("https://i.ytimg.com/vi/ct9Sz6PbCFE/hqdefault.jpg").conGeneros(Arrays.asList(new Genero("PUNK"))).conMaterial(Arrays.asList(videoEtiliko)).build();
@@ -176,17 +176,17 @@ public class DatabaseLoader {
         bandaRepository.save(camus);
         bandaRepository.save(dementes);
         bandaRepository.save(laRenga);
-        bandaRepository.save(ineptos);
-        bandaRepository.save(fok);
-        bandaRepository.save(gritos);
-        bandaRepository.save(higado);
-        bandaRepository.save(laCautiva);
-        bandaRepository.save(lameloides);
-        bandaRepository.save(tramposos);
-        bandaRepository.save(verdaderos);
-        bandaRepository.save(muffarinis);
-        bandaRepository.save(gronchos);
-        bandaRepository.save(sagrada);
+//        bandaRepository.save(ineptos);
+//        bandaRepository.save(fok);
+//        bandaRepository.save(gritos);
+//        bandaRepository.save(higado);
+//        bandaRepository.save(laCautiva);
+//        bandaRepository.save(lameloides);
+//        bandaRepository.save(tramposos);
+//        bandaRepository.save(verdaderos);
+//        bandaRepository.save(muffarinis);
+//        bandaRepository.save(gronchos);
+//        bandaRepository.save(sagrada);
 
         //ConurbanoBlues
         //Furias del metal
