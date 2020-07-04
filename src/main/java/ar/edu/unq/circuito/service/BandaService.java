@@ -96,6 +96,9 @@ public class BandaService {
     }
 
     public Banda buscarPorId(Long id) {
+        if (!bandaRepository.existsById(id)) {
+            throw new NoSuchElementException("La banda a la que intenta acceder no existe");
+        }
         return bandaRepository.findById(id).get();
     }
 
