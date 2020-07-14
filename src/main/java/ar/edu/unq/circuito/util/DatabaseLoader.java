@@ -127,8 +127,31 @@ public class DatabaseLoader {
         videoSagrada.setUrl("https://www.youtube.com/embed/t4-VRZHImys");
         videoSagrada.setComentario("POR LAS CALLES - SRAGADA ETIOPIA PRODUCIDO Y DIRIGIDO POR @DEL_SUR_PRODUCCIONES FACEBOOK");
 
+        Material materialManaco = new Material();
+        materialManaco.setTipoMaterial(TipoMaterial.TIPO_VIDEO);
+        materialManaco.setUrl("https://www.youtube.com/embed/D_v4-_TDxTs");
+        materialManaco.setComentario("Show en vivo - Basta ya!");
 
-        Banda banda = BandaBuilderForLoader.conNombre("MAÑACO").conInfo("Somos una Banda de Florencio Varela que hacemos Grincore. Nos gusta tocar en vivo y viajar para difundir nuestra musica. Mañaco somos Facundo en la guitarra, cachito en el bajo, luka monti en la bata y Monky en la voz.").conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/87357485_1533890093453193_2906730567674363904_n.jpg?_nc_cat=109&_nc_sid=7aed08&_nc_oc=AQmSwa-ISI-cqXDlwy58Vzqnb5VgpNa68LhKJIQLWffXm2RW48RAPLlb9SXP1l5PgUQRucrb8pzKHLb7VcH9u1fK&_nc_ht=scontent.faep4-1.fna&oh=2c1eb31f80d50519b399f447ab83f176&oe=5F080E90").conGeneros(Arrays.asList(new Genero("GRINCORE"),new Genero("HARDCORE"),new Genero("PUNK"))).conMaterial(Arrays.asList(videoMuffarinis)).build();
+
+        Banda ineptos = BandaBuilderForLoader.conNombre("INEPTOS").conInfo("INEPTOS es una banda de la zona oeste del conurbano bonaerense, después de 18 años de no tocar, a fines del año 2018, volvimos a juntarnos con las mismas ganas de hace 20 años atrás. INEPTOS somos Mauro, Alejandro, Pablo, Atilio y Danno.").conImagen("https://i.ibb.co/nk6810S/inepto-1.jpg").conGeneros(Arrays.asList(new Genero("HARDCORE"), new Genero("PUNK ROCK"))).conMaterial(Arrays.asList(videoIneptos)).build();
+        Banda fok = BandaBuilderForLoader.conNombre("FOK").conInfo("Fok Electro chongo es la historia de un músico físicoculturista amante del Tecno-Pop, pero con dificultad para encontrar un cantante para su banda. Eso fue lo que me llevo a ser el cantante, soy un piano-man super musculoso con un notable oído para las melodías y las letras sensibles y/o con gracia. ").conImagen("https://i.ibb.co/X3bXjqW/Fok-Logo.jpg").conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("ALTERNATIVO"), new Genero("PROGRESIVO"))).conMaterial(Arrays.asList(videoFok)).build();
+        Banda gritos = BandaBuilderForLoader.conNombre("GRITOS DE PROTESTA").conInfo("Somos una Banda de punk protestante de un sonido crudo con letras en contra del sistema, la policía, toda autoridad y sobretodo una banda de amigos solidarios con las causas justas y la autogestión de los compañeros punk de toda Latinoamérica unida. ").conImagen("https://i.ibb.co/BV1Nhkw/Gritos-De-Protesta-Logo.jpg").conGeneros(Arrays.asList(new Genero("HARDCORE"), new Genero("PUNK"),new Genero("METAL"))).conMaterial(Arrays.asList(videoGritos)).build();
+        Banda higado = BandaBuilderForLoader.conNombre("HIGADO VALIENTE").conInfo("Hígado valiente, banda thrash metal de Argentina Bs.As fundada en el 2009... Tenemos dos demo 2011 y 2013, después de tanta lucha en el ambiente del underground pudimos sacar este material para todos ustedes...").conImagen(higadoLogo).conGeneros(Arrays.asList(new Genero("METAL"),new Genero("NEW METAL"),new Genero("TRASH"),new Genero("HARDCORE"))).conMaterial(Arrays.asList(videoHigado)).build();
+        Banda laCautiva = BandaBuilderForLoader.conNombre("LA CAUTIVA").conInfo("LA CAUTIVA banda de Rock, de zona sur de Bs.As. Más precisamente del partido de Fcio. Varela, que tuvo sus comienzos allá por el año 2000 y aun nos mantenemos con el mismo espíritu de rebeldía, recitales, amigos y la energía de siempre.").conImagen("https://i.ibb.co/nfCvvWx/La-Cautiva-Logo.jpg").conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("ROCK AND ROLL"),new Genero("BLUEZ"))).conMaterial(Arrays.asList(videoCautiva)).build();
+        Banda lameloides = BandaBuilderForLoader.conNombre("LAMELOIDES").conInfo("Banda formada en el 2013 en el conurbano de buenos aires, con 2 demos y 3 discos de estudio...Con un estilo punk, grunge, rock alternativo con letras de amor, odio y siempre en contra del opresor. Con LEO en voz, DAVID guitarra y coros, FEDE en la batería y MARTIN en bajo...ellos ya están trabajando en otro disco para el 2021.todo su material esta en las plataformas musicales.").conImagen("https://i.ibb.co/9mPSJvz/Lameloides-Logo.jpg").conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("GRUNGE"),new Genero("PUNK"))).conMaterial(Arrays.asList(videoLameloide)).build();
+        Banda tramposos = BandaBuilderForLoader.conNombre("LOS TRAMPOSOS").conInfo("Gordos, ebrios y viejos haciendo punk rock en el conurbano bonaerense.").conImagen("https://i.ibb.co/6HKdtGZ/Los-Tramposos-Logo.jpg").conGeneros(Arrays.asList(new Genero("PUNK ROCK"),new Genero("PUNK"),new Genero("ROCK"))).conMaterial(Arrays.asList(videoTramposos)).build();
+        Banda verdaderos = BandaBuilderForLoader.conNombre("LOS VERDADEROS").conInfo("Los Verdaderos surgieron en San Martín, del desprendimiento de otra banda que tenía Mariano, su cantante, y hace 12 años que tocan por todos lados, todos los barrios y algunos lugares más lejanos como Brasil, Chile, y el interior del país.").conImagen("https://i.ibb.co/pvZJ4Fb/Los-Verdaderos-Logo.jpg").conGeneros(Arrays.asList(new Genero("PROGRSIVO"),new Genero("HARDCORE"),new Genero("METAL"))).conMaterial(Arrays.asList(videoVerdaderos)).build();
+        Banda muffarinis = BandaBuilderForLoader.conNombre("MUFFARINIS").conInfo("Movimiento Musical Melodías simples de Compases Rápidos Anarquismo Autogestión Independencia Nihilismo.").conImagen("https://i.ibb.co/F6SSrgS/Muffarinis-Logo.jpg").conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("PUNK ROCK"),new Genero("PUNK"))).conMaterial(Arrays.asList(videoMuffarinis)).build();
+        Banda gronchos = BandaBuilderForLoader.conNombre("THE GRONCHOS").conInfo("somos una banda del sur de Buenos aires, hacemos PUNK ROCK").conImagen("https://i.ibb.co/pjcQTFX/The-Gronchos-Logo.jpg").conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("PUNK ROcK"),new Genero("PUNK"))).conMaterial(Arrays.asList(videoGronchos)).build();
+        Banda sagrada = BandaBuilderForLoader.conNombre("SAGRADA UTIOPIA").conInfo("La banda se formó en el 2009 y llevamos nuestra música por  toda la zona sur. Sin embargo, en el 2013 tuvimos un impase y se formaron otras bandas, “Del Barrio Reggae” y “Culto Fakari”; la separación no duró tanto y este año volvimos a reunirnos con la misma mística y pasión por el Reggae.").conImagen("https://i.ibb.co/zG4mtj2/sagrada-Logo.jpg").conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("ALTERNATIVO"),new Genero("REGGAE"))).conMaterial(Arrays.asList(videoSagrada)).build();
+        
+        Banda banda = BandaBuilderForLoader.conNombre("MAÑACO").conInfo("Somos una Banda de Florencio Varela que hacemos Grincore. Nos gusta tocar en vivo y viajar para difundir nuestra musica. Mañaco MAÑACO hoy son:\n" +
+            "MARIO:VOZ\n" +
+            "MIDI: VOZ\n" +
+            "GUSTY:VIOLA\n" +
+            "NICO:VIOLA\n" +
+            "ADRI:BAJO\n" +
+            "FACU:BATERIA").conImagen("https://i.ibb.co/QJ6Gt5f/Manaco.jpg").conGeneros(Arrays.asList(new Genero("GRINCORE"),new Genero("HARDCORE"),new Genero("PUNK"))).conMaterial(Arrays.asList(materialManaco)).build();
         Banda elBanda = BandaBuilderForLoader.conNombre("Explenden").conInfo("EXPLENDEN se formó en enero del 2001, y originalmente la banda estaba integrada por amigos de la escuela que se reunían en Villa Urquiza por las tardes y las noches de aquel verano. La idea por aquel entonces fue hacer temas que siguieran la línea de las influencias musicales de sus integrantes: Mal Momento y Flema como referentes locales, y Ramones, Sex Pistols, Buzzcocks o La Polla Records desde el exterior, entre muchos otros.").conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/p960x960/68701583_2644002115632614_3536889436358836224_o.jpg?_nc_cat=110&_nc_sid=85a577&_nc_oc=AQnSRFnE1QVTAT6XzhbH_JtLyc4BV0SF5OHps2Rrij43a9yY9Qqpxx_SHbGhoxOMxynNcoTTB2Lh7RkYOQgfYoNy&_nc_ht=scontent.faep4-1.fna&_nc_tp=6&oh=d36589d0292d112e3bf15c3a47b468c9&oe=5F09F62C").conGeneros(Arrays.asList(new Genero("PUNK"), new Genero("PUNK_ROCK"), new Genero("ROCK"))).conMaterial(explendenMaterial).build();
         Banda aluminosis = BandaBuilderForLoader.conNombre("Aluminosis").conInfo("somos una banda española, hacemos rock").conImagen("https://gp1.wac.edgecastcdn.net/802892/http_public_production/artists/images/2331471/original/resize:600x600/crop:x44y48w516h386/aspect:1.0/hash:1467286589/1327535155_AGRO_2_BLANC_MODEL_2.JPG?1467286589").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
         Banda etiliko = BandaBuilderForLoader.conNombre("ETILIKO").conInfo("somos un grupo punk procedente de Salvatierra, País Vasco").conImagen("https://i.ytimg.com/vi/ct9Sz6PbCFE/hqdefault.jpg").conGeneros(Arrays.asList(new Genero("PUNK"))).conMaterial(Arrays.asList(videoEtiliko)).build();
@@ -146,25 +169,23 @@ public class DatabaseLoader {
         Banda dementes = BandaBuilderForLoader.conNombre("Dementes").conInfo("somos una banda de rock").conImagen("http://dementesska.es/wp-content/uploads/2016/01/footer-logo.png").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(null).build();
         Banda laRenga = BandaBuilderForLoader.conNombre("La Renga").conInfo("somos una banda del sur de Buenos aires, hacemos metal").conImagen("https://www.larenga.com/images/logo.png").conGeneros(Arrays.asList(new Genero("ROCK"))).conMaterial(Arrays.asList(videoLaRenga, albunRenga)).build();
         
-        Banda ineptos = BandaBuilderForLoader.conNombre("INEPTOS").conInfo("INEPTOS es una banda de la zona oeste del conurbano bonaerense, después de 18 años de no tocar, a fines del año 2018, volvimos a juntarnos con las mismas ganas de hace 20 años atrás. INEPTOS somos Mauro, Alejandro, Pablo, Atilio y Danno.").conImagen(ineptosLogo).conGeneros(Arrays.asList(new Genero("HARDCORE"), new Genero("PUNK ROCK"))).conMaterial(Arrays.asList(videoIneptos)).build();
-        Banda fok = BandaBuilderForLoader.conNombre("FOK").conInfo("Fok Electro chongo es la historia de un músico físicoculturista amante del Tecno-Pop, pero con dificultad para encontrar un cantante para su banda. Eso fue lo que me llevo a ser el cantante, soy un piano-man super musculoso con un notable oído para las melodías y las letras sensibles y/o con gracia. ").conImagen(fokLogo).conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("ALTERNATIVO"), new Genero("PROGRESIVO"))).conMaterial(Arrays.asList(videoFok)).build();
-        Banda gritos = BandaBuilderForLoader.conNombre("GRITOS DE PROTESTA").conInfo("Somos una Banda de punk protestante de un sonido crudo con letras en contra del sistema, la policía, toda autoridad y sobretodo una banda de amigos solidarios con las causas justas y la autogestión de los compañeros punk de toda Latinoamérica unida. ").conImagen(gritosLogo).conGeneros(Arrays.asList(new Genero("HARDCORE"), new Genero("PUNK"),new Genero("METAL"))).conMaterial(Arrays.asList(videoGritos)).build();
-        Banda higado = BandaBuilderForLoader.conNombre("HIGADO VALIENTE").conInfo("Hígado valiente, banda thrash metal de Argentina Bs.As fundada en el 2009... Tenemos dos demo 2011 y 2013, después de tanta lucha en el ambiente del underground pudimos sacar este material para todos ustedes...").conImagen(higadoLogo).conGeneros(Arrays.asList(new Genero("METAL"),new Genero("NEW METAL"),new Genero("TRASH"),new Genero("HARDCORE"))).conMaterial(Arrays.asList(videoHigado)).build();
-        Banda laCautiva = BandaBuilderForLoader.conNombre("LA CAUTIVA").conInfo("LA CAUTIVA banda de Rock, de zona sur de Bs.As. Más precisamente del partido de Fcio. Varela, que tuvo sus comienzos allá por el año 2000 y aun nos mantenemos con el mismo espíritu de rebeldía, recitales, amigos y la energía de siempre.").conImagen(laCautivaLogo).conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("ROCK AND ROLL"),new Genero("BLUEZ"))).conMaterial(Arrays.asList(videoCautiva)).build();
-        Banda lameloides = BandaBuilderForLoader.conNombre("LAMELOIDES").conInfo("Banda formada en el 2013 en el conurbano de buenos aires, con 2 demos y 3 discos de estudio...Con un estilo punk, grunge, rock alternativo con letras de amor, odio y siempre en contra del opresor. Con LEO en voz, DAVID guitarra y coros, FEDE en la batería y MARTIN en bajo...ellos ya están trabajando en otro disco para el 2021.todo su material esta en las plataformas musicales.").conImagen(lameloidesLogo).conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("GRUNGE"),new Genero("PUNK"))).conMaterial(Arrays.asList(videoLameloide)).build();
-        Banda tramposos = BandaBuilderForLoader.conNombre("LOS TRAMPOSOS").conInfo("Gordos, ebrios y viejos haciendo punk rock en el conurbano bonaerense.").conImagen(trampososLogo).conGeneros(Arrays.asList(new Genero("PUNK ROCK"),new Genero("PUNK"),new Genero("ROCK"))).conMaterial(Arrays.asList(videoTramposos)).build();
-        Banda verdaderos = BandaBuilderForLoader.conNombre("LOS VERDADEROS").conInfo("Los Verdaderos surgieron en San Martín, del desprendimiento de otra banda que tenía Mariano, su cantante, y hace 12 años que tocan por todos lados, todos los barrios y algunos lugares más lejanos como Brasil, Chile, y el interior del país.").conImagen(verdaderosLogo).conGeneros(Arrays.asList(new Genero("PROGRSIVO"),new Genero("HARDCORE"),new Genero("METAL"))).conMaterial(Arrays.asList(videoVerdaderos)).build();
-        Banda muffarinis = BandaBuilderForLoader.conNombre("MUFFARINIS").conInfo("Movimiento Musical Melodías simples de Compases Rápidos Anarquismo Autogestión Independencia Nihilismo.").conImagen(muffarinisLogo).conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("PUNK ROCK"),new Genero("PUNK"))).conMaterial(Arrays.asList(videoMuffarinis)).build();
-        Banda gronchos = BandaBuilderForLoader.conNombre("THE GRONCHOS").conInfo("somos una banda del sur de Buenos aires, hacemos PUNK ROCK").conImagen(gronchosLogo).conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("PUNK ROcK"),new Genero("PUNK"))).conMaterial(Arrays.asList(videoGronchos)).build();
-        Banda sagrada = BandaBuilderForLoader.conNombre("SAGRADA UTIOPIA").conInfo("La banda se formó en el 2009 y llevamos nuestra música por  toda la zona sur. Sin embargo, en el 2013 tuvimos un impase y se formaron otras bandas, “Del Barrio Reggae” y “Culto Fakari”; la separación no duró tanto y este año volvimos a reunirnos con la misma mística y pasión por el Reggae.").conImagen(sagradaLogo).conGeneros(Arrays.asList(new Genero("ROCK"),new Genero("ALTERNATIVO"),new Genero("REGGAE"))).conMaterial(Arrays.asList(videoSagrada)).build();
         
-        
+        bandaRepository.save(ineptos);
+        bandaRepository.save(gritos);
+        bandaRepository.save(higado);
+        bandaRepository.save(desorbitados);
+        bandaRepository.save(laCautiva);
+        bandaRepository.save(sagrada);
+        bandaRepository.save(gronchos);
+        bandaRepository.save(lameloides);
+        bandaRepository.save(tramposos);
+        bandaRepository.save(verdaderos);
+        bandaRepository.save(muffarinis);
         bandaRepository.save(banda);
         bandaRepository.save(elBanda);
         bandaRepository.save(aluminosis);
         bandaRepository.save(etiliko);
         bandaRepository.save(potencial);
-        bandaRepository.save(desorbitados);
         bandaRepository.save(gondwana);
         bandaRepository.save(amnecia);
         bandaRepository.save(forasteros);
@@ -176,17 +197,7 @@ public class DatabaseLoader {
         bandaRepository.save(camus);
         bandaRepository.save(dementes);
         bandaRepository.save(laRenga);
-//        bandaRepository.save(ineptos);
-//        bandaRepository.save(fok);
-//        bandaRepository.save(gritos);
-//        bandaRepository.save(higado);
-//        bandaRepository.save(laCautiva);
-//        bandaRepository.save(lameloides);
-//        bandaRepository.save(tramposos);
-//        bandaRepository.save(verdaderos);
-//        bandaRepository.save(muffarinis);
-//        bandaRepository.save(gronchos);
-//        bandaRepository.save(sagrada);
+        bandaRepository.save(fok);
 
         //ConurbanoBlues
         //Furias del metal
@@ -211,16 +222,16 @@ public class DatabaseLoader {
 
         Recital recitalUno = RecitalBuilderForLoader
                 .conNombre("Convención de Batmans")
-                .conDescripcion("MAÑACO se presenta con su nueva formación en El Bar del Fondo. Los esperamos juntos a bandas amigas. Entradas gratis")
-                .conBandas(Arrays.asList(banda, elBanda))
+                .conDescripcion("Hoy!! La convención de batman!!!! en solano...vengan altas bandas buena onda y sobretodo respeto mutuo. Vengan temprano primer banda 21 hs arranka...Traigan alimento para el comedor santillan.Los vemos mas tarde los espero!!")
+                .conBandas(Arrays.asList(banda, gritos))
                 .conFecha(LocalDate.of(2020, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Quilmes")
-                .conDireccion("Alvares tomas 2015")
-                .conLugar("Bar del fondo")
-                .conImagen("https://depositosonoro.com/wp-content/uploads/2019/04/55478027_1689594917851261_4586995436853657600_o.jpg")
+                .conDireccion("Av Ferrocaril Provincial 4005")
+                .conLugar("Salon cultural SUDAKA")
+                .conImagen("https://i.ibb.co/stxtM4G/batman.png")
                 .conPrecio(0)
-                .conUbicacion(new Ubicacion(-34.706501, -58.2807187)).build();
+                .conUbicacion(new Ubicacion(-34.7797141,-58.320197)).build();
 
         Recital recitalDos = RecitalBuilderForLoader
                 .conNombre("Aluminosis")
@@ -238,13 +249,13 @@ public class DatabaseLoader {
         Recital recitalTres = RecitalBuilderForLoader
                 .conNombre("Lolapeluza")
                 .conDescripcion("Potencial Hardcore se presenta al Lolapeluza con todo su rock punk no te lo podes perder")
-                .conBandas(Arrays.asList(laRenga, potencial, etiliko))
+                .conBandas(Arrays.asList(potencial, elBanda))
                 .conFecha(LocalDate.of(2020, 10, 30))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("San Isidro")
                 .conDireccion("Bernabe marquez 800")
                 .conLugar("Hipódromo de San Isidro")
-                .conImagen("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTaKkBYrBRb131SvqD4Nfw000qaBFtvL5L1WOvL2K7vStRzKtss&usqp=CAU")
+                .conImagen("https://i.ibb.co/5cN7gWM/Lolapeluza.jpg")
                 .conPrecio(0)
                 .conUbicacion(new Ubicacion(-34.481620, -58.522587)).build();
 
@@ -277,7 +288,7 @@ public class DatabaseLoader {
         Recital recitalSeis = RecitalBuilderForLoader
                 .conNombre("Furias del metal")
                 .conDescripcion("Hoy Noche de Metal Argento en La Caldera. Se presenta Demoledor juto a Furias del metal. Los esperamos! Las mejores noches de Rock están en La Caldera")
-                .conBandas(Arrays.asList(demoledor, banda))
+                .conBandas(Arrays.asList(demoledor,higado))
                 .conFecha(LocalDate.of(2020, 6, 22))
                 .conHora(LocalTime.of(21, 00, 00))
                 .conLocalidad("Avellaneda")
@@ -372,8 +383,6 @@ public class DatabaseLoader {
                 .conFecha(LocalDate.of(2020, 10, 11))
                 .conHora(LocalTime.of(20, 00, 00))
                 .conLocalidad("Avellaneda")
-                //.conDireccion("Mitre 2245")
-                //.conLugar("El Catar")
                 .conDireccion("Mitre 2226")
                 .conLugar("Asociación Cultural y Folklórica Martín Fierro")
                 .conImagen("https://media.datachaco.com/adjuntos/244/imagenes/000/896/0000896826.jpg")
@@ -381,13 +390,12 @@ public class DatabaseLoader {
                 .conUbicacion(new Ubicacion(-34.672135, -58.352027)).build();
 
         Recital recitalCatorce = RecitalBuilderForLoader
-                .conNombre("Volátil")
+                .conNombre("Volatil")
                 .conDescripcion("Volátil se presenta junto a grandes colegas del under local. No te lo podés perder")
-                .conBandas(Arrays.asList(camus))
+                .conBandas(Arrays.asList(camus,laKatana))
                 .conFecha(LocalDate.of(2020, 9, 21))
                 .conHora(LocalTime.of(23, 00, 00))
                 .conLocalidad("Burzaco")
-                //.conDireccion("Pedro moran 6622")
                 .conDireccion("Carlos Pellegrini 788")
                 .conLugar("El Amparo")
                 .conImagen("https://pbs.twimg.com/media/DGtg4VlXgAQqIkn?format=jpg&name=small")
@@ -408,7 +416,7 @@ public class DatabaseLoader {
         Recital recitalDieciSeis = RecitalBuilderForLoader
                 .conNombre("Dementes")
                 .conDescripcion("Hoy una noche de puro Rock y Blues en la Terraza. Tenemos show en vivo de DEMENTES, El CONCILIO, LA PAVADA, OJOS TURBIOS. Los esperamos! Las mejores noches de Rock están en La Terraza")
-                .conBandas(Arrays.asList(dementes))
+                .conBandas(Arrays.asList(dementes ,banda))
                 .conFecha(LocalDate.of(2020, 11, 20))
                 .conHora(LocalTime.of(22, 00, 00))
                 .conLocalidad("Berazategui")
@@ -417,6 +425,45 @@ public class DatabaseLoader {
                 .conImagen("https://www.inforegion.com.ar/wp-content/uploads/2019/08/banda1200.jpg")
                 .conPrecio(0)
                 .conUbicacion(new Ubicacion(-34.770335, -58.244218)).build();
+
+        Recital recitalDieciSiete = RecitalBuilderForLoader
+                .conNombre("FESTI UNDER PUNK")
+                .conDescripcion("Nos visita desde Santiago del estero la banda de “que se cague punk rock” vamos a estar tocando también con los amigos de los matados empieza a las 23:00hs la entrada es gratis y nos quedamos hasta que nos echen¡¡¡ av. corrientes 5008 villa crespo CABA.")
+                .conBandas(Arrays.asList(ineptos))
+                .conFecha(LocalDate.of(2020, 11, 20))
+                .conHora(LocalTime.of(23, 00, 00))
+                .conLocalidad("CABA")
+                .conDireccion("Av. corrientes 5008")
+                .conLugar("La Terraza")
+                .conImagen("https://i.ibb.co/MMQhnXh/ineptos-2.jpg")
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.6007489, -58.4385634)).build();
+        
+        Recital recitalDieciOcho = RecitalBuilderForLoader
+                .conNombre("LA ERA DE LA REVELIÓN FEST")
+                .conDescripcion("La era de la rebelión fest, domingo 22 de noviembre 17 hs av. Alsina 2030 (lomas de Zamora) entrada solo en puerta $40.")
+                .conBandas(Arrays.asList(verdaderos))
+                .conFecha(LocalDate.of(2020, 11, 22))
+                .conHora(LocalTime.of(22, 00, 00))
+                .conLocalidad("Lomas de Zamora")
+                .conDireccion("Av. Alsina 2030")
+                .conLugar("El lugarsito")
+                .conImagen("https://i.ibb.co/HdC1N9F/los-verdaderos-2.jpg")
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.7605256,-58.3982006)).build();
+
+        Recital recitalDieciNueve = RecitalBuilderForLoader
+                .conNombre("PUNK ROCK EN ZORBA!")
+                .conDescripcion("EXPLENDEN - TUKERA - MALAS KOSTUMBRES - GRAN ESTAFA - METHRASHEROS en Zorba Rock, J.C. Paz , Hipolito Yrigoyen 1061. 22hs ENTRADAS EN PUERTA")
+                .conBandas(Arrays.asList(elBanda))
+                .conFecha(LocalDate.of(2021,02, 15))
+                .conHora(LocalTime.of(22, 00, 00))
+                .conLocalidad("Jose C. Paz")
+                .conDireccion("Hipolito Yrigoyen 1061")
+                .conLugar("ZORBA")
+                .conImagen("https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/51548680_2344366532262842_2882754827572477952_n.jpg?_nc_cat=105&_nc_sid=340051&_nc_eui2=AeF_AkGi_enSt_OVvAXfi3hqw2YqXC0E4BrDZipcLQTgGuD3svQ3pWpeO7H9FPRSHtx1_mFvlGvx8oZFqtqQrEv7&_nc_oc=AQmcWnkLLmnP5xCVBWUBrEar1DbJFFA8EPx0KrOiREWX3evadH0Ies9YU45LHoZ8Nqg&_nc_ht=scontent.faep4-1.fna&oh=5810f8e56600cb9beda12556556f099c&oe=5F2FCB4C")
+                .conPrecio(0)
+                .conUbicacion(new Ubicacion(-34.515336,-58.7460679)).build();
 
         recitalRepository.save(recitalUno);
         recitalRepository.save(recitalDos);
@@ -434,10 +481,13 @@ public class DatabaseLoader {
         recitalRepository.save(recitalCatorce);
         //recitalRepository.save(recitalQuince);
         recitalRepository.save(recitalDieciSeis);
+        recitalRepository.save(recitalDieciSiete);
+        recitalRepository.save(recitalDieciOcho);
+        recitalRepository.save(recitalDieciNueve);
 
         IniciativaRecital iniciativa1 = new IniciativaRecitalBuilderForLoader()
                 .conDescripcion("Buenas colegas, estamos organizando una fechita en la cobacha Burzaco, un bar chiquito pero amistoso, podemos tocar hasta 4 bandas, el sonido corre por cuenta de el lugar, pero las bandas se encargarían del resto.")
-                .conBanda(forasteros)
+                .conBanda(ineptos)
                 .conFecha(LocalDate.of(2020, 9, 18))
                 .conLocalidad("Burzaco")
                 .conTelefono(1135781400)
@@ -445,7 +495,7 @@ public class DatabaseLoader {
 
         IniciativaRecital iniciativa2 = new IniciativaRecitalBuilderForLoader()
                 .conDescripcion("Hay un bar en Berazategui que se llama La Terraza que no les cobran a las bandas por tocar. El único detalle es que las bandas que tocan tienen que poner el sonido y los instrumentos. Pueden tocar hasta 4 bandas. La idea es hacer una fecha Punk y Metal")
-                .conBanda(dementes)
+                .conBanda(banda)
                 .conFecha(LocalDate.of(2020, 11, 20))
                 .conLocalidad("Berazategui")
                 .conTelefono(1135781400)

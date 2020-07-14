@@ -31,6 +31,7 @@ public class Recital implements Serializable {
     private String localidad;
     @NotNull
     private String lugar;
+    @Column(length = 1337)
     @NotNull
     private String imagen;
     @NotNull
